@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BrainGauge™ — MedAnalytica CRIS GOLD™</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.bg-layout { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+.bg-visual {
+  background:var(--navy); border-radius:20px; padding:36px;
+  border:1px solid rgba(26,111,181,.3); position:sticky; top:88px;
+}
+.bg-visual-title { font-family:var(--serif); font-size:20px; font-weight:700; color:#fff; margin-bottom:4px; }
+.bg-visual-sub { font-size:12.5px; color:rgba(255,255,255,.5); margin-bottom:28px; }
+.brain-metrics { display:flex; flex-direction:column; gap:20px; }
+.bm-item { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.bm-label { font-size:13px; color:rgba(255,255,255,.7); font-weight:500; }
+.bm-score-wrap { display:flex; align-items:center; gap:10px; flex:1; justify-content:flex-end; }
+.bm-bar { flex:1; max-width:120px; height:6px; background:rgba(255,255,255,.1); border-radius:100px; overflow:hidden; }
+.bm-fill { height:100%; border-radius:100px; }
+.bm-val { font-family:var(--serif); font-size:16px; font-weight:700; color:#fff; min-width:36px; text-align:right; }
+.app-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
+.app-card { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:22px; text-align:center; }
+.app-icon { font-size:30px; margin-bottom:10px; display:block; }
+.app-card h4 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+.app-card p { font-size:12.5px; color:var(--muted); line-height:1.55; }
+@media(max-width:900px){ .bg-layout{ grid-template-columns:1fr; } .bg-visual{ position:static; } .app-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:640px){ .app-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">Neurology Module</div>
+    <h1>BrainGauge™</h1>
+    <p>Objective cortical function testing — measure brain speed, cognitive performance, and neurological health in your office or home.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="bg-layout fade-in">
+      <div>
+        <span class="label">What Is BrainGauge</span>
+        <h2 class="section-title">Objective Brain Health Metrics You Can Track</h2>
+        <p class="section-desc">The BrainGauge, developed by Dr. Mark Tommerdahl and Cortical Metrics, is a neuroscience-validated device that measures cortical function through somatosensory testing. When integrated with CRIS GOLD™, it provides a comprehensive picture of brain health alongside autonomic nervous system function.</p>
+        <p class="section-desc" style="margin-top:16px;">Rather than subjective cognitive questionnaires, the BrainGauge uses precise vibrotactile stimulation to measure how your brain processes sensory information — providing quantifiable, reproducible neurological metrics.</p>
+
+        <div class="feat-list" style="margin-top:32px;">
+          <div class="feat-item"><div class="feat-icon fi-blue">🧠</div><div><h4>Cortical Metrics Assessment</h4><p>Measures amplitude discrimination, temporal order judgment, frequency discrimination, and other cortical processing metrics.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-teal">⚡</div><div><h4>Brain Speed & Processing</h4><p>Quantifies neural processing speed — a key marker of brain health that declines with age, injury, or neurological compromise.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-green">📊</div><div><h4>Reproducible Tracking</h4><p>Every test produces a quantifiable score. Track changes over time, pre/post concussion, or before/after treatment interventions.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-gold">🏋️</div><div><h4>Brain Training Exercises</h4><p>Dr. Kessler has developed a series of brain training exercises that can be used alongside BrainGauge measurement to improve cortical metrics over time.</p></div></div>
+        </div>
+
+        <div class="notice" style="margin-top:28px;">
+          <strong>Special Discount:</strong> Purchase the BrainGauge through our link and save 10% with code <strong>HQPRO</strong>. Regular price: $3,299 + tax & shipping. Your saving: $330.
+        </div>
+
+        <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="http://www.corticalmetrics.com/hqpro" target="_blank" class="btn btn-primary">Purchase BrainGauge™ (10% off) →</a>
+          <a href="purchase.html" class="btn btn-outline">Get CRIS GOLD™ Bundle</a>
+        </div>
+      </div>
+
+      <div class="bg-visual">
+        <div class="bg-visual-title">BrainGauge™ Results</div>
+        <div class="bg-visual-sub">Sample Report · Post-Concussion Baseline</div>
+        <div class="brain-metrics">
+          <div class="bm-item"><span class="bm-label">Processing Speed</span><div class="bm-score-wrap"><div class="bm-bar"><div class="bm-fill" style="width:78%;background:linear-gradient(90deg,var(--blue),var(--teal))"></div></div><span class="bm-val" style="color:var(--teal)">78</span></div></div>
+          <div class="bm-item"><span class="bm-label">Amplitude Discrimination</span><div class="bm-score-wrap"><div class="bm-bar"><div class="bm-fill" style="width:65%;background:linear-gradient(90deg,var(--blue),#60a5fa)"></div></div><span class="bm-val" style="color:#60a5fa">65</span></div></div>
+          <div class="bm-item"><span class="bm-label">Temporal Order Judgment</span><div class="bm-score-wrap"><div class="bm-bar"><div class="bm-fill" style="width:71%;background:linear-gradient(90deg,var(--green),var(--teal))"></div></div><span class="bm-val" style="color:var(--green)">71</span></div></div>
+          <div class="bm-item"><span class="bm-label">Frequency Discrimination</span><div class="bm-score-wrap"><div class="bm-bar"><div class="bm-fill" style="width:55%;background:linear-gradient(90deg,var(--amber),#d4a017)"></div></div><span class="bm-val" style="color:var(--amber)">55</span></div></div>
+          <div class="bm-item"><span class="bm-label">Tactile Detection</span><div class="bm-score-wrap"><div class="bm-bar"><div class="bm-fill" style="width:82%;background:linear-gradient(90deg,var(--blue),var(--teal))"></div></div><span class="bm-val" style="color:var(--teal)">82</span></div></div>
+          <div class="bm-item"><span class="bm-label">Composite Brain Score</span><div class="bm-score-wrap"><div class="bm-bar"><div class="bm-fill" style="width:70%;background:linear-gradient(90deg,var(--gold),#f5c842)"></div></div><span class="bm-val" style="color:var(--gold)">70</span></div></div>
+        </div>
+        <div style="margin-top:24px;padding:14px 16px;background:rgba(26,111,181,.15);border:1px solid rgba(26,111,181,.3);border-radius:12px;">
+          <div style="font-size:11px;font-weight:700;color:#60a5fa;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;">Trend Analysis</div>
+          <p style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;">Processing speed improved +12 points since baseline. Recommend continued cognitive rehab protocol. Retest in 4 weeks.</p>
+        </div>
+        <div style="margin-top:16px;text-align:center;">
+          <div style="font-size:13px;color:rgba(255,255,255,.4);">$3,299 + tax & shipping</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;margin-top:2px;">Save 10% with code HQPRO</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner" style="background:var(--white);">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Clinical Applications</span>
+      <h2 class="section-title">Who Benefits from BrainGauge™?</h2>
+    </div>
+    <div class="app-grid fade-in">
+      <div class="app-card"><span class="app-icon">🏈</span><h4>Sports Medicine</h4><p>Baseline and post-concussion testing for athletes. Objective return-to-play clearance with measurable data.</p></div>
+      <div class="app-card"><span class="app-icon">🧓</span><h4>Aging & Cognitive Decline</h4><p>Track brain health year over year. Detect early decline before symptoms become clinically apparent.</p></div>
+      <div class="app-card"><span class="app-icon">🧘</span><h4>Stress & Fatigue</h4><p>Measure cognitive impact of chronic stress and burnout — correlate with CRIS GOLD™ HRV data for a complete picture.</p></div>
+      <div class="app-card"><span class="app-icon">💊</span><h4>Treatment Response</h4><p>Objectively measure whether supplements, therapies, or lifestyle changes are improving neurological function.</p></div>
+      <div class="app-card"><span class="app-icon">🩺</span><h4>Chronic Illness</h4><p>Many chronic conditions affect cognitive function. BrainGauge provides objective cognitive tracking for fibromyalgia, Lyme, ME/CFS, and more.</p></div>
+      <div class="app-card"><span class="app-icon">🏠</span><h4>Home & Office Use</h4><p>Simple enough for home use — patients can track their own brain health between clinical visits and share data with their practitioner.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="inner">
+  <div class="container fade-in">
+    <div class="cta-banner">
+      <h2>Add BrainGauge™ to Your Clinical Toolkit</h2>
+      <p>10% discount with code HQPRO. Combine with CRIS GOLD™ for the most comprehensive patient assessment available.</p>
+      <div class="cta-btns">
+        <a href="http://www.corticalmetrics.com/hqpro" target="_blank" class="btn btn-primary">Purchase BrainGauge™</a>
+        <a href="purchase.html" class="btn btn-outline" style="color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2);">Purchase CRIS GOLD™</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

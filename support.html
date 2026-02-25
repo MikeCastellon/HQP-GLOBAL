@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Support — MedAnalytica CRIS GOLD™</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.support-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
+.support-card {
+  background:var(--white); border:1px solid var(--border); border-radius:20px; padding:36px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:14px;
+}
+.support-card.primary { background:var(--navy); border-color:rgba(26,111,181,.3); }
+.support-card.primary h3, .support-card.primary p { color:rgba(255,255,255,.9); }
+.support-card.primary h3 { color:#fff; }
+.support-icon { font-size:36px; }
+.support-card h3 { font-family:var(--serif); font-size:20px; font-weight:700; color:var(--navy); }
+.support-card p { font-size:14px; color:var(--muted); line-height:1.65; flex:1; }
+.contact-row { display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600; }
+.contact-row a { color:var(--blue); text-decoration:none; transition:color .2s; }
+.contact-row a:hover { color:var(--teal); }
+.support-card.primary .contact-row a { color:var(--gold); }
+.setup-steps { margin-top:56px; }
+.setup-step { display:flex; gap:20px; align-items:flex-start; padding:24px 0; border-bottom:1px solid var(--border); }
+.setup-step:last-child { border-bottom:none; }
+.setup-num {
+  width:44px; height:44px; border-radius:50%; background:var(--navy); color:#fff;
+  font-family:var(--serif); font-size:17px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.setup-step h4 { font-size:16px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.setup-step p { font-size:14px; color:var(--muted); line-height:1.65; }
+.video-pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+.mini-video {
+  background:var(--bg3); border:1px solid var(--border); border-radius:12px;
+  aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:8px; cursor:pointer; transition:border-color .2s;
+}
+.mini-video:hover { border-color:var(--blue); }
+.mini-play { width:36px; height:36px; border-radius:50%; background:var(--navy); display:flex; align-items:center; justify-content:center; }
+.mini-label { font-size:11.5px; color:var(--muted); font-weight:600; }
+.faq-list { margin-top:48px; display:flex; flex-direction:column; gap:0; }
+.faq-item { padding:20px 0; border-bottom:1px solid var(--border); }
+.faq-item:last-child { border-bottom:none; }
+.faq-q { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px; cursor:pointer; }
+.faq-a { font-size:14px; color:var(--muted); line-height:1.7; }
+@media(max-width:640px){ .support-grid,.video-pair{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">Support</div>
+    <h1>We're Here to Help</h1>
+    <p>From setup appointments to ongoing technical support — the MedAnalytica team is available to ensure you get the most from CRIS GOLD™.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="support-grid fade-in">
+      <div class="support-card primary">
+        <div class="support-icon">📅</div>
+        <h3>New Owner Setup Appointment</h3>
+        <p>Just received your CRIS GOLD™ device? Book a personal onboarding session with our team to get your device connected, software installed, and your first reading taken — all in one call.</p>
+        <div class="contact-row">
+          📞 <a href="tel:14156466112">+1 (415) 646-6112</a>
+        </div>
+        <div class="contact-row">
+          ✉️ <a href="mailto:heartquestglobal@gmail.com">heartquestglobal@gmail.com</a>
+        </div>
+        <a href="mailto:heartquestglobal@gmail.com?subject=Setup Appointment Request" class="btn btn-primary" style="margin-top:6px;">Book Setup Appointment →</a>
+      </div>
+
+      <div class="support-card">
+        <div class="support-icon">🔧</div>
+        <h3>General Technical Support</h3>
+        <p>Already set up and experiencing a technical issue? Contact our dedicated technical support line. We're available during business hours — or leave a message and we'll return your call as soon as possible.</p>
+        <div class="contact-row">
+          📞 <a href="tel:16232520968">+1 (623) 252-0968</a>
+        </div>
+        <div class="contact-row" style="font-size:13px;color:var(--muted);">Technical Support Line</div>
+        <a href="tel:16232520968" class="btn btn-outline" style="margin-top:6px;">Call Tech Support →</a>
+      </div>
+
+      <div class="support-card">
+        <div class="support-icon">🌍</div>
+        <h3>South Africa Support</h3>
+        <p>South African customers can reach our team directly through our South Africa contact number during business hours.</p>
+        <div class="contact-row">📞 <a href="tel:0861420421">0861 420 421</a></div>
+        <div class="contact-row" style="font-size:13px;color:var(--muted);">South Africa Line</div>
+      </div>
+
+      <div class="support-card">
+        <div class="support-icon">💰</div>
+        <h3>Affiliate Program</h3>
+        <p>Refer colleagues and other health professionals to CRIS GOLD™ and earn commissions on every sale. Join our affiliate program to get your unique referral link.</p>
+        <a href="http://bb4c8ba4-75ed-4fba-9f3c-fde5c7fcc78c.goaffpro.com/create-account" target="_blank" class="btn btn-outline" style="margin-top:auto;">Join Affiliate Program →</a>
+      </div>
+    </div>
+
+    <div class="setup-steps fade-in">
+      <span class="label">Getting Started</span>
+      <h2 class="section-title">New Owner Setup Guide</h2>
+      <p class="section-desc">Watch these four videos first — they'll get you up and running on your new CRIS GOLD™ device. Follow them in order for the best experience.</p>
+
+      <div class="setup-step">
+        <div class="setup-num">1</div>
+        <div style="flex:1;">
+          <h4>Opening the Contents</h4>
+          <p>Unbox your CRIS GOLD™ device and identify all components — the sensor, Bluetooth adapter, cables, and accessories. Verify everything is present before proceeding.</p>
+          <div class="video-pair">
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">Video #1: Contents</span></div>
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">HQP Made Easy Pt.1</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="setup-num">2</div>
+        <div style="flex:1;">
+          <h4>Bluetooth & Software Setup</h4>
+          <p>Pair your CRIS GOLD™ device via Bluetooth, install the software, and configure your initial settings. Our video walks through every step for both Mac and Windows.</p>
+          <div class="video-pair">
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">Video #2: Bluetooth</span></div>
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">HQP Made Easy Pt.2</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="setup-num">3</div>
+        <div style="flex:1;">
+          <h4>Connecting the Sensor Clamps</h4>
+          <p>Learn how to properly connect the ear clip and finger clamp sensors to patients. Proper placement is essential for clean ECG signal capture and accurate results.</p>
+          <div class="video-pair">
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">Video #3: Clamps</span></div>
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">HQP Made Easy Pt.3</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-step">
+        <div class="setup-num">4</div>
+        <div style="flex:1;">
+          <h4>Recording Your First Reading</h4>
+          <p>The final setup step — take your first CRIS GOLD™ reading from start to finish. Learn how to start a recording, monitor signal quality, and generate your first clinical report.</p>
+          <div class="video-pair">
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">Video #4: First Recording</span></div>
+            <div class="mini-video"><div class="mini-play"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 2.5l7 4.5-7 4.5V2.5z" fill="white"/></svg></div><span class="mini-label">HQP Made Easy Pt.4</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-list fade-in">
+      <span class="label">FAQ</span>
+      <h2 class="section-title">Common Questions</h2>
+
+      <div class="faq-item"><div class="faq-q">What operating systems does CRIS GOLD™ support?</div><div class="faq-a">CRIS GOLD™ software is compatible with Windows 10/11 and macOS. For the latest system requirements, please contact our support team or check the documentation provided with your device.</div></div>
+      <div class="faq-item"><div class="faq-q">How long does a typical patient session take?</div><div class="faq-a">A standard CRIS GOLD™ assessment takes approximately 5 minutes — including sensor attachment, ECG capture, and report generation. Some users complete it in as little as 3–4 minutes once they're comfortable with the workflow.</div></div>
+      <div class="faq-item"><div class="faq-q">Can I use CRIS GOLD™ in my home instead of a clinic?</div><div class="faq-a">Yes — CRIS GOLD™ is designed for both clinical and home use. The device is compact and portable, and the software runs on standard Windows or macOS computers.</div></div>
+      <div class="faq-item"><div class="faq-q">Are software updates included with my purchase?</div><div class="faq-a">Yes — all CRIS GOLD™ software updates are included for the lifetime of your device. New features, modules, and parameter improvements are delivered automatically as they are released.</div></div>
+      <div class="faq-item"><div class="faq-q">What is your return and warranty policy?</div><div class="faq-a">Please contact us directly at heartquestglobal@gmail.com or +1 (415) 646-6112 to discuss our warranty and return terms. We stand behind our product and will work with you to resolve any issues.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you offer training for my staff?</div><div class="faq-a">Yes — every CRIS GOLD™ purchase includes access to our full educational video library and a personal onboarding session. We also offer expanded training and can arrange additional sessions for larger practices.</div></div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

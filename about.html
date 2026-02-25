@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About Us — MedAnalytica CRIS GOLD™</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.mission-block {
+  background:var(--navy); border-radius:24px; padding:56px;
+  position:relative; overflow:hidden; margin-bottom:64px;
+}
+.mission-block::before {
+  content:''; position:absolute; width:400px; height:400px; border-radius:50%;
+  background:radial-gradient(circle, rgba(26,111,181,.2) 0%, transparent 70%);
+  top:50%; right:-100px; transform:translateY(-50%); pointer-events:none;
+}
+.mission-block blockquote {
+  font-family:var(--serif); font-size:clamp(18px,2.5vw,26px); color:#fff;
+  font-style:italic; line-height:1.5; position:relative; z-index:1; max-width:680px;
+}
+.mission-block cite {
+  font-family:var(--sans); font-size:13px; font-weight:600;
+  color:var(--gold); display:block; margin-top:16px;
+  font-style:normal; position:relative; z-index:1;
+}
+.team-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:20px; padding:36px; display:flex; flex-direction:column; gap:0;
+}
+.team-top { display:flex; align-items:flex-start; gap:18px; margin-bottom:18px; }
+.team-avatar {
+  width:64px; height:64px; border-radius:50%; background:var(--navy);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--serif); font-size:22px; font-weight:700; color:var(--gold);
+  flex-shrink:0;
+}
+.team-name { font-family:var(--serif); font-size:20px; font-weight:700; color:var(--navy); margin-bottom:3px; }
+.team-role { font-size:12px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; color:var(--teal); }
+.team-credentials { font-size:12px; color:var(--muted); margin-top:4px; }
+.team-bio { font-size:14px; color:var(--muted); line-height:1.75; }
+.team-bio + .team-bio { margin-top:12px; }
+.expertise-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:16px; }
+.expertise-tag { font-size:11.5px; color:var(--muted); background:var(--bg3); border:1px solid var(--border); padding:4px 10px; border-radius:100px; }
+.origin-block {
+  background:var(--bg3); border:1px solid var(--border); border-radius:20px; padding:40px;
+  margin-top:64px;
+}
+.origin-block h3 { font-family:var(--serif); font-size:24px; font-weight:700; color:var(--navy); margin-bottom:16px; }
+.origin-block p { font-size:15px; color:var(--muted); line-height:1.75; margin-bottom:14px; }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">Our Story</div>
+    <h1>The MedAnalytica Team</h1>
+    <p>Built by health professionals for health professionals — a global team united by a mission to make the most advanced clinical assessment technology accessible to every practitioner.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="mission-block fade-in">
+      <blockquote>"HQP is a technology developed using HRV technology to reflect the complex nature of the human body and to integrate Western and Eastern principles into one seamless evaluation. The HQP reflects the totality of one's life choices and emotional state combined with one's genetic make-up. The key to health is the ability to adapt to all stressors."</blockquote>
+      <cite>— The HeartQuest Professional Foundation</cite>
+    </div>
+
+    <div class="fade-in">
+      <span class="label">Founding Team</span>
+      <h2 class="section-title">Meet the People Behind CRIS GOLD™</h2>
+    </div>
+
+    <div class="team-grid fade-in">
+      <div class="team-card">
+        <div class="team-top">
+          <div class="team-avatar">MK</div>
+          <div>
+            <div class="team-name">Dr. Michael Kessler</div>
+            <div class="team-role">Co-Founder & Clinical Director</div>
+            <div class="team-credentials">D.C., C.C.S.P. — Graduated Life Chiropractic School, 1985</div>
+          </div>
+        </div>
+        <p class="team-bio">Dr. Kessler is a Doctor of Chiropractic and Certified Chiropractic Sports Physician who has been in practice for over 25 years. He taught licensed renewal training for Chiropractors and Acupuncturists in Bio Terrain Analysis and Advanced Psychoemotional Analysis.</p>
+        <p class="team-bio">Over his career, Dr. Kessler pursued extensive undergraduate training in Functional Medicine, Bioregulatory Medicine, and Functional Genomics — all of which inform the clinical philosophy embedded in CRIS GOLD™.</p>
+        <p class="team-bio">"Your health depends on how robustly and dynamically your Autonomic Nervous System can adapt to change in the environment. CRIS GOLD™ tells us that — and this is exactly what Charles Darwin was saying."</p>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Chiropractic</span><span class="expertise-tag">Functional Medicine</span><span class="expertise-tag">HRV Analysis</span><span class="expertise-tag">Bioregulatory Medicine</span><span class="expertise-tag">Functional Genomics</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-top">
+          <div class="team-avatar">SB</div>
+          <div>
+            <div class="team-name">Dr. Sondra Becchetti</div>
+            <div class="team-role">Co-Founder</div>
+            <div class="team-credentials">D.C., F.I.A.C.A. — Graduated Palmer Chiropractic West College, 1987</div>
+          </div>
+        </div>
+        <p class="team-bio">Dr. Becchetti co-founded HeartQuest Global alongside Dr. Kessler after more than 25 years of clinical practice. Together with Dr. Javdat Karimov, they were the first to bring sophisticated Functional Evaluation Technology including Heart Rate Variability from Russia to the USA in 2010.</p>
+        <p class="team-bio">"In 2010 we brought, together with Dr. Javdat Karimov, the first sophisticated Functional Evaluation Technology which included Heart Rate Variability from Russia to the USA. At this time we translated the information from Russian and developed manuals and taught the use of this technology for over 10 years. This opened the door for similar technology to piggyback in from Russia. At this time we broke off with Russia and started to develop an improved version with our current team."</p>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Chiropractic</span><span class="expertise-tag">Acupuncture</span><span class="expertise-tag">Bio Terrain Analysis</span><span class="expertise-tag">HRV Technology</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-top">
+          <div class="team-avatar">JK</div>
+          <div>
+            <div class="team-name">Dr. Javdat Karimov</div>
+            <div class="team-role">Co-Founder & Parameter Architect</div>
+            <div class="team-credentials">NMD — National College of Naturopathic Medicine, 2003</div>
+          </div>
+        </div>
+        <p class="team-bio">Dr. Karimov is a Naturopathic Physician with an MD background in Anesthesiology and Emergency Medicine from Uzbekistan — over 20 years of clinical experience spanning hospital and private practice in Portland, Oregon.</p>
+        <p class="team-bio">He is responsible for bringing the original Dinamika technology from Russia and is integral in formulating many of the new parameters found in CRIS GOLD™ that make it the most advanced tracking technology available. His expertise in IV therapies, Hyperbaric, Ozone, and Chelation therapy uniquely inform the clinical applications of the platform.</p>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Naturopathic Medicine</span><span class="expertise-tag">Emergency Medicine</span><span class="expertise-tag">IV Therapy</span><span class="expertise-tag">Ozone</span><span class="expertise-tag">Hyperbaric</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-top">
+          <div class="team-avatar">RD</div>
+          <div>
+            <div class="team-name">Ruan De Necker</div>
+            <div class="team-role">Co-Founder & Chief Technology Officer</div>
+            <div class="team-credentials">Visual Communication, Business Management, Honours in Interactive Development</div>
+          </div>
+        </div>
+        <p class="team-bio">Ruan is a technological start-up enthusiast with a diverse background spanning software development, industrial design, and business management. His Honours thesis on blockchain and digital identity earned him the Creative Technology Innovations award.</p>
+        <p class="team-bio">Starting as a lecturer at a well-known design college in South Africa, Ruan grew into the role of Senior Lecturer in software and product development while pursuing his own business ventures. He has been the chief technology officer for prominent South African companies.</p>
+        <p class="team-bio">"Without Ruan, our product vision would not have been developed and now used by customers all over the world."</p>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Software Engineering</span><span class="expertise-tag">Product Development</span><span class="expertise-tag">Blockchain</span><span class="expertise-tag">Digital Identity</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-top">
+          <div class="team-avatar">GT</div>
+          <div>
+            <div class="team-name">Gabriel Theron</div>
+            <div class="team-role">Co-Founder & Global Marketing</div>
+            <div class="team-credentials">ICT R&D, Digital Agency, Former Acting CEO of SAFCOL</div>
+          </div>
+        </div>
+        <p class="team-bio">Gabriel started as an Internal Auditor at The South African Breweries before co-founding an R&D company in the ICT sector. He was listed as one of Mail & Guardian's "200 Young South Africans You Must Take to Lunch."</p>
+        <p class="team-bio">In 2015, Gabriel was appointed as a non-executive Board member of the South Africa Forestry Company (SAFCOL) and later served as Acting CEO — where he oversaw SAFCOL breaking the R1 Billion turnover mark for the first time, making it one of the few self-sustaining state entities in South Africa.</p>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Digital Marketing</span><span class="expertise-tag">Business Strategy</span><span class="expertise-tag">Executive Leadership</span><span class="expertise-tag">ICT</span>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-top">
+          <div class="team-avatar">SE</div>
+          <div>
+            <div class="team-name">Stephen Emond</div>
+            <div class="team-role">Canadian & International Distributor</div>
+            <div class="team-credentials">Homeopathic Pharmaceutical Assoc. · NHPD Committee Member</div>
+          </div>
+        </div>
+        <p class="team-bio">Stephen Emond serves as the Canadian and International Distributor of the HeartQuest Professional HRV Systems. He brings decades of expertise in physiological health products R&D, homeopathic compounding, bioresonance, and frequency recording technology.</p>
+        <p class="team-bio">With extensive training spanning environmental medicine, TCM, acupuncture, homeopathy, kinesiology, nutrition, gemmotherapy, and a host of other integrative health modalities — Stephen brings a uniquely broad perspective to the global distribution of CRIS GOLD™.</p>
+        <div class="expertise-tags">
+          <span class="expertise-tag">Homeopathy</span><span class="expertise-tag">Bioresonance</span><span class="expertise-tag">TCM</span><span class="expertise-tag">Kinesiology</span><span class="expertise-tag">Distribution</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="origin-block fade-in">
+      <h3>Our Origin Story</h3>
+      <p>In 2010, Dr. Kessler, Dr. Becchetti, and Dr. Karimov were the first to bring sophisticated Functional Evaluation Technology — including Heart Rate Variability — from Russia to the United States. They spent years translating the research, developing manuals, and teaching the technology to clinicians across North America.</p>
+      <p>After teaching this technology for over 10 years, the team made the decision to break away from the Russian platform and develop an entirely new, improved system — one built from the ground up with their own clinical wisdom, a global team of experts, and modern software architecture. The result is CRIS GOLD™ — the most advanced clinical HRV and Eastern medicine assessment platform available today.</p>
+      <p>Your health depends on how robustly and dynamically your Autonomic Nervous System can adapt to change in the environment. CRIS GOLD™ was built to measure exactly that.</p>
+    </div>
+  </div>
+</section>
+
+<section class="inner" style="background:var(--white);">
+  <div class="container fade-in">
+    <div class="cta-banner">
+      <h2>Join the CRIS GOLD™ Community</h2>
+      <p>Work alongside a global team of health professionals dedicated to advancing clinical assessment technology.</p>
+      <div class="cta-btns">
+        <a href="purchase.html" class="btn btn-primary">Purchase CRIS GOLD™</a>
+        <a href="http://bb4c8ba4-75ed-4fba-9f3c-fde5c7fcc78c.goaffpro.com/create-account" target="_blank" class="btn btn-outline" style="color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2);">Join Affiliate Program</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

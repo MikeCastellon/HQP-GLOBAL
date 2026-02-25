@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Events & Webinars — MedAnalytica CRIS GOLD™</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.conference-hero {
+  background:var(--white); border:1px solid var(--border); border-radius:20px;
+  padding:48px; margin-bottom:48px; position:relative; overflow:hidden;
+}
+.conference-hero::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:4px;
+  background:linear-gradient(90deg,var(--navy),var(--blue),var(--teal));
+}
+.conf-meta { display:flex; gap:24px; flex-wrap:wrap; margin-top:20px; margin-bottom:28px; }
+.conf-meta-item { display:flex; align-items:center; gap:8px; font-size:14px; color:var(--muted); font-weight:500; }
+.conf-meta-item span:first-child { font-size:18px; }
+.conf-photos { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:28px; }
+.conf-photo {
+  border-radius:12px; overflow:hidden; aspect-ratio:4/3;
+  background:var(--bg3); display:flex; align-items:center; justify-content:center;
+  font-size:32px; border:1px solid var(--border);
+}
+.testimonial {
+  background:var(--bg3); border:1px solid var(--border); border-left:3px solid var(--teal);
+  border-radius:0 14px 14px 0; padding:22px 24px; margin-top:24px;
+}
+.testimonial p { font-size:15px; color:var(--muted); line-height:1.7; font-style:italic; }
+.upcoming-grid { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:40px; }
+.upcoming-card {
+  background:var(--white); border:1px solid var(--border); border-radius:18px; padding:28px;
+  display:flex; flex-direction:column; gap:14px;
+}
+.upcoming-date {
+  font-family:var(--serif); font-size:13px; font-weight:700;
+  color:var(--blue); letter-spacing:.5px;
+}
+.upcoming-card h4 { font-size:17px; font-weight:700; color:var(--navy); }
+.upcoming-card p { font-size:13.5px; color:var(--muted); line-height:1.6; flex:1; }
+.status-tag {
+  display:inline-block; font-size:11px; font-weight:700; letter-spacing:.8px;
+  text-transform:uppercase; padding:4px 10px; border-radius:6px; border:1px solid;
+}
+.st-live { background:rgba(14,122,85,.1); color:var(--green); border-color:rgba(14,122,85,.3); }
+.st-coming { background:rgba(26,111,181,.08); color:var(--blue); border-color:rgba(26,111,181,.25); }
+.st-recorded { background:rgba(212,160,23,.1); color:var(--amber); border-color:rgba(212,160,23,.3); }
+@media(max-width:900px){ .upcoming-grid,.conf-photos{ grid-template-columns:1fr 1fr; } }
+@media(max-width:640px){ .conf-photos{ grid-template-columns:1fr 1fr; } }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">Community & Education</div>
+    <h1>Events & Webinars</h1>
+    <p>Connect with the MedAnalytica community — attend live conferences, webinars, and educational programs for health professionals.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Past Event</span>
+      <h2 class="section-title">"The Renaissance of New Healing"</h2>
+    </div>
+    <div class="conference-hero fade-in">
+      <p style="font-size:17px;color:var(--muted);line-height:1.7;max-width:700px;">Our first and highly successful conference exceeded every expectation. With fabulous speakers, exhibitors, and attendees from across the country, the event was a landmark moment for the HeartQuest Professional community.</p>
+      <div class="conf-meta">
+        <div class="conf-meta-item"><span>📅</span><span>November 12–13, 2022</span></div>
+        <div class="conf-meta-item"><span>📍</span><span>Scottsdale, AZ</span></div>
+        <div class="conf-meta-item"><span>🎤</span><span>Featured Speakers & Exhibitors</span></div>
+        <div class="conf-meta-item"><span>⭐</span><span>Rave Reviews from Participants</span></div>
+      </div>
+      <p style="font-size:15px;color:var(--muted);line-height:1.7;">Highlights included a presentation by Bob Miller from Functional Genomics, a catered lunch, and an inspiring post-conference trip to Sedona. We continue to receive positive feedback from everyone who attended and participated.</p>
+      <div class="conf-photos">
+        <div class="conf-photo">🎤</div>
+        <div class="conf-photo">🍽️</div>
+        <div class="conf-photo">👥</div>
+        <div class="conf-photo">🌄</div>
+      </div>
+      <div class="testimonial">
+        <p>"The conference surpassed all of our expectations. The speakers were world-class, the atmosphere was collaborative, and the energy in the room was extraordinary. We want to thank everyone who attended and participated — it was truly the renaissance of healing we envisioned."</p>
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-top:10px;">— Dr. Michael Kessler & Dr. Sondra Becchetti, Co-Founders</div>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <span class="label">Upcoming & Ongoing</span>
+      <h2 class="section-title">Webinars & Educational Programs</h2>
+      <p class="section-desc">We're excited about our ongoing series of webinars and educational programs for health professionals. Stay in touch and stay informed!</p>
+    </div>
+
+    <div class="upcoming-grid fade-in">
+      <div class="upcoming-card">
+        <div class="upcoming-date">Ongoing Series</div>
+        <span class="status-tag st-live">Available Now</span>
+        <h4>HRV Clinical Application Masterclass</h4>
+        <p>A deep dive into applying HRV parameters clinically — from interpretation to treatment protocol development. Presented by Dr. Kessler.</p>
+        <a href="support.html" class="btn btn-primary" style="align-self:flex-start">Register Interest →</a>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-date">Ongoing Series</div>
+        <span class="status-tag st-recorded">Recorded</span>
+        <h4>New Immune Screen Walkthrough</h4>
+        <p>Dr. Karimov and Dr. Kessler walk through the new HQP Immune Screen — how to use it, how to interpret results, and clinical applications.</p>
+        <a href="immune-screen.html" class="btn btn-outline" style="align-self:flex-start">View Module →</a>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-date">2024 Series</div>
+        <span class="status-tag st-coming">Coming Soon</span>
+        <h4>Cell Danger Response: Clinical Protocols</h4>
+        <p>Advanced webinar series on identifying CDR patterns with CRIS GOLD™ and developing effective treatment protocols for chronic illness patients.</p>
+        <a href="support.html" class="btn btn-outline" style="align-self:flex-start">Be Notified →</a>
+      </div>
+      <div class="upcoming-card">
+        <div class="upcoming-date">Annual Conference</div>
+        <span class="status-tag st-coming">Planning 2025</span>
+        <h4>HeartQuest Professional Annual Summit</h4>
+        <p>Our next in-person conference is in planning. Building on the success of our inaugural Scottsdale event — stay tuned for dates and location.</p>
+        <a href="support.html" class="btn btn-outline" style="align-self:flex-start">Stay Updated →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner" style="background:var(--white);">
+  <div class="container fade-in">
+    <div class="cta-banner">
+      <h2>Stay in the Loop</h2>
+      <p>Get notified about upcoming webinars, software updates, and educational programs. Contact us to be added to our newsletter.</p>
+      <div class="cta-btns">
+        <a href="mailto:heartquestglobal@gmail.com?subject=Newsletter Sign-up" class="btn btn-primary">Join Our Mailing List</a>
+        <a href="http://bb4c8ba4-75ed-4fba-9f3c-fde5c7fcc78c.goaffpro.com/create-account" target="_blank" class="btn btn-outline" style="color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2);">Join Affiliate Program</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

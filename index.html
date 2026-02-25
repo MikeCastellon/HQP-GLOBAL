@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedAnalytica — CRIS GOLD™ Clinical Reporting Platform</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+body { padding-top: 0; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; padding: 100px 40px 80px;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(26,111,181,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,111,181,.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+}
+.hero-glow {
+  position: absolute; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(26,111,181,.18) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none;
+}
+.hero-glow-gold {
+  position: absolute; width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(212,160,23,.13) 0%, transparent 70%);
+  top: 25%; right: 12%; pointer-events: none;
+}
+.hero-content { position: relative; z-index: 2; max-width: 800px; text-align: center; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(212,160,23,.12); border: 1px solid rgba(212,160,23,.3);
+  border-radius: 100px; padding: 6px 16px; margin-bottom: 30px;
+  font-size: 11.5px; font-weight: 700; color: var(--gold);
+  letter-spacing: 1.2px; text-transform: uppercase;
+  animation: fadeDown .6s ease both;
+}
+.hero-badge::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--gold); animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)} }
+.hero-title {
+  font-family: var(--serif); font-weight: 700;
+  font-size: clamp(40px,6vw,70px); color: #fff; line-height: 1.1;
+  letter-spacing: -1.5px; margin-bottom: 10px;
+  animation: fadeDown .6s .1s ease both;
+}
+.gold-text {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 60%, var(--gold) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(15px,2vw,19px); color: rgba(255,255,255,.6);
+  line-height: 1.7; margin-bottom: 44px;
+  animation: fadeDown .6s .2s ease both;
+}
+.hero-pills {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 44px;
+  animation: fadeDown .6s .3s ease both;
+}
+.pill {
+  display: flex; align-items: center; gap: 7px;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 100px; padding: 7px 16px; font-size: 13px; color: rgba(255,255,255,.8); font-weight: 500;
+}
+.pill-dot { width: 7px; height: 7px; border-radius: 50%; }
+.pd-teal{background:var(--teal)} .pd-gold{background:var(--gold)} .pd-green{background:var(--green)} .pd-blue{background:var(--blue)}
+.hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; animation: fadeDown .6s .4s ease both; }
+.hero-stats {
+  display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+  padding-top: 48px; margin-top: 60px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  animation: fadeDown .6s .5s ease both;
+}
+.stat-num { font-family: var(--serif); font-weight: 700; font-size: 38px; color: #fff; }
+.stat-num span { color: var(--gold); }
+.stat-label { font-size: 11px; color: rgba(255,255,255,.45); font-weight: 600; letter-spacing: .5px; text-transform: uppercase; margin-top: 4px; }
+@keyframes fadeDown { from{opacity:0;transform:translateY(-18px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.ecg-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 20px; padding: 36px;
+}
+.ecg-svg { width: 100%; height: 72px; }
+.vitals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+.vital {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 14px 16px;
+}
+.vital-label { font-size: 10.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+.vital-val { font-family: var(--serif); font-size: 21px; font-weight: 700; margin-top: 2px; }
+.vv-blue{color:var(--blue)} .vv-green{color:var(--green)} .vv-teal{color:var(--teal)} .vv-amber{color:var(--amber)}
+.vital-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.ai-note {
+  margin-top: 16px; background: rgba(14,138,122,.08);
+  border: 1px solid rgba(14,138,122,.2); border-radius: 12px; padding: 14px 16px;
+}
+.ai-note-label { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: .5px; text-transform: uppercase; margin-bottom: 5px; }
+.ai-note p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── PRODUCTS GRID ── */
+.products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 52px; }
+.prod-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 18px; padding: 28px;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.prod-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(15,39,68,.09); }
+.prod-card.featured { background: var(--navy); border-color: rgba(212,160,23,.4); }
+.prod-card.featured h3, .prod-card.featured p, .prod-card.featured .card-link { color: rgba(255,255,255,.9) !important; }
+.prod-card.featured h3 { color: #fff !important; }
+.prod-card.featured .feat-check { color: var(--gold) !important; }
+.prod-card h3 { font-family: var(--serif); font-weight: 700; font-size: 19px; color: var(--navy); margin-bottom: 8px; }
+.prod-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 18px; }
+.prod-feats { display: flex; flex-direction: column; gap: 7px; margin-bottom: 22px; }
+.prod-feat { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted); }
+.feat-check { color: var(--teal); font-weight: 700; }
+.card-link { font-size: 12.5px; font-weight: 600; color: var(--blue); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: gap .2s; }
+.card-link:hover { gap: 9px; }
+
+/* ── HOW ── */
+.steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 52px; }
+.step-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 18px; padding: 28px 22px; text-align: center;
+  transition: border-color .25s, transform .25s;
+}
+.step-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+.step-num {
+  width: 50px; height: 50px; border-radius: 50%; background: var(--navy); color: #fff;
+  font-family: var(--serif); font-size: 20px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 18px;
+}
+.step-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.step-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.step-time {
+  display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 600;
+  color: var(--teal); background: rgba(14,138,122,.1); padding: 3px 12px; border-radius: 100px;
+}
+
+/* ── MED MODES ── */
+.med-split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 52px; }
+.med-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 18px; padding: 36px; position: relative; overflow: hidden;
+}
+.med-card::after {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+}
+.med-card.western::after { background: linear-gradient(90deg,var(--blue),var(--teal)); }
+.med-card.eastern::after { background: linear-gradient(90deg,var(--gold),var(--amber)); }
+.med-card h3 { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--navy); margin-bottom: 10px; }
+.med-card p { font-size: 14.5px; color: var(--muted); line-height: 1.7; margin-bottom: 22px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: 100px; border: 1px solid; }
+.t-blue { background: rgba(26,111,181,.07); color: var(--blue); border-color: rgba(26,111,181,.2); }
+.t-gold { background: rgba(212,160,23,.08); color: var(--amber); border-color: rgba(180,83,9,.2); }
+
+@media(max-width:900px){
+  .products-grid{ grid-template-columns:1fr 1fr; }
+  .steps-grid{ grid-template-columns:1fr 1fr; }
+  .about-grid, .med-split{ grid-template-columns:1fr; }
+}
+@media(max-width:640px){
+  .products-grid,.steps-grid{ grid-template-columns:1fr; }
+  .hero{padding:88px 20px 64px;}
+  .hero-stats{gap:32px;}
+}
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-gold"></div>
+  <div class="hero-content">
+    <div class="hero-badge">AI-Powered Clinical Reporting · HIPAA Compliant</div>
+    <h1 class="hero-title">Clinical Reports.<br><span class="gold-text">Generated in Minutes.</span></h1>
+    <p class="hero-sub">MedAnalytica's <strong style="color:rgba(255,255,255,.9)">CRIS GOLD™</strong> combines Heart Rate Variability analytics with AI-powered clinical intelligence — bridging Western diagnostics and Eastern medicine into one comprehensive assessment platform for health professionals.</p>
+    <div class="hero-pills">
+      <div class="pill"><span class="pill-dot pd-teal"></span>HRV Analysis</div>
+      <div class="pill"><span class="pill-dot pd-gold"></span>Eastern Medicine Parameters</div>
+      <div class="pill"><span class="pill-dot pd-green"></span>5-Minute Assessment</div>
+      <div class="pill"><span class="pill-dot pd-blue"></span>Side-by-Side Comparison</div>
+    </div>
+    <div class="hero-ctas">
+      <a href="purchase.html" class="btn btn-primary">Purchase CRIS GOLD™ <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="what-is-hrv.html" class="btn btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.2);">Learn About HRV</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">5<span>min</span></div><div class="stat-label">Per Assessment</div></div>
+      <div class="stat-item"><div class="stat-num">2<span>x</span></div><div class="stat-label">Medicine Systems</div></div>
+      <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label">HIPAA Compliant</div></div>
+      <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Treatment Tracking</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="inner" style="background:var(--white);">
+  <div class="container">
+    <div class="about-grid fade-in">
+      <div>
+        <span class="label">What Is CRIS GOLD™</span>
+        <h2 class="section-title">The Ultimate Health Assessment Tool for Clinical Professionals</h2>
+        <p class="section-desc">Built by practicing health professionals for health professionals. CRIS GOLD™ objectively tracks patient response to any type of treatment or lifestyle change — combining traditional HRV with deeper Eastern medicine parameters instantly and accurately.</p>
+        <div class="feat-list">
+          <div class="feat-item"><div class="feat-icon fi-teal">⚡</div><div><h4>Takes Only 5 Minutes</h4><p>Easy to apply — minimal setup, powerful results from the first session.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-blue">📊</div><div><h4>Side-by-Side Comparison</h4><p>Compare results across any parameter on different dates to track progress over time.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-green">📚</div><div><h4>Built-in Education</h4><p>Dropdown explanations are embedded into every result screen — perfect for patient education.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-gold">🏅</div><div><h4>Continuously Updated</h4><p>Regular software updates deliver the latest validated research and parameters automatically.</p></div></div>
+        </div>
+      </div>
+      <div class="ecg-card">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;">Live ECG Readout</div>
+        <svg class="ecg-svg" viewBox="0 0 400 72" preserveAspectRatio="none">
+          <defs><linearGradient id="eg" x1="0" x2="1"><stop offset="0%" stop-color="#0e8a7a" stop-opacity=".4"/><stop offset="100%" stop-color="#1a6fb5" stop-opacity=".9"/></linearGradient></defs>
+          <polyline points="0,36 28,36 38,36 43,34 48,8 53,60 58,36 78,36 108,36 118,36 123,34 128,8 133,60 138,36 158,36 188,36 198,36 203,34 208,8 213,60 218,36 238,36 268,36 278,36 283,34 288,8 293,60 298,36 318,36 348,36 358,36 363,34 368,8 373,60 378,36 400,36"
+            stroke="url(#eg)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="vitals-grid">
+          <div class="vital"><div class="vital-label">HRV Score</div><div class="vital-val vv-blue">72 ms</div><div class="vital-sub">↑ Optimal range</div></div>
+          <div class="vital"><div class="vital-label">Vagal Tone</div><div class="vital-val vv-green">High</div><div class="vital-sub">Parasympathetic active</div></div>
+          <div class="vital"><div class="vital-label">Qi Balance</div><div class="vital-val vv-teal">Balanced</div><div class="vital-sub">Eastern parameter</div></div>
+          <div class="vital"><div class="vital-label">Stress Index</div><div class="vital-val vv-amber">Moderate</div><div class="vital-sub">Monitor closely</div></div>
+        </div>
+        <div class="ai-note">
+          <div class="ai-note-label">AI Clinical Summary</div>
+          <p>Strong parasympathetic recovery detected. Eastern pulse analysis indicates balanced Liver & Heart meridian function. Recommend continuing current treatment protocol.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="inner">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Products & Modules</span>
+      <h2 class="section-title">Everything You Need in One Platform</h2>
+      <p class="section-desc">From HRV core analysis to immune screening, mitochondrial assessment, and body composition — CRIS GOLD™ covers the complete clinical picture.</p>
+    </div>
+    <div class="products-grid fade-in">
+      <div class="prod-card featured">
+        <div class="card-tag ct-gold">★ Flagship</div>
+        <h3>CRIS GOLD™ Core</h3>
+        <p>Complete HRV + Eastern medicine clinical assessment. 5-minute sessions. AI-generated summaries.</p>
+        <div class="prod-feats">
+          <div class="prod-feat"><span class="feat-check">✓</span> Full HRV spectrum analysis</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Chinese & Ayurvedic parameters</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> AI clinical summaries</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Side-by-side date comparison</div>
+        </div>
+        <a href="purchase.html" class="card-link" style="color:var(--gold)">Learn More →</a>
+      </div>
+      <div class="prod-card">
+        <div class="card-tag ct-teal">New</div>
+        <h3>HQP Immune Screen</h3>
+        <p>Advanced immune system assessment using HRV biomarkers. Monitor immune resilience and recovery response.</p>
+        <div class="prod-feats">
+          <div class="prod-feat"><span class="feat-check">✓</span> Immune biomarker mapping</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Inflammation index scoring</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Recovery trajectory analysis</div>
+        </div>
+        <a href="immune-screen.html" class="card-link">Learn More →</a>
+      </div>
+      <div class="prod-card">
+        <div class="card-tag ct-blue">Neurology</div>
+        <h3>BrainGauge™</h3>
+        <p>Objective cortical function testing. Assess brain speed, cognitive performance, and neurological health.</p>
+        <div class="prod-feats">
+          <div class="prod-feat"><span class="feat-check">✓</span> Cortical function mapping</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Cognitive performance index</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> TBI & concussion tracking</div>
+        </div>
+        <a href="braingauge.html" class="card-link">Learn More →</a>
+      </div>
+      <div class="prod-card">
+        <div class="card-tag ct-blue">Mitochondria</div>
+        <h3>MEScreen™</h3>
+        <p>Mitochondrial efficiency screening and Cell Danger Response pattern identification.</p>
+        <div class="prod-feats">
+          <div class="prod-feat"><span class="feat-check">✓</span> Mitochondrial efficiency index</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> CDR pattern mapping</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Energy production scoring</div>
+        </div>
+        <a href="mescreen.html" class="card-link">Learn More →</a>
+      </div>
+      <div class="prod-card">
+        <div class="card-tag ct-blue">Body Comp</div>
+        <h3>Bio-Impedance RJL</h3>
+        <p>Professional body composition analysis integrated with HRV data. Phase angle, ECW/ICW, metabolic rate.</p>
+        <div class="prod-feats">
+          <div class="prod-feat"><span class="feat-check">✓</span> Phase angle measurement</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Lean/fat mass tracking</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Weight management tools</div>
+        </div>
+        <a href="body-composition.html" class="card-link">Learn More →</a>
+      </div>
+      <div class="prod-card">
+        <div class="card-tag ct-teal">Therapy</div>
+        <h3>Vagal Nerve Devices</h3>
+        <p>Non-invasive vagal nerve stimulation with integrated outcome tracking via CRIS GOLD™.</p>
+        <div class="prod-feats">
+          <div class="prod-feat"><span class="feat-check">✓</span> Pre/post stimulation analysis</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> Autonomic response tracking</div>
+          <div class="prod-feat"><span class="feat-check">✓</span> VeRelief Prime integration</div>
+        </div>
+        <a href="vagal-nerve.html" class="card-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="inner" style="background:var(--white);">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;max-width:580px;margin:0 auto;">
+      <span class="label">How It Works</span>
+      <h2 class="section-title">From Patient to Report in 5 Minutes</h2>
+      <p class="section-desc" style="margin:0 auto;">No complex setup. No lengthy training. Just objective, actionable clinical data — ready in minutes.</p>
+    </div>
+    <div class="steps-grid fade-in">
+      <div class="step-card"><div class="step-num">1</div><h4>Connect Sensor</h4><p>Attach the ear clip or finger pulse sensor. ECG capture begins automatically.</p><div class="step-time">~30 sec</div></div>
+      <div class="step-card"><div class="step-num">2</div><h4>Capture Reading</h4><p>CRIS GOLD™ records the HRV signal and runs real-time spectral analysis across frequency bands.</p><div class="step-time">~3 min</div></div>
+      <div class="step-card"><div class="step-num">3</div><h4>AI Analysis</h4><p>Western HRV parameters plus Eastern medicine pulse equivalents are processed simultaneously.</p><div class="step-time">~60 sec</div></div>
+      <div class="step-card"><div class="step-num">4</div><h4>Generate Report</h4><p>Complete clinical report with visual charts, explanations, and AI-written clinical notes — ready to share.</p><div class="step-time">~30 sec</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="inner">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Methodology</span>
+      <h2 class="section-title">Two Systems. One Report.</h2>
+      <p class="section-desc">CRIS GOLD™ uniquely bridges the objectivity of Western diagnostics with the holistic depth of Eastern medicine — the most complete clinical picture available.</p>
+    </div>
+    <div class="med-split fade-in">
+      <div class="med-card western">
+        <span style="font-size:32px;display:block;margin-bottom:14px;">📡</span>
+        <h3>Western HRV Parameters</h3>
+        <p>Decades of peer-reviewed research. Sympathetic/parasympathetic balance, autonomic nervous system function, and cardiovascular resilience via validated spectral frequency analysis.</p>
+        <div class="tag-row">
+          <span class="tag t-blue">LF/HF Ratio</span><span class="tag t-blue">SDNN</span><span class="tag t-blue">RMSSD</span><span class="tag t-blue">Autonomic Balance</span><span class="tag t-blue">Stress Index</span><span class="tag t-blue">Vagal Tone</span>
+        </div>
+      </div>
+      <div class="med-card eastern">
+        <span style="font-size:32px;display:block;margin-bottom:14px;">☯️</span>
+        <h3>Eastern Medicine Parameters</h3>
+        <p>Like an electronic pulse analysis — a skill that takes years to master. CRIS GOLD™ evaluates Chinese and Ayurvedic parameters from the ECG instantly, making advanced diagnostics accessible to every clinician.</p>
+        <div class="tag-row">
+          <span class="tag t-gold">Meridian Analysis</span><span class="tag t-gold">Qi Balance</span><span class="tag t-gold">Five Elements</span><span class="tag t-gold">Ayurvedic Doshas</span><span class="tag t-gold">Organ Vitality</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="inner" style="background:var(--white);">
+  <div class="container fade-in">
+    <div class="cta-banner">
+      <h2>Ready to Elevate Your Clinical Practice?</h2>
+      <p>Join health professionals worldwide using CRIS GOLD™ for faster, more comprehensive patient assessments.</p>
+      <div class="cta-btns">
+        <a href="purchase.html" class="btn btn-primary">Purchase CRIS GOLD™</a>
+        <a href="support.html" class="btn btn-outline" style="color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2);">Contact Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

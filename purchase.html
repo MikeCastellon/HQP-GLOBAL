@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Purchase CRIS GOLD™ — MedAnalytica</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.purchase-layout { display:grid; grid-template-columns:1fr 1.1fr; gap:56px; align-items:start; }
+.purchase-form-area {
+  background:var(--white); border:1px solid var(--border); border-radius:20px;
+  overflow:hidden; position:sticky; top:88px;
+}
+.purchase-form-header { background:var(--navy); padding:28px 32px; }
+.purchase-form-header h3 { font-family:var(--serif); font-size:22px; font-weight:700; color:#fff; margin-bottom:4px; }
+.purchase-form-header p { font-size:13px; color:rgba(255,255,255,.55); }
+.purchase-price-row { display:flex; align-items:baseline; gap:10px; margin-top:12px; }
+.purchase-amount { font-family:var(--serif); font-size:40px; font-weight:700; color:#fff; }
+.purchase-details { font-size:13px; color:rgba(255,255,255,.5); margin-top:4px; }
+.purchase-form-body { padding:28px 32px; }
+.form-group { margin-bottom:20px; }
+.form-label { font-size:13px; font-weight:600; color:var(--navy); margin-bottom:7px; display:block; }
+.form-input {
+  width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:10px;
+  font-family:var(--sans); font-size:14px; color:var(--text); background:var(--bg);
+  transition:border-color .2s; outline:none;
+}
+.form-input:focus { border-color:var(--blue); background:var(--white); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.secure-note {
+  display:flex; align-items:center; gap:8px;
+  font-size:12px; color:var(--muted); margin-top:16px;
+}
+.intl-note {
+  background:rgba(26,111,181,.07); border:1px solid rgba(26,111,181,.2);
+  border-radius:10px; padding:14px 16px; margin-top:16px;
+  font-size:13px; color:var(--blue); line-height:1.6;
+}
+.includes-section { margin-top:40px; }
+.includes-section h3 { font-family:var(--serif); font-size:22px; font-weight:700; color:var(--navy); margin-bottom:20px; }
+.include-item {
+  display:flex; gap:14px; align-items:flex-start; padding:16px 0;
+  border-bottom:1px solid var(--border);
+}
+.include-item:last-child { border-bottom:none; }
+.include-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.include-item h4 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:3px; }
+.include-item p { font-size:13px; color:var(--muted); line-height:1.55; }
+.bundle-options { display:flex; flex-direction:column; gap:14px; margin-top:36px; }
+.bundle-card {
+  background:var(--bg3); border:1px solid var(--border); border-radius:14px; padding:20px 22px;
+  display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+  transition:border-color .25s;
+}
+.bundle-card:hover { border-color:var(--blue); }
+.bundle-card-name { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:3px; }
+.bundle-card-desc { font-size:13px; color:var(--muted); }
+.bundle-card-price { font-family:var(--serif); font-size:20px; font-weight:700; color:var(--navy); white-space:nowrap; }
+.bundle-card-save { font-size:11px; color:var(--green); font-weight:700; margin-top:2px; }
+@media(max-width:900px){ .purchase-layout{ grid-template-columns:1fr; } .purchase-form-area{ position:static; } .form-row{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">Purchase</div>
+    <h1>Purchase CRIS GOLD™</h1>
+    <p>Join health professionals worldwide using CRIS GOLD™ for comprehensive, objective patient assessment. International orders welcome.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="purchase-layout fade-in">
+      <div>
+        <span class="label">What You Get</span>
+        <h2 class="section-title">Everything You Need to Start Assessing Patients Today</h2>
+        <p class="section-desc">Upon purchase, you'll receive full hardware, software, instructions, and access to our complete educational video library — everything you need to start delivering CRIS GOLD™ assessments within days.</p>
+
+        <div class="includes-section">
+          <div class="include-item">
+            <div class="include-icon fi-navy" style="background:var(--navy);color:var(--gold);">🔌</div>
+            <div><h4>CRIS GOLD™ Hardware Device</h4><p>The HeartQuest Professional sensor — ear clip and finger pulse options. Bluetooth connected. Compact and portable for clinic or home visits.</p></div>
+          </div>
+          <div class="include-item">
+            <div class="include-icon fi-blue" style="background:rgba(26,111,181,.12);">💻</div>
+            <div><h4>CRIS GOLD™ Software License</h4><p>Full software access including all analysis modules, questionnaires, comparison tools, and AI-generated clinical summaries.</p></div>
+          </div>
+          <div class="include-item">
+            <div class="include-icon fi-teal" style="background:rgba(14,138,122,.12);">🎓</div>
+            <div><h4>Complete Educational Video Library</h4><p>Step-by-step setup videos, clinical application training, and ongoing educational content by Dr. Kessler and Dr. Karimov.</p></div>
+          </div>
+          <div class="include-item">
+            <div class="include-icon fi-green" style="background:rgba(14,122,85,.12);">📞</div>
+            <div><h4>Onboarding & Support</h4><p>Personal onboarding appointment to get you up and running, plus ongoing technical support from our team.</p></div>
+          </div>
+          <div class="include-item">
+            <div class="include-icon fi-gold" style="background:rgba(212,160,23,.12);">🔄</div>
+            <div><h4>Lifetime Software Updates</h4><p>Every new feature, module, and parameter update delivered automatically — including new immune screen features, CDR tracking, and more.</p></div>
+          </div>
+        </div>
+
+        <div style="margin-top:40px;">
+          <h3 style="font-family:var(--serif);font-size:20px;font-weight:700;color:var(--navy);margin-bottom:16px;">Add-On Devices</h3>
+          <div class="bundle-options">
+            <div class="bundle-card">
+              <div><div class="bundle-card-name">BrainGauge™</div><div class="bundle-card-desc">Cortical function testing — use code HQPRO at checkout</div></div>
+              <div style="text-align:right;"><div class="bundle-card-price">$3,299</div><div class="bundle-card-save">Save $330 with HQPRO</div></div>
+            </div>
+            <div class="bundle-card">
+              <div><div class="bundle-card-name">RJL Quantum VII BIA</div><div class="bundle-card-desc">Bio-impedance body composition — use code HQP10 at checkout</div></div>
+              <div style="text-align:right;"><div class="bundle-card-price">$2,961</div><div class="bundle-card-save">Save $329 with HQP10</div></div>
+            </div>
+            <div class="bundle-card">
+              <div><div class="bundle-card-name">VeRelief Prime</div><div class="bundle-card-desc">Vagal nerve stimulation device with accessories</div></div>
+              <div style="text-align:right;"><div class="bundle-card-price">$299</div><div class="bundle-card-save">Discount via affiliate link</div></div>
+            </div>
+            <div class="bundle-card">
+              <div><div class="bundle-card-name">MEScreen™ Test</div><div class="bundle-card-desc">Mitochondrial efficiency assessment</div></div>
+              <div style="text-align:right;"><div class="bundle-card-price">$399</div><div class="bundle-card-save">Per test via MEScreen</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="purchase-form-area">
+        <div class="purchase-form-header">
+          <h3>CRIS GOLD™ System</h3>
+          <p>HeartQuest Professional — Full Platform</p>
+          <div class="purchase-price-row">
+            <div class="purchase-amount">$3,975</div>
+          </div>
+          <div class="purchase-details">+ tax (within AZ) & shipping · International orders welcome</div>
+        </div>
+        <div class="purchase-form-body">
+          <div class="intl-note">
+            🌍 <strong>International Orders:</strong> Please contact us directly for international ordering. We ship worldwide.
+          </div>
+          <div style="height:24px;"></div>
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="Dr. Jane Smith">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="jane@clinic.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+1 (555) 000-0000">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Country</label>
+              <input type="text" class="form-input" placeholder="United States">
+            </div>
+            <div class="form-group">
+              <label class="form-label">State / Province</label>
+              <input type="text" class="form-input" placeholder="AZ">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Practice / Clinic Name</label>
+            <input type="text" class="form-input" placeholder="Integrative Health Clinic">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message / Questions (optional)</label>
+            <textarea class="form-input" rows="3" placeholder="Any questions or special requests..."></textarea>
+          </div>
+          <a href="mailto:heartquestglobal@gmail.com?subject=CRIS GOLD Purchase Inquiry" class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px;">
+            Submit Order Inquiry →
+          </a>
+          <div style="text-align:center;margin-top:10px;">
+            <div style="font-size:12px;color:var(--muted);">Or call us directly:</div>
+            <div style="font-size:14px;font-weight:700;color:var(--navy);margin-top:4px;">+1 (415) 646-6112</div>
+          </div>
+          <div class="secure-note">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3v4c0 3.3 2.1 5.8 5 6.5 2.9-.7 5-3.2 5-6.5V3L7 1z" stroke="var(--green)" stroke-width="1" fill="rgba(14,122,85,.1)"/><path d="M5 7l1.5 1.5L9 5" stroke="var(--green)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Your information is secure and will only be used to process your order.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

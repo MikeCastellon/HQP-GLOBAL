@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MEScreen™ Mitochondrial Assessment — MedAnalytica CRIS GOLD™</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.me-layout { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+.me-report {
+  background:var(--bg3); border:1px solid var(--border); border-radius:20px;
+  overflow:hidden; position:sticky; top:88px;
+}
+.me-report-header {
+  background:var(--navy); padding:24px 28px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.me-report-title { font-family:var(--serif); font-size:18px; font-weight:700; color:#fff; }
+.me-report-badge {
+  font-size:11px; font-weight:700; letter-spacing:.8px; text-transform:uppercase;
+  background:rgba(212,160,23,.2); color:var(--gold); border:1px solid rgba(212,160,23,.35);
+  padding:4px 10px; border-radius:6px;
+}
+.me-report-body { padding:28px; }
+.me-gauge { text-align:center; margin-bottom:28px; }
+.me-gauge-ring {
+  width:120px; height:120px; border-radius:50%;
+  background:conic-gradient(var(--teal) 0% 68%, var(--bg3) 68% 100%);
+  display:flex; align-items:center; justify-content:center; margin:0 auto 12px;
+  box-shadow:inset 0 0 0 14px var(--bg3);
+}
+.me-gauge-val { font-family:var(--serif); font-size:26px; font-weight:700; color:var(--navy); }
+.me-gauge-label { font-size:12px; color:var(--muted); font-weight:600; }
+.me-params { display:flex; flex-direction:column; gap:12px; }
+.me-param { display:flex; justify-content:space-between; align-items:center; padding:12px 14px; background:var(--white); border:1px solid var(--border); border-radius:10px; }
+.me-param-name { font-size:13px; font-weight:600; color:var(--text); }
+.me-param-val { font-size:13px; font-weight:700; }
+.good{color:var(--green)} .moderate{color:var(--amber)} .low{color:var(--red)}
+.mito-stages { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:36px; }
+.stage-card { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:20px; text-align:center; }
+.stage-dot { width:14px; height:14px; border-radius:50%; margin:0 auto 10px; }
+.stage-card h4 { font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.stage-card p { font-size:12px; color:var(--muted); line-height:1.55; }
+@media(max-width:900px){ .me-layout{ grid-template-columns:1fr; } .me-report{ position:static; } .mito-stages{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">Mitochondrial Module</div>
+    <h1>MEScreen™ Mitochondrial Assessment</h1>
+    <p>Advanced mitochondrial efficiency screening — developed by Dr. Hemal Patel. Identify Cell Danger Response patterns and cellular energy production deficits non-invasively.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="me-layout fade-in">
+      <div>
+        <span class="label">Advanced Mitochondrial Screening</span>
+        <h2 class="section-title">The Energy Behind Your Patient's Health</h2>
+        <p class="section-desc">Mitochondria are the powerhouses of every cell in the body. When mitochondrial function declines — whether from chronic stress, toxin exposure, infection, or aging — it can manifest as fatigue, brain fog, immune dysfunction, and a wide range of chronic health conditions.</p>
+        <p class="section-desc" style="margin-top:16px;">The MEScreen™ test, developed by Dr. Hemal Patel, provides a non-invasive assessment of mitochondrial efficiency — giving clinicians an objective window into cellular energy production that was previously only accessible through invasive biopsy procedures.</p>
+
+        <div class="feat-list" style="margin-top:32px;">
+          <div class="feat-item"><div class="feat-icon fi-teal">⚡</div><div><h4>Mitochondrial Efficiency Index</h4><p>Quantify how efficiently each patient's mitochondria are producing ATP — the fundamental energy currency of cellular function.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-blue">🔴</div><div><h4>Cell Danger Response Detection</h4><p>Identify patterns consistent with the Cell Danger Response (CDR) — the innate cellular defense mechanism linked to many chronic illnesses.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-green">📊</div><div><h4>Longitudinal Tracking</h4><p>Track mitochondrial health over time and across treatment interventions — see objective evidence of cellular improvement.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-gold">💡</div><div><h4>Practitioner-Friendly Reports</h4><p>Clear, visual reports that you can share with patients to explain their mitochondrial health status in plain language.</p></div></div>
+        </div>
+
+        <div class="notice" style="margin-top:28px;">
+          <strong>Current Price: $399 per test</strong> — order through our link to be directed to the MEScreen site. Advanced technology developed by Dr. Hemal Patel at the Patel Lab.
+        </div>
+
+        <div style="margin-top:24px; display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="https://mescreen.com/products/complete?ref=mkessler" target="_blank" class="btn btn-primary">Order MEScreen™ Test ($399) →</a>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:8px;">You'll be directed to the MEScreen website for ordering.</p>
+      </div>
+
+      <div class="me-report">
+        <div class="me-report-header">
+          <div class="me-report-title">MEScreen™ Report</div>
+          <div class="me-report-badge">Sample Output</div>
+        </div>
+        <div class="me-report-body">
+          <div class="me-gauge">
+            <div class="me-gauge-ring"><div class="me-gauge-val">68</div></div>
+            <div class="me-gauge-label">Mitochondrial Efficiency Score</div>
+          </div>
+          <div class="me-params">
+            <div class="me-param"><span class="me-param-name">ATP Production Rate</span><span class="me-param-val moderate">Moderate</span></div>
+            <div class="me-param"><span class="me-param-name">Oxidative Phosphorylation</span><span class="me-param-val good">Adequate</span></div>
+            <div class="me-param"><span class="me-param-name">Cell Danger Response</span><span class="me-param-val moderate">Stage 2 (Freeze)</span></div>
+            <div class="me-param"><span class="me-param-name">Mitochondrial Density</span><span class="me-param-val moderate">Reduced</span></div>
+            <div class="me-param"><span class="me-param-name">Reactive Oxygen Species</span><span class="me-param-val moderate">Elevated</span></div>
+            <div class="me-param"><span class="me-param-name">NAD+/NADH Ratio</span><span class="me-param-val low">Low</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner" style="background:var(--white);">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Cell Danger Response</span>
+      <h2 class="section-title">Understanding the CDR Stages</h2>
+      <p class="section-desc">The Cell Danger Response is a universal, evolutionarily conserved cellular response to threat — described by Dr. Robert Naviaux. CRIS GOLD™ and MEScreen™ together can identify which stage of the CDR a patient may be experiencing.</p>
+    </div>
+    <div class="mito-stages fade-in">
+      <div class="stage-card">
+        <div class="stage-dot" style="background:var(--red)"></div>
+        <h4>CDR Stage 1</h4>
+        <p>Acute inflammation and immune activation. The cell is actively fighting a perceived threat. Characterized by elevated sympathetic tone and inflammatory markers.</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage-dot" style="background:var(--amber)"></div>
+        <h4>CDR Stage 2</h4>
+        <p>The freeze and regeneration phase. Cell reduces energy output to protect itself. Common in chronic fatigue, fibromyalgia, and post-viral syndromes.</p>
+      </div>
+      <div class="stage-card">
+        <div class="stage-dot" style="background:var(--green)"></div>
+        <h4>CDR Resolution</h4>
+        <p>Successful completion and return to homeostasis. Mitochondria resume normal energy production. HRV and autonomic balance normalize.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;" class="fade-in">
+      <a href="cell-danger-response.html" class="btn btn-outline">Learn More About Cell Danger Response →</a>
+    </div>
+  </div>
+</section>
+
+<section class="inner">
+  <div class="container fade-in">
+    <div class="cta-banner">
+      <h2>Add Mitochondrial Screening to Your Practice</h2>
+      <p>Combine MEScreen™ with CRIS GOLD™ for a complete cellular and autonomic health assessment.</p>
+      <div class="cta-btns">
+        <a href="https://mescreen.com/products/complete?ref=mkessler" target="_blank" class="btn btn-primary">Order MEScreen™ Test</a>
+        <a href="purchase.html" class="btn btn-outline" style="color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2);">Purchase CRIS GOLD™</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

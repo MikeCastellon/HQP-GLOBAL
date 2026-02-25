@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cell Danger Response — MedAnalytica CRIS GOLD™</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.cdr-timeline { display:flex; flex-direction:column; gap:0; margin-top:48px; position:relative; }
+.cdr-timeline::before { content:''; position:absolute; left:28px; top:0; bottom:0; width:2px; background:var(--border); }
+.cdr-item { display:flex; gap:28px; align-items:flex-start; padding-bottom:40px; position:relative; }
+.cdr-item:last-child { padding-bottom:0; }
+.cdr-dot {
+  width:58px; height:58px; border-radius:50%; flex-shrink:0; z-index:1;
+  display:flex; align-items:center; justify-content:center; font-size:22px;
+  border:3px solid var(--bg);
+}
+.cdr-body { flex:1; padding-top:8px; }
+.cdr-stage { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; }
+.cdr-body h3 { font-family:var(--serif); font-size:22px; font-weight:700; color:var(--navy); margin-bottom:10px; }
+.cdr-body p { font-size:15px; color:var(--muted); line-height:1.7; }
+.cdr-symptoms { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.cdr-symptom { font-size:12px; font-weight:500; padding:5px 12px; border-radius:100px; border:1px solid; }
+.s-red { background:rgba(192,57,43,.08); color:var(--red); border-color:rgba(192,57,43,.25); }
+.s-amber { background:rgba(180,83,9,.08); color:var(--amber); border-color:rgba(180,83,9,.25); }
+.s-green { background:rgba(14,122,85,.08); color:var(--green); border-color:rgba(14,122,85,.25); }
+.video-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:48px; }
+.video-card { background:var(--white); border:1px solid var(--border); border-radius:18px; overflow:hidden; }
+.video-thumb {
+  background:var(--navy); aspect-ratio:16/9;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px;
+}
+.play-circle {
+  width:56px; height:56px; border-radius:50%; background:rgba(26,111,181,.8);
+  display:flex; align-items:center; justify-content:center;
+}
+.video-card-body { padding:20px 22px; }
+.video-card-body h4 { font-size:15px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+.video-card-body p { font-size:13px; color:var(--muted); line-height:1.55; }
+@media(max-width:640px){ .video-grid{ grid-template-columns:1fr; } .cdr-timeline::before{ display:none; } }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">Advanced Education</div>
+    <h1>Cell Danger Response</h1>
+    <p>Understanding the universal cellular defense mechanism behind many chronic illnesses — and how CRIS GOLD™ helps identify and track it.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="fade-in" style="max-width:740px;">
+      <span class="label">What Is the CDR</span>
+      <h2 class="section-title">When Cells Stay in Defense Mode</h2>
+      <p class="section-desc">The Cell Danger Response (CDR) is a universal, evolutionarily conserved cellular response to threat, described by Dr. Robert Naviaux at UC San Diego. When cells sense danger — whether from infection, toxins, trauma, or extreme stress — they shift their behavior from normal energy production to a defensive mode.</p>
+      <p class="section-desc" style="margin-top:16px;">In healthy individuals, the CDR resolves once the danger has passed. But in many patients with chronic illness, the CDR becomes stuck — leaving cells in a perpetual state of defense long after the original trigger is gone. This is now believed to underlie many mysterious chronic conditions including fibromyalgia, ME/CFS, autism spectrum disorder, PTSD, and post-viral syndromes.</p>
+      <p class="section-desc" style="margin-top:16px;">CRIS GOLD™ can non-invasively identify HRV and autonomic signatures associated with CDR stages — enabling clinicians to track progress through recovery and measure the effectiveness of treatment protocols aimed at resolving the CDR.</p>
+    </div>
+
+    <div class="cdr-timeline fade-in">
+      <div class="cdr-item">
+        <div class="cdr-dot" style="background:rgba(192,57,43,.15);border-color:rgba(192,57,43,.3);">🔥</div>
+        <div class="cdr-body">
+          <div class="cdr-stage" style="color:var(--red);">CDR Stage 1 — Inflammation</div>
+          <h3>The Fight: Active Cellular Defense</h3>
+          <p>In CDR1, cells are actively fighting a perceived threat. Mitochondria shift from ATP production to producing reactive oxygen species (ROS) as cellular weapons. The immune system is activated and inflammation is high. This is a normal, healthy short-term response — the problem occurs when it doesn't resolve.</p>
+          <div class="cdr-symptoms">
+            <span class="cdr-symptom s-red">Acute inflammation</span>
+            <span class="cdr-symptom s-red">Elevated cortisol</span>
+            <span class="cdr-symptom s-red">Sympathetic dominance</span>
+            <span class="cdr-symptom s-red">Pain & fever</span>
+            <span class="cdr-symptom s-red">Reduced HRV</span>
+          </div>
+        </div>
+      </div>
+      <div class="cdr-item">
+        <div class="cdr-dot" style="background:rgba(180,83,9,.15);border-color:rgba(180,83,9,.3);">🧊</div>
+        <div class="cdr-body">
+          <div class="cdr-stage" style="color:var(--amber);">CDR Stage 2 — Freeze & Regenerate</div>
+          <h3>The Freeze: Cellular Energy Conservation</h3>
+          <p>In CDR2, cells have reduced energy output to protect and regenerate. The mitochondria are damaged or depleted. This manifests clinically as profound fatigue, cognitive impairment, pain hypersensitivity, and autonomic dysregulation. This stage is common in ME/CFS, fibromyalgia, and many post-viral syndromes.</p>
+          <div class="cdr-symptoms">
+            <span class="cdr-symptom s-amber">Chronic fatigue</span>
+            <span class="cdr-symptom s-amber">Brain fog</span>
+            <span class="cdr-symptom s-amber">Pain hypersensitivity</span>
+            <span class="cdr-symptom s-amber">Autonomic dysregulation</span>
+            <span class="cdr-symptom s-amber">Low energy</span>
+          </div>
+        </div>
+      </div>
+      <div class="cdr-item">
+        <div class="cdr-dot" style="background:rgba(14,122,85,.15);border-color:rgba(14,122,85,.3);">🌱</div>
+        <div class="cdr-body">
+          <div class="cdr-stage" style="color:var(--green);">CDR Stage 3 — Resolution</div>
+          <h3>Recovery: Return to Cellular Homeostasis</h3>
+          <p>In CDR3, the cell has successfully navigated the threat and is returning to normal function. Mitochondria resume efficient ATP production, inflammation resolves, and the autonomic nervous system rebalances. HRV normalizes and patients experience restored energy, clearer cognition, and reduced pain. This is the therapeutic target.</p>
+          <div class="cdr-symptoms">
+            <span class="cdr-symptom s-green">Restored energy</span>
+            <span class="cdr-symptom s-green">Improved HRV</span>
+            <span class="cdr-symptom s-green">Reduced pain</span>
+            <span class="cdr-symptom s-green">Normalized autonomics</span>
+            <span class="cdr-symptom s-green">Mental clarity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner" style="background:var(--white);">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Educational Videos</span>
+      <h2 class="section-title">CDR Deep Dive: Video Series</h2>
+      <p class="section-desc">Dr. Kessler and Dr. Karimov present a two-part educational series on the Cell Danger Response and its relationship to HRV and clinical outcomes.</p>
+    </div>
+    <div class="video-grid fade-in">
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="play-circle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M8 5l10 6-10 6V5z" fill="white"/></svg></div>
+          <span style="font-size:13px;color:rgba(255,255,255,.5);font-weight:500;">Video 1 of 2</span>
+        </div>
+        <div class="video-card-body">
+          <h4>Part 1: Cell Danger Response — Introduction</h4>
+          <p>An overview of the CDR concept, its mechanisms, and why it matters for understanding chronic illness. Presented by Dr. Kessler.</p>
+        </div>
+      </div>
+      <div class="video-card">
+        <div class="video-thumb">
+          <div class="play-circle"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M8 5l10 6-10 6V5z" fill="white"/></svg></div>
+          <span style="font-size:13px;color:rgba(255,255,255,.5);font-weight:500;">Video 2 of 2</span>
+        </div>
+        <div class="video-card-body">
+          <h4>Part 2: CDR — Clinical Application with CRIS GOLD™</h4>
+          <p>How to identify and track CDR patterns using HRV data from CRIS GOLD™. Treatment approaches and outcome measurement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner">
+  <div class="container fade-in">
+    <div class="cta-banner">
+      <h2>Track CDR Patterns in Your Practice</h2>
+      <p>CRIS GOLD™ provides the HRV and autonomic data needed to identify and monitor Cell Danger Response patterns in your patients.</p>
+      <div class="cta-btns">
+        <a href="purchase.html" class="btn btn-primary">Purchase CRIS GOLD™</a>
+        <a href="mescreen.html" class="btn btn-outline" style="color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2);">Add MEScreen™</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>

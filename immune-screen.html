@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>HQP Immune Screen — MedAnalytica CRIS GOLD™</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.immune-grid { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
+.immune-visual { background:var(--navy); border-radius:20px; padding:36px; border:1px solid rgba(212,160,23,.3); }
+.immune-title { font-family:var(--serif); font-size:22px; font-weight:700; color:#fff; margin-bottom:6px; }
+.immune-sub { font-size:13px; color:rgba(255,255,255,.5); margin-bottom:28px; }
+.immune-bars { display:flex; flex-direction:column; gap:16px; }
+.ibar-label { font-size:12px; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:6px; display:flex; justify-content:space-between; }
+.ibar-track { height:8px; background:rgba(255,255,255,.1); border-radius:100px; overflow:hidden; }
+.ibar-fill { height:100%; border-radius:100px; transition:width 1.5s ease; }
+.ibar-green { background:linear-gradient(90deg,var(--green),var(--teal)); }
+.ibar-blue  { background:linear-gradient(90deg,var(--blue),var(--teal)); }
+.ibar-amber { background:linear-gradient(90deg,var(--amber),#d4a017); }
+.ibar-red   { background:linear-gradient(90deg,var(--red),var(--amber)); }
+.doc-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:40px; }
+.doc-card { background:var(--white); border:1px solid var(--border); border-radius:14px; padding:20px 22px; display:flex; align-items:flex-start; gap:14px; }
+.doc-icon { font-size:24px; flex-shrink:0; }
+.doc-card h4 { font-size:14px; font-weight:700; color:var(--navy); margin-bottom:4px; }
+.doc-card p { font-size:13px; color:var(--muted); line-height:1.55; }
+@media(max-width:900px){ .immune-grid,.doc-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<div class="page-hero">
+  <div class="grid-bg"></div>
+  <div class="page-hero-content">
+    <div class="page-badge">New Module</div>
+    <h1>HQP Immune Screen</h1>
+    <p>Advanced immune system assessment using Heart Rate Variability biomarkers — developed with Dr. Javdat Karimov and Dr. Michael Kessler.</p>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="container">
+    <div class="immune-grid fade-in">
+      <div>
+        <span class="label">What Is the Immune Screen</span>
+        <h2 class="section-title">Navigate Immune Function with Objective Data</h2>
+        <p class="section-desc">The HQP Immune Screen is a new module within CRIS GOLD™ that helps clinicians understand and navigate the vital informational landscape of immune function. Using advanced HRV biomarker analysis, it gives an objective window into immune resilience, inflammatory states, and recovery trajectories.</p>
+        <div class="feat-list" style="margin-top:28px;">
+          <div class="feat-item"><div class="feat-icon fi-teal">🛡️</div><div><h4>Immune Resilience Assessment</h4><p>Quantify the body's current immune capacity and adaptive reserve using HRV spectral markers.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-blue">📈</div><div><h4>Inflammatory State Scoring</h4><p>Identify acute and chronic inflammatory patterns non-invasively through autonomic nervous system signatures.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-green">🔄</div><div><h4>Recovery Trajectory Tracking</h4><p>Monitor immune recovery over time — compare pre/post treatment results side-by-side with built-in date comparison.</p></div></div>
+          <div class="feat-item"><div class="feat-icon fi-gold">🎓</div><div><h4>Advanced Education Available</h4><p>Advanced informational resources on the immune screen methodology are continuously added to our educational portal.</p></div></div>
+        </div>
+      </div>
+      <div class="immune-visual">
+        <div class="immune-title">Immune Screen Dashboard</div>
+        <div class="immune-sub">Patient: Sample Report · Session 1 of 3</div>
+        <div class="immune-bars">
+          <div>
+            <div class="ibar-label"><span>Immune Resilience</span><span style="color:var(--teal)">82%</span></div>
+            <div class="ibar-track"><div class="ibar-fill ibar-green" style="width:82%"></div></div>
+          </div>
+          <div>
+            <div class="ibar-label"><span>Parasympathetic Activity</span><span style="color:#60a5fa">74%</span></div>
+            <div class="ibar-track"><div class="ibar-fill ibar-blue" style="width:74%"></div></div>
+          </div>
+          <div>
+            <div class="ibar-label"><span>Inflammatory Load</span><span style="color:var(--amber)">38%</span></div>
+            <div class="ibar-track"><div class="ibar-fill ibar-amber" style="width:38%"></div></div>
+          </div>
+          <div>
+            <div class="ibar-label"><span>Oxidative Stress Markers</span><span style="color:var(--red)">24%</span></div>
+            <div class="ibar-track"><div class="ibar-fill ibar-red" style="width:24%"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:28px; padding:16px; background:rgba(14,138,122,.12); border:1px solid rgba(14,138,122,.25); border-radius:12px;">
+          <div style="font-size:11px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">AI Assessment</div>
+          <p style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.6;">Immune function is within optimal range. Low inflammatory markers suggest treatment is effective. Recommend follow-up in 3 weeks to track progression.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section class="inner" style="background:var(--white);">
+  <div class="container">
+    <div class="fade-in">
+      <span class="label">Developed By</span>
+      <h2 class="section-title">Expert-Led Development</h2>
+      <p class="section-desc">The HQP Immune Screen was co-developed by Dr. Javdat Karimov, ND and Dr. Michael Kessler, DC — combining decades of clinical experience in naturopathic medicine, emergency medicine, and HRV technology.</p>
+    </div>
+    <div class="doc-grid fade-in">
+      <div class="doc-card">
+        <div class="doc-icon">👨‍⚕️</div>
+        <div>
+          <h4>Dr. Javdat Karimov, ND</h4>
+          <p>Naturopathic Physician with MD background in Anesthesiology and Emergency Medicine. Over 20 years of clinical experience. Key architect of the HQP parameter framework.</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">🩺</div>
+        <div>
+          <h4>Dr. Michael Kessler, DC, CCSP</h4>
+          <p>Co-founder of HeartQuest Global. Chiropractic sports physician with extensive training in Functional Medicine, Bioregulatory Medicine, and Functional Genomics.</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">🔬</div>
+        <div>
+          <h4>Validated HRV Biomarkers</h4>
+          <p>All immune screen parameters are derived from validated HRV biomarker research, cross-referenced with current immunological literature.</p>
+        </div>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon">📹</div>
+        <div>
+          <h4>Video Walkthroughs</h4>
+          <p>Comprehensive video training by Dr. Karimov and Dr. Kessler available to all CRIS GOLD™ users to maximize clinical application of the Immune Screen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="inner">
+  <div class="container fade-in">
+    <div class="cta-banner">
+      <h2>Add the Immune Screen to Your Practice</h2>
+      <p>Available as a module within CRIS GOLD™. Contact us to learn how to access advanced educational resources.</p>
+      <div class="cta-btns">
+        <a href="purchase.html" class="btn btn-primary">Purchase CRIS GOLD™</a>
+        <a href="support.html" class="btn btn-outline" style="color:rgba(255,255,255,.75);border-color:rgba(255,255,255,.2);">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+</body>
+</html>
