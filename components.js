@@ -5,10 +5,6 @@ const NAV_HTML = `
 <nav>
   <a href="index.html" class="nav-logo">
     ${LOGO_SVG}
-    <div>
-      <span class="nav-brand-name">MedAnalytica</span>
-      <span class="nav-brand-sub">CRIS GOLD™</span>
-    </div>
   </a>
   <ul class="nav-links">
     <li><a href="immune-screen.html">Immune Screen</a></li>
@@ -33,7 +29,6 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-brand-name">
           ${LOGO_SVG}
-          MedAnalytica
         </div>
         <p class="footer-desc">CRIS GOLD™ — the clinical reporting intelligence system bridging Western HRV diagnostics with Eastern medicine parameters. Built by health professionals, for health professionals.</p>
       </div>
