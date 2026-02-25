@@ -1,11 +1,5 @@
 // MedAnalytica — Shared Components
-const LOGO_SVG = `<svg class="logo-svg" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="19" cy="19" r="18" stroke="rgba(212,160,23,0.35)" stroke-width="1"/>
-  <circle cx="19" cy="19" r="12" fill="rgba(15,39,68,0.85)" stroke="rgba(212,160,23,0.5)" stroke-width="1"/>
-  <polyline points="5,19 10,19 12,13 15,25 17,16 19,22 21,19 33,19"
-    stroke="#d4a017" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="33" cy="19" r="2" fill="#f5c842"/>
-</svg>`;
+const LOGO_SVG = `<img src="HQP-Logo.png" alt="HQP Global Logo" class="logo-svg" style="height:38px;width:auto;object-fit:contain;">`;
 
 const NAV_HTML = `
 <nav>
