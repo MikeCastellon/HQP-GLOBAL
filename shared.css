@@ -29,7 +29,7 @@ body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
-  padding-top: 84px;
+  padding-top: 100px;
 }
 
 /* ───── NAV ───── */
@@ -38,7 +38,7 @@ nav {
   background: #ffffff;
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 12px rgba(15,39,68,0.08);
-  height: 84px;
+  height: 100px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 40px;
 }
@@ -71,7 +71,7 @@ nav {
 .nav-links .nav-cta:hover { background: #155d9a; }
 
 /* ───── LOGO SVG ───── */
-.logo-svg { width: auto; height: 62px; }
+.logo-svg { width: auto; height: 90px; }
 
 /* ───── PAGE HERO (inner pages) ───── */
 .page-hero {
