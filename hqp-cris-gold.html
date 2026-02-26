@@ -116,13 +116,13 @@
     .stat-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
     @media (max-width: 900px) { .nv-pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } .nv-testimonials-grid { grid-template-columns: 1fr; } .nv-flow { gap: 8px; } .nv-flow-arrow { display: none; } }
     @media (max-width: 640px) { .nv-hero { padding: 80px 20px 60px; } .nv-section { padding: 64px 20px; } .nv-final-cta { padding: 72px 20px; } .nv-cta-row { flex-direction: column; align-items: center; } }
+    .nv-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,160,23,0.18) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(26,111,181,0.2) 0%, transparent 60%); pointer-events: none; }
+    .nv-testimonial::before { content: '”'; font-size: 64px; font-family: Georgia, serif; color: rgba(212,160,23,0.2); line-height: 1; position: absolute; top: 12px; left: 20px; }
+    .nv-final-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,160,23,0.2) 0%, transparent 70%); pointer-events: none; }
   </style>
 </head>
 <body>
-  <div id="main-nav"></div>
-    .nv-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,160,23,0.18) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(26,111,181,0.2) 0%, transparent 60%); pointer-events: none; }
-    .nv-testimonial::before { content: '“'; font-size: 64px; font-family: Georgia, serif; color: rgba(212,160,23,0.2); line-height: 1; position: absolute; top: 12px; left: 20px; }
-    .nv-final-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,160,23,0.2) 0%, transparent 70%); pointer-events: none; }
+  <div id=”main-nav”></div>
 
   <!-- HERO -->
   <section class="nv-hero">
