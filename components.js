@@ -7,15 +7,11 @@ const NAV_HTML = `
     ${LOGO_SVG}
   </a>
   <ul class="nav-links">
-    <li><a href="immune-screen.html">Immune Screen</a></li>
-    <li><a href="what-is-hrv.html">HRV</a></li>
-    <li><a href="vagal-nerve.html">Vagal Nerve</a></li>
-    <li><a href="braingauge.html">BrainGauge™</a></li>
-    <li><a href="body-composition.html">Body Comp</a></li>
-    <li><a href="mescreen.html">MEScreen™</a></li>
-    <li><a href="cell-danger-response.html">CDR</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="software.html">Software</a></li>
+    <li><a href="hqp-cris-gold.html">CRIS GOLD™ AI</a></li>
+    <li><a href="neurovizr.html">neuroVIZR</a></li>
+    <li><a href="braingauge-funnel.html">BrainGauge™</a></li>
+    <li><a href="rjl-system.html">RJL System</a></li>
+    <li><a href="rubimed.html">Rubimed™</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="support.html">Support</a></li>
     <li><a href="purchase.html" class="nav-cta">Purchase</a></li>
@@ -35,11 +31,11 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-col-head">Platform</div>
         <ul class="footer-links">
-          <li><a href="immune-screen.html">HQP Immune Screen</a></li>
-          <li><a href="braingauge.html">BrainGauge™</a></li>
-          <li><a href="mescreen.html">MEScreen™</a></li>
-          <li><a href="body-composition.html">Body Composition</a></li>
-          <li><a href="vagal-nerve.html">Vagal Nerve Devices</a></li>
+          <li><a href="hqp-cris-gold.html">CRIS GOLD™ AI</a></li>
+          <li><a href="neurovizr.html">neuroVIZR</a></li>
+          <li><a href="braingauge-funnel.html">BrainGauge™</a></li>
+          <li><a href="rjl-system.html">RJL System</a></li>
+          <li><a href="rubimed.html">Rubimed™</a></li>
         </ul>
       </div>
       <div>
