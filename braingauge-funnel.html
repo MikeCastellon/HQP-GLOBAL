@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BrainGauge&#8482; &#8212; Measure Brain Health. Objectively. | HRVHQ</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .bg-hero { background: linear-gradient(135deg, #020d1a 0%, #071e38 50%, #031528 100%); padding: 100px 40px 80px; position: relative; overflow: hidden; text-align: center; }
+    .bg-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+    .bg-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(26,111,181,0.15); border: 1px solid rgba(26,111,181,0.4); border-radius: 100px; padding: 6px 16px; margin-bottom: 28px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #60a8e8; }
+    .bg-hero h1 { font-family: var(--serif); font-size: clamp(34px, 5.5vw, 62px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 22px; }
+    .bg-hero h1 span { color: #60a8e8; }
+    .bg-hero-sub { font-size: clamp(16px, 2vw, 19px); color: rgba(255,255,255,0.68); line-height: 1.7; max-width: 680px; margin: 0 auto 38px; }
+    .bg-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn-blue { background: linear-gradient(135deg, #1a6fb5, #0f4d8a); color: #fff; border-radius: 10px; padding: 15px 30px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 6px 24px rgba(26,111,181,0.45); transition: all .2s; border: none; cursor: pointer; }
+    .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(26,111,181,0.55); }
+    .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 10px; padding: 15px 30px; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; transition: all .2s; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); }
+    .bg-price-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.35); border-radius: 100px; padding: 8px 20px; font-size: 13px; font-weight: 600; color: var(--gold); }
+    .bg-section { padding: 88px 40px; }
+    .bg-section-alt { background: var(--bg3); }
+    .bg-section-dark { background: #080e1a; }
+    .bg-inner { max-width: 1100px; margin: 0 auto; }
+    .bg-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; display: block; }
+    .bg-label-blue { color: #60a8e8; }
+    .bg-label-teal { color: var(--teal); }
+    .bg-label-gold { color: var(--gold); }
+    .bg-label-light { color: #60a8e8; }
+    .bg-h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 18px; }
+    .bg-h2-dark { color: var(--navy); }
+    .bg-h2-light { color: #fff; }
+    .bg-lead { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 660px; }
+    .bg-lead-light { color: rgba(255,255,255,0.62); }
+    .bg-checks { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+    .bg-checks li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--text); line-height: 1.5; }
+    .bg-checks li .ck { color: var(--teal); font-weight: 700; font-size: 17px; flex-shrink: 0; }
+    .bg-feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-top: 48px; }
+    .bg-feat-card { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; transition: border-color .25s, transform .25s, box-shadow .25s; }
+    .bg-feat-card:hover { border-color: #1a6fb5; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,111,181,0.12); }
+    .bg-feat-card-dark { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 28px 24px; transition: border-color .25s; }
+    .bg-feat-card-dark:hover { border-color: rgba(26,111,181,0.45); }
+    .bg-feat-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+    .fi-blue3 { background: rgba(26,111,181,0.12); }
+    .fi-teal3 { background: rgba(14,138,122,0.12); }
+    .fi-gold3 { background: rgba(212,160,23,0.12); }
+    .fi-indigo { background: rgba(79,70,229,0.12); }
+    .bg-feat-card h3, .bg-feat-card-dark h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .bg-feat-card h3 { color: var(--navy); }
+    .bg-feat-card-dark h3 { color: #fff; }
+    .bg-feat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+    .bg-feat-card-dark p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+    .bg-metric-viz { display: flex; gap: 28px; justify-content: center; margin: 48px 0; flex-wrap: wrap; }
+    .bg-metric-orb { width: 130px; height: 130px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; font-size: 11px; font-weight: 600; text-align: center; padding: 8px; }
+    .orb-speed { background: radial-gradient(circle, rgba(26,111,181,0.3), rgba(26,111,181,0.05)); border: 2px solid rgba(26,111,181,0.45); color: #60a8e8; animation: pulse-orb 3s ease-in-out infinite; }
+    .orb-amp { background: radial-gradient(circle, rgba(14,138,122,0.3), rgba(14,138,122,0.05)); border: 2px solid rgba(14,138,122,0.4); color: #3ecf8e; animation: pulse-orb 2.6s ease-in-out infinite; }
+    .orb-temporal { background: radial-gradient(circle, rgba(212,160,23,0.25), rgba(212,160,23,0.04)); border: 2px solid rgba(212,160,23,0.4); color: var(--gold); animation: pulse-orb 3.4s ease-in-out infinite; }
+    .orb-freq { background: radial-gradient(circle, rgba(79,70,229,0.25), rgba(79,70,229,0.04)); border: 2px solid rgba(79,70,229,0.4); color: #a5b4fc; animation: pulse-orb 2.8s ease-in-out infinite; }
+    @keyframes pulse-orb { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.07); opacity: 0.88; } }
+    .bg-flow { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; margin: 48px 0; }
+    .bg-flow-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 20px 18px; text-align: center; min-width: 130px; flex: 1; max-width: 180px; }
+    .bg-flow-step .step-icon { font-size: 28px; margin-bottom: 8px; }
+    .bg-flow-step .step-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #60a8e8; margin-bottom: 4px; }
+    .bg-flow-step .step-name { font-size: 13px; font-weight: 600; color: #fff; }
+    .bg-flow-arrow { font-size: 24px; color: rgba(255,255,255,0.3); padding: 0 8px; }
+    .bg-member-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 32px 0; }
+    .bg-member-list li { display: flex; align-items: flex-start; gap: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px 20px; }
+    .bg-member-list li .mi { font-size: 22px; flex-shrink: 0; }
+    .bg-member-list li .mt { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.75); }
+    .bg-member-list li .mt strong { color: #fff; }
+    .bg-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+    .bg-price-card { border-radius: 20px; padding: 32px 28px; text-align: center; transition: transform .25s; }
+    .bg-price-card:hover { transform: translateY(-4px); }
+    .bg-price-card.featured { background: linear-gradient(135deg, #1a6fb5, #0f4d8a); box-shadow: 0 16px 48px rgba(26,111,181,0.4); position: relative; }
+    .bg-price-card.standard { background: var(--white); border: 1px solid var(--border); }
+    .bg-price-card.match { background: var(--bg3); border: 1.5px dashed var(--border); }
+    .bg-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 100px; padding: 4px 16px; white-space: nowrap; }
+    .bg-price-qty { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .standard .bg-price-qty { color: var(--muted); }
+    .featured .bg-price-qty { color: rgba(255,255,255,0.7); }
+    .match .bg-price-qty { color: var(--teal); }
+    .bg-price-was { font-size: 14px; text-decoration: line-through; margin-bottom: 2px; }
+    .featured .bg-price-was { color: rgba(255,255,255,0.5); }
+    .bg-price-amount { font-family: var(--serif); font-size: 44px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .standard .bg-price-amount { color: var(--navy); font-size: 26px; line-height: 1.3; }
+    .featured .bg-price-amount { color: #fff; }
+    .match .bg-price-amount { color: var(--teal); font-size: 22px; line-height: 1.3; }
+    .bg-price-per { font-size: 13px; margin-bottom: 16px; }
+    .standard .bg-price-per { color: var(--muted); }
+    .featured .bg-price-per { color: rgba(255,255,255,0.65); }
+    .match .bg-price-per { color: var(--muted); }
+    .bg-price-bonus { font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; }
+    .standard .bg-price-bonus { color: var(--teal); }
+    .featured .bg-price-bonus { color: rgba(255,255,255,0.85); }
+    .match .bg-price-bonus { color: var(--teal); }
+    .bg-price-small { font-size: 12px; color: var(--muted); font-style: italic; text-align: center; max-width: 700px; margin: 0 auto; padding: 16px; background: var(--bg3); border-radius: 10px; }
+    .bg-compare-wrap { overflow-x: auto; margin: 40px 0; }
+    .bg-compare { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .bg-compare th { padding: 16px 20px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .bg-compare th:first-child { color: var(--muted); }
+    .bg-compare th.th-hqp { background: linear-gradient(135deg, #1a6fb5, #0f4d8a); color: #fff; border-radius: 10px 10px 0 0; }
+    .bg-compare th.th-other { color: var(--muted); }
+    .bg-compare td { padding: 13px 20px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .bg-compare td:first-child { color: var(--text); font-weight: 500; }
+    .bg-compare td.td-hqp { background: rgba(26,111,181,0.04); border-left: 1px solid rgba(26,111,181,0.15); border-right: 1px solid rgba(26,111,181,0.15); }
+    .bg-compare td.td-other { color: var(--muted); }
+    .bg-compare tr:last-child td.td-hqp { border-radius: 0 0 10px 10px; border-bottom: 1px solid rgba(26,111,181,0.15); }
+    .check-yes { color: var(--teal); font-weight: 700; }
+    .bg-testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+    .bg-testimonial { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; position: relative; }
+    .bg-testimonial blockquote { font-size: 15px; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 16px; padding-top: 20px; }
+    .bg-testimonial cite { font-size: 13px; font-weight: 700; color: var(--navy); font-style: normal; display: block; }
+    .bg-testimonial cite span { font-weight: 400; color: var(--muted); }
+    .bg-final-cta { background: linear-gradient(135deg, #021428 0%, #051e3c 50%, #071a30 100%); padding: 100px 40px; text-align: center; position: relative; overflow: hidden; }
+    .bg-final-cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    .bg-final-cta h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 46px); color: #fff; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+    .bg-final-cta p { font-size: 17px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 36px; }
+    .btn-pulse { animation: btn-pulse-blue 2.4s ease-in-out infinite; }
+    @keyframes btn-pulse-blue { 0%, 100% { box-shadow: 0 6px 24px rgba(26,111,181,0.45); } 50% { box-shadow: 0 6px 40px rgba(26,111,181,0.75), 0 0 0 8px rgba(26,111,181,0.12); } }
+    .bg-disclaimer { background: #f8f9fb; border-top: 1px solid var(--border); padding: 24px 40px; text-align: center; }
+    .bg-disclaimer p { font-size: 12px; color: var(--muted); max-width: 700px; margin: 0 auto; font-style: italic; line-height: 1.6; }
+    @media (max-width: 900px) { .bg-pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } .bg-testimonials-grid { grid-template-columns: 1fr; } .bg-flow-arrow { display: none; } }
+    @media (max-width: 640px) { .bg-hero { padding: 80px 20px 60px; } .bg-section { padding: 64px 20px; } .bg-final-cta { padding: 72px 20px; } .bg-cta-row { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <!-- SECTION 1: HERO -->
+  <section class="bg-hero">
+    <div class="bg-hero-inner">
+      <div class="bg-eyebrow">&#129504; Neuroscience-Validated Cortical Assessment</div>
+      <h1>Measure Brain Health.<br><span>Objectively. In Your Office.</span></h1>
+      <p class="bg-hero-sub">
+        Harness <strong>neuroscience-validated cortical metrics</strong> to measure brain speed,
+        cognitive performance, and neurological health &mdash; delivering quantifiable data for
+        every patient, every session.
+      </p>
+      <div class="bg-cta-row">
+        <a href="http://www.corticalmetrics.com/hqpro" target="_blank" rel="noopener" class="btn-blue btn-pulse">
+          &#128722; Order BrainGauge&#8482; &mdash; Save 10% with HQPRO
+        </a>
+        <a href="#integration" class="btn-outline-white">
+          &#128302; See How It Integrates with HeartQuest
+        </a>
+      </div>
+      <div>
+        <span class="bg-price-badge">&#128176; 10% Discount with Code HQPRO + Clinical Integration Included</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WHY BRAINGAUGE -->
+  <section class="bg-section bg-section-alt fade-in">
+    <div class="bg-inner">
+      <span class="bg-label bg-label-blue">Why BrainGauge</span>
+      <h2 class="bg-h2 bg-h2-dark">&#129329; Objective Brain Metrics &mdash; Not Subjective Questionnaires.</h2>
+      <p class="bg-lead">
+        BrainGauge&#8482; by Cortical Metrics gives your practice a <strong>quantifiable window into
+        cortical function</strong> &mdash; the same technology used in neuroscience research, now
+        available in your clinical setting.
+      </p>
+      <ul class="bg-checks">
+        <li><span class="ck">&#10003;</span> Neuroscience-validated by Dr. Mark Tommerdahl, Cortical Metrics</li>
+        <li><span class="ck">&#10003;</span> Measures cortical processing speed, amplitude discrimination, temporal order judgment</li>
+        <li><span class="ck">&#10003;</span> Reproducible, quantifiable scores &mdash; track pre/post concussion, treatment response</li>
+        <li><span class="ck">&#10003;</span> Perfect companion to HeartQuest HRV for complete neurological + autonomic assessment</li>
+        <li><span class="ck">&#10003;</span> Used in sports medicine, aging, chronic illness, and cognitive rehabilitation</li>
+      </ul>
+      <div class="bg-metric-viz">
+        <div class="bg-metric-orb orb-speed"><div style="font-size:28px">&#9889;</div><div>Processing Speed</div></div>
+        <div class="bg-metric-orb orb-amp"><div style="font-size:28px">&#127922;</div><div>Amplitude Discrimination</div></div>
+        <div class="bg-metric-orb orb-temporal"><div style="font-size:28px">&#9203;</div><div>Temporal Order Judgment</div></div>
+        <div class="bg-metric-orb orb-freq"><div style="font-size:28px">&#128200;</div><div>Frequency Discrimination</div></div>
+      </div>
+      <div style="text-align:center;">
+        <a href="http://www.corticalmetrics.com/hqpro" target="_blank" rel="noopener" class="btn btn-primary">&#128302; Learn the Science Behind BrainGauge</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: HOW IT WORKS -->
+  <section class="bg-section fade-in">
+    <div class="bg-inner">
+      <span class="bg-label bg-label-teal">How It Works</span>
+      <h2 class="bg-h2 bg-h2-dark">&#128302; Science-Backed. Simple to Use. Loved by Practitioners.</h2>
+      <p class="bg-lead">Each BrainGauge&#8482; assessment delivers precisely calibrated vibrotactile stimulation and scores cortical function across multiple validated metrics &mdash; in minutes.</p>
+      <div class="bg-feat-grid">
+        <div class="bg-feat-card">
+          <div class="bg-feat-icon fi-blue3">&#128307;</div>
+          <h3>Vibrotactile Stimulation</h3>
+          <p>Precise finger-tip vibration delivers structured sensory input that measures cortical processing &mdash; the same validated method used in neuroscience research for decades.</p>
+        </div>
+        <div class="bg-feat-card">
+          <div class="bg-feat-icon fi-teal3">&#9889;</div>
+          <h3>Cortical Processing Speed</h3>
+          <p>Quantifies how fast your brain processes sensory information &mdash; a key marker of brain health that declines with age, injury, or neurological compromise.</p>
+        </div>
+        <div class="bg-feat-card">
+          <div class="bg-feat-icon fi-gold3">&#128200;</div>
+          <h3>Multi-Metric Scoring</h3>
+          <p>Amplitude Discrimination, Temporal Order Judgment, Frequency Discrimination, Tactile Detection &mdash; each providing a unique window into cortical function.</p>
+        </div>
+        <div class="bg-feat-card">
+          <div class="bg-feat-icon fi-indigo">&#128202;</div>
+          <h3>Reproducible Tracking</h3>
+          <p>Every test produces a quantifiable score. Track changes over time, before/after treatment, or pre/post concussion with objective, comparable data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CLINICAL INTEGRATION -->
+  <section id="integration" class="bg-section bg-section-dark fade-in">
+    <div class="bg-inner">
+      <span class="bg-label bg-label-light">Clinical Integration</span>
+      <h2 class="bg-h2 bg-h2-light">&#128147; From Brain Health Data to Clinical Action &mdash; Powered by HRVHQ.</h2>
+      <p class="bg-lead bg-lead-light">HeartQuest measures autonomic function; BrainGauge measures cortical function. Together they create the most complete <strong style="color:#fff;">neurological + autonomic clinical picture</strong> available.</p>
+      <div class="bg-flow">
+        <div class="bg-flow-step"><div class="step-icon">&#129504;</div><div class="step-label">Step 1</div><div class="step-name">BrainGauge Assessment</div></div>
+        <div class="bg-flow-arrow">&rarr;</div>
+        <div class="bg-flow-step"><div class="step-icon">&#128202;</div><div class="step-label">Step 2</div><div class="step-name">Cortical Score</div></div>
+        <div class="bg-flow-arrow">&rarr;</div>
+        <div class="bg-flow-step"><div class="step-icon">&#128147;</div><div class="step-label">Step 3</div><div class="step-name">Correlate with HRV</div></div>
+        <div class="bg-flow-arrow">&rarr;</div>
+        <div class="bg-flow-step"><div class="step-icon">&#128203;</div><div class="step-label">Step 4</div><div class="step-name">Treatment Protocol</div></div>
+        <div class="bg-flow-arrow">&rarr;</div>
+        <div class="bg-flow-step"><div class="step-icon">&#128200;</div><div class="step-label">Step 5</div><div class="step-name">Retest</div></div>
+      </div>
+      <div class="bg-feat-grid">
+        <div class="bg-feat-card-dark">
+          <div class="bg-feat-icon fi-blue3">&#128270;</div>
+          <h3>Detect Cortical Decline</h3>
+          <p>Identify early changes in cortical processing speed and sensory discrimination before symptoms become debilitating &mdash; with objective, quantifiable data.</p>
+        </div>
+        <div class="bg-feat-card-dark">
+          <div class="bg-feat-icon fi-teal3">&#128260;</div>
+          <h3>Correlate with Autonomic Data</h3>
+          <p>Layer BrainGauge cortical scores over HeartQuest HRV findings to reveal the relationship between brain health and nervous system regulation.</p>
+        </div>
+        <div class="bg-feat-card-dark">
+          <div class="bg-feat-icon fi-gold3">&#10003;</div>
+          <h3>Prove Treatment Response</h3>
+          <p>Retest after interventions to demonstrate measurable cortical improvement &mdash; giving patients and providers objective proof of progress.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;"><a href="index.html" class="btn-blue">&#128200; See the Complete HRVHQ System</a></div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: EXCLUSIVE ACCESS -->
+  <section class="bg-section bg-section-alt fade-in">
+    <div class="bg-inner">
+      <span class="bg-label bg-label-blue">Exclusive Access</span>
+      <h2 class="bg-h2 bg-h2-dark">&#128275; Buy Through HRVHQ &mdash; Get Clinical Integration Included.</h2>
+      <p class="bg-lead">Your BrainGauge&#8482; purchase through HRVHQ includes <strong>complimentary clinical integration resources</strong> you will not find anywhere else.</p>
+      <ul class="bg-member-list">
+        <li>
+          <span class="mi">&#127909;</span>
+          <span class="mt"><strong>Brain Gym Training Protocols:</strong> Dr. Kessler&#8217;s series of brain training exercises mapped to BrainGauge metrics &mdash; structured for patient progression.</span>
+        </li>
+        <li>
+          <span class="mi">&#128202;</span>
+          <span class="mt"><strong>HQP Integration Guides:</strong> Correlate BrainGauge cortical data with HeartQuest HRV results for a complete clinical picture.</span>
+        </li>
+        <li>
+          <span class="mi">&#129504;</span>
+          <span class="mt"><strong>Cognitive Rehabilitation Pathways:</strong> Structured, repeatable protocols for concussion, aging, and chronic illness &mdash; ready to implement from day one.</span>
+        </li>
+        <li>
+          <span class="mi">&#129309;</span>
+          <span class="mt"><strong>Private Practitioner Community:</strong> Live Q&amp;As, clinical case sharing, and ongoing education with peers using both systems.</span>
+        </li>
+        <li>
+          <span class="mi">&#128260;</span>
+          <span class="mt"><strong>Protocol Updates Monthly:</strong> New brain training exercises and clinical protocols added regularly &mdash; at no additional cost.</span>
+        </li>
+      </ul>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="http://www.corticalmetrics.com/hqpro" target="_blank" rel="noopener" class="btn btn-primary">&#128275; Order BrainGauge&#8482; with Exclusive Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PRICING -->
+  <section id="pricing" class="bg-section fade-in">
+    <div class="bg-inner">
+      <span class="bg-label bg-label-gold">Pricing &amp; Savings</span>
+      <h2 class="bg-h2 bg-h2-dark">&#128176; Simple Pricing. Exclusive Savings.</h2>
+      <p class="bg-lead">Order BrainGauge&#8482; through HRVHQ and save 10% instantly with code <strong>HQPRO</strong> &mdash; plus unlock clinical integration tools not available anywhere else.</p>
+      <div class="bg-pricing-grid">
+        <div class="bg-price-card featured">
+          <div class="bg-featured-badge">Best Value &mdash; Save 30</div>
+          <div class="bg-price-qty">1 Device</div>
+          <div class="bg-price-was">,299</div>
+          <div class="bg-price-amount">,969</div>
+          <div class="bg-price-per">with code HQPRO &mdash; you save 30</div>
+          <div class="bg-price-bonus">&#10003; Includes clinical integration package</div>
+          <div style="margin-top:24px;">
+            <a href="http://www.corticalmetrics.com/hqpro" target="_blank" rel="noopener" class="btn-blue" style="width:100%;justify-content:center;display:flex;">&#128722; Order with Code HQPRO</a>
+          </div>
+        </div>
+        <div class="bg-price-card standard">
+          <div class="bg-price-qty">3+ Devices</div>
+          <div class="bg-price-amount">Bulk Pricing Available</div>
+          <div class="bg-price-per">contact us for volume discount</div>
+          <div class="bg-price-bonus">&#10003; Integration per practitioner included</div>
+          <div style="margin-top:24px;">
+            <a href="support.html" class="btn btn-outline" style="width:100%;justify-content:center;">&#128172; Request Bulk Pricing</a>
+          </div>
+        </div>
+        <div class="bg-price-card match">
+          <div class="bg-price-qty">Already Have a Device?</div>
+          <div class="bg-price-amount">Integration Package Available</div>
+          <div class="bg-price-per">access Brain Gym + HRV correlation guides</div>
+          <div class="bg-price-bonus">&#10003; Clinical integration tools still available</div>
+          <div style="margin-top:24px;">
+            <a href="support.html" class="btn btn-outline" style="width:100%;justify-content:center;">&#128172; Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <p class="bg-price-small">Save 10% when ordering through <strong>corticalmetrics.com/hqpro</strong> using code <strong>HQPRO</strong> at checkout. Clinical integration package is exclusive to HRVHQ purchasers. Contact us for multi-device pricing.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px;">
+        <a href="http://www.corticalmetrics.com/hqpro" target="_blank" rel="noopener" class="btn-blue btn-pulse">&#128722; Order BrainGauge&#8482; with Code HQPRO</a>
+        <a href="support.html" class="btn btn-outline">&#128172; Request Bulk Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7A: COMPARISON TABLE -->
+  <section class="bg-section bg-section-alt fade-in">
+    <div class="bg-inner">
+      <span class="bg-label bg-label-teal">Side-by-Side Comparison</span>
+      <h2 class="bg-h2 bg-h2-dark">BrainGauge&#8482; Purchase Options Compared</h2>
+      <div class="bg-compare-wrap">
+        <table class="bg-compare">
+          <thead>
+            <tr>
+              <th style="width:36%">Feature</th>
+              <th class="th-hqp" style="width:32%">&#127942; Through HRVHQ</th>
+              <th class="th-other" style="width:32%">Direct from Cortical Metrics</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10% Discount</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Use code HQPRO</td><td class="td-other">Standard pricing</td></tr>
+            <tr><td>HQP HRV Integration</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Included</td><td class="td-other">Not included</td></tr>
+            <tr><td>Brain Gym Protocols</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Dr. Kessler&#8217;s program</td><td class="td-other">Not included</td></tr>
+            <tr><td>Clinical Implementation Training</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Included</td><td class="td-other">Not included</td></tr>
+            <tr><td>Cortical + Autonomic Correlation</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Both systems</td><td class="td-other">Brain only</td></tr>
+            <tr><td>Cognitive Rehab Pathways</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Structured &amp; guided</td><td class="td-other">Self-directed</td></tr>
+            <tr><td>Ongoing Protocol Updates</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Included</td><td class="td-other">Not included</td></tr>
+            <tr><td>Practitioner Community</td><td class="td-hqp"><span class="check-yes">&#10003;</span> Included</td><td class="td-other">Not included</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7B: TESTIMONIALS -->
+  <section class="bg-section fade-in">
+    <div class="bg-inner">
+      <span class="bg-label bg-label-blue">Practitioner Testimonials</span>
+      <h2 class="bg-h2 bg-h2-dark">&#128172; What Practitioners Are Saying</h2>
+      <div class="bg-testimonials-grid">
+        <div class="bg-testimonial">
+          <blockquote>&#8220;The BrainGauge + HeartQuest combination gives me both cortical and autonomic data in one session. My concussion patients finally have objective metrics to track their recovery.&#8221;</blockquote>
+          <cite>Dr. M. Kessler <span>DC, ND</span></cite>
+        </div>
+        <div class="bg-testimonial">
+          <blockquote>&#8220;I use BrainGauge for every sports physical now. The pre/post testing has transformed my return-to-play protocols &mdash; parents and coaches love the objective data.&#8221;</blockquote>
+          <cite>Dr. T. Williams <span>Sports Medicine</span></cite>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="about.html" class="btn btn-primary">&#11088; Join the HRVHQ Practitioner Network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: FINAL CTA -->
+  <section class="bg-final-cta fade-in">
+    <div class="bg-final-cta-inner">
+      <h2>&#128640; Ready to Add Objective Brain Health<br>to Your Practice?</h2>
+      <p>Order BrainGauge&#8482; through HRVHQ today &mdash; save 10% with code <strong style="color:#fff;">HQPRO</strong> and unlock clinical integration with HeartQuest.</p>
+      <div class="bg-cta-row">
+        <a href="http://www.corticalmetrics.com/hqpro" target="_blank" rel="noopener" class="btn-blue btn-pulse" style="font-size:17px;padding:18px 38px;">&#128722; Order BrainGauge&#8482; &mdash; Save 10%</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <div class="bg-disclaimer">
+    <p><strong>Disclaimer:</strong> BrainGauge&#8482; is a neuroscience research tool developed by Cortical Metrics. It is designed for educational and clinical assessment purposes. It is not intended for diagnosis or treatment of any medical condition.</p>
+  </div>
+
+  <div id="main-footer"></div>
+  <script src="components.js"></script>
+</body>
+</html>

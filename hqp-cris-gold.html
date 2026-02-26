@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HQP with CRIS GOLD™ AI — Clinical Intelligence Platform | HRVHQ</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .nv-hero { background: linear-gradient(135deg, #060d1a 0%, #0f2744 50%, #0a1e3a 100%); padding: 100px 40px 80px; position: relative; overflow: hidden; text-align: center; }
+    .nv-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+    .nv-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,160,23,0.15); border: 1px solid rgba(212,160,23,0.35); border-radius: 100px; padding: 6px 16px; margin-bottom: 28px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #f5c842; }
+    .nv-hero h1 { font-family: var(--serif); font-size: clamp(34px, 5.5vw, 62px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 22px; }
+    .nv-hero h1 span { background: linear-gradient(135deg, #d4a017, #f5c842); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nv-hero-sub { font-size: clamp(16px, 2vw, 19px); color: rgba(255,255,255,0.68); line-height: 1.7; max-width: 680px; margin: 0 auto 38px; }
+    .nv-hero-sub strong { color: #fff; }
+    .nv-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn-gold-main { background: linear-gradient(135deg, #d4a017, #b88912); color: #fff; border-radius: 10px; padding: 15px 30px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 6px 24px rgba(212,160,23,0.45); transition: all .2s; border: none; cursor: pointer; }
+    .btn-gold-main:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(212,160,23,0.55); }
+    .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 10px; padding: 15px 30px; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; transition: all .2s; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+    .nv-price-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.35); border-radius: 100px; padding: 8px 20px; font-size: 13px; font-weight: 600; color: var(--gold); }
+    .nv-section { padding: 88px 40px; }
+    .nv-section-alt { background: var(--bg3); }
+    .nv-section-dark { background: #080e1a; }
+    .nv-inner { max-width: 1100px; margin: 0 auto; }
+    .nv-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; display: block; }
+    .nv-label-gold { color: var(--gold); }
+    .nv-label-teal { color: var(--teal); }
+    .nv-label-blue { color: var(--blue); }
+    .nv-h2 { font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; line-height: 1.2; margin-bottom: 18px; }
+    .nv-h2-dark { color: var(--navy); }
+    .nv-h2-light { color: #fff; }
+    .nv-lead { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 660px; }
+    .nv-lead-light { color: rgba(255,255,255,0.62); }
+    .nv-checks { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+    .nv-checks li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--text); line-height: 1.5; }
+    .nv-checks li .ck { color: var(--teal); font-weight: 700; font-size: 17px; flex-shrink: 0; }
+    .nv-feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-top: 48px; }
+    .nv-feat-card { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; transition: border-color .25s, transform .25s, box-shadow .25s; }
+    .nv-feat-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(212,160,23,0.1); }
+    .nv-feat-card-dark { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 28px 24px; transition: border-color .25s; }
+    .nv-feat-card-dark:hover { border-color: rgba(212,160,23,0.45); }
+    .nv-feat-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+    .fi-gold2 { background: rgba(212,160,23,0.12); }
+    .fi-teal2 { background: rgba(14,138,122,0.12); }
+    .fi-blue2 { background: rgba(26,111,181,0.12); }
+    .fi-green2 { background: rgba(14,122,85,0.12); }
+    .nv-feat-card h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--navy); }
+    .nv-feat-card-dark h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+    .nv-feat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+    .nv-feat-card-dark p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+    .nv-flow { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; margin: 48px 0; }
+    .nv-flow-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 20px 24px; text-align: center; min-width: 160px; flex: 1; max-width: 200px; }
+    .nv-flow-step .step-icon { font-size: 28px; margin-bottom: 8px; }
+    .nv-flow-step .step-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #f5c842; margin-bottom: 4px; }
+    .nv-flow-step .step-name { font-size: 13.5px; font-weight: 600; color: #fff; }
+    .nv-flow-arrow { font-size: 24px; color: rgba(255,255,255,0.3); padding: 0 10px; }
+    .nv-member-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 32px 0; }
+    .nv-member-list li { display: flex; align-items: flex-start; gap: 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px 20px; }
+    .nv-member-list li .mi { font-size: 22px; flex-shrink: 0; }
+    .nv-member-list li .mt { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.75); }
+    .nv-member-list li .mt strong { color: #fff; }
+    .nv-pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+    .nv-price-card { border-radius: 20px; padding: 32px 28px; text-align: center; transition: transform .25s; }
+    .nv-price-card:hover { transform: translateY(-4px); }
+    .nv-price-card.featured { background: linear-gradient(135deg, #d4a017, #b88912); box-shadow: 0 16px 48px rgba(212,160,23,0.4); position: relative; }
+    .nv-price-card.standard { background: var(--white); border: 1px solid var(--border); }
+    .nv-price-card.match { background: var(--bg3); border: 1.5px dashed var(--border); }
+    .nv-featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--navy); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 100px; padding: 4px 16px; white-space: nowrap; }
+    .nv-price-qty { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .standard .nv-price-qty { color: var(--muted); }
+    .featured .nv-price-qty { color: rgba(255,255,255,0.8); }
+    .match .nv-price-qty { color: var(--teal); }
+    .nv-price-amount { font-family: var(--serif); font-size: 44px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .standard .nv-price-amount { color: var(--navy); }
+    .featured .nv-price-amount { color: #fff; }
+    .match .nv-price-amount { color: var(--teal); font-size: 30px; }
+    .nv-price-per { font-size: 13px; margin-bottom: 16px; }
+    .standard .nv-price-per { color: var(--muted); }
+    .featured .nv-price-per { color: rgba(255,255,255,0.7); }
+    .match .nv-price-per { color: var(--muted); }
+    .nv-price-bonus { font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 12px; }
+    .standard .nv-price-bonus { color: var(--teal); }
+    .featured .nv-price-bonus { color: rgba(255,255,255,0.9); }
+    .match .nv-price-bonus { color: var(--teal); }
+    .nv-price-small { font-size: 12px; color: var(--muted); font-style: italic; text-align: center; max-width: 700px; margin: 0 auto; padding: 16px; background: var(--bg3); border-radius: 10px; }
+    .nv-compare-wrap { overflow-x: auto; margin: 40px 0; }
+    .nv-compare { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .nv-compare th { padding: 16px 20px; text-align: left; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .nv-compare th:first-child { color: var(--muted); }
+    .nv-compare th.th-hqp { background: linear-gradient(135deg, #d4a017, #b88912); color: #fff; border-radius: 10px 10px 0 0; }
+    .nv-compare th.th-other { color: var(--muted); }
+    .nv-compare td { padding: 13px 20px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .nv-compare td:first-child { color: var(--text); font-weight: 500; }
+    .nv-compare td.td-hqp { background: rgba(212,160,23,0.04); border-left: 1px solid rgba(212,160,23,0.15); border-right: 1px solid rgba(212,160,23,0.15); }
+    .nv-compare td.td-other { color: var(--muted); }
+    .nv-compare tr:last-child td.td-hqp { border-radius: 0 0 10px 10px; border-bottom: 1px solid rgba(212,160,23,0.15); }
+    .check-yes { color: var(--teal); font-weight: 700; }
+    .check-no { color: var(--red); font-weight: 700; }
+    .nv-testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+    .nv-testimonial { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; position: relative; }
+    .nv-testimonial blockquote { font-size: 15px; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 16px; padding-top: 20px; }
+    .nv-testimonial cite { font-size: 13px; font-weight: 700; color: var(--navy); font-style: normal; display: block; }
+    .nv-testimonial cite span { font-weight: 400; color: var(--muted); }
+    .nv-final-cta { background: linear-gradient(135deg, #0a1628 0%, #0f2744 50%, #1a1000 100%); padding: 100px 40px; text-align: center; position: relative; overflow: hidden; }
+    .nv-final-cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    .nv-final-cta h2 { font-family: var(--serif); font-size: clamp(28px, 4vw, 46px); color: #fff; font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+    .nv-final-cta p { font-size: 17px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 36px; }
+    .btn-pulse { animation: btn-pulse-gold 2.4s ease-in-out infinite; }
+    @keyframes btn-pulse-gold { 0%, 100% { box-shadow: 0 6px 24px rgba(212,160,23,0.45); } 50% { box-shadow: 0 6px 40px rgba(212,160,23,0.75), 0 0 0 8px rgba(212,160,23,0.12); } }
+    .nv-disclaimer { background: #f8f9fb; border-top: 1px solid var(--border); padding: 24px 40px; text-align: center; }
+    .nv-disclaimer p { font-size: 12px; color: var(--muted); max-width: 700px; margin: 0 auto; font-style: italic; line-height: 1.6; }
+    .stats-row { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin: 48px 0; padding: 36px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: var(--serif); font-size: 40px; font-weight: 700; color: #f5c842; line-height: 1; }
+    .stat-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+    @media (max-width: 900px) { .nv-pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; } .nv-testimonials-grid { grid-template-columns: 1fr; } .nv-flow { gap: 8px; } .nv-flow-arrow { display: none; } }
+    @media (max-width: 640px) { .nv-hero { padding: 80px 20px 60px; } .nv-section { padding: 64px 20px; } .nv-final-cta { padding: 72px 20px; } .nv-cta-row { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+  <div id="main-nav"></div>
+    .nv-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,160,23,0.18) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(26,111,181,0.2) 0%, transparent 60%); pointer-events: none; }
+    .nv-testimonial::before { content: '“'; font-size: 64px; font-family: Georgia, serif; color: rgba(212,160,23,0.2); line-height: 1; position: absolute; top: 12px; left: 20px; }
+    .nv-final-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,160,23,0.2) 0%, transparent 70%); pointer-events: none; }
+
+  <!-- HERO -->
+  <section class="nv-hero">
+    <div class="nv-hero-inner">
+      <div class="nv-eyebrow">⚡ AI-Powered Clinical Reporting · HIPAA Compliant</div>
+      <h1>Clinical Reports.<br><span>Generated in Minutes.</span></h1>
+      <p class="nv-hero-sub">
+        <strong>CRIS GOLD™</strong> combines Heart Rate Variability analytics with AI-powered clinical intelligence — bridging Western diagnostics and Eastern medicine into one comprehensive assessment platform for health professionals worldwide.
+      </p>
+      <div class="nv-cta-row">
+        <a href="#pricing" class="btn-gold-main btn-pulse">🛒 Purchase CRIS GOLD™ — From $3,975</a>
+        <a href="#how-it-works" class="btn-outline-white">🔬 See How It Works</a>
+      </div>
+      <div>
+        <span class="nv-price-badge">🏅 Used by Health Professionals in 40+ Countries</span>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item"><div class="stat-num">5<span style="font-size:22px;">min</span></div><div class="stat-label">Per Assessment</div></div>
+        <div class="stat-item"><div class="stat-num">2<span style="font-size:22px;">x</span></div><div class="stat-label">Medicine Systems</div></div>
+        <div class="stat-item"><div class="stat-num">100<span style="font-size:22px;">%</span></div><div class="stat-label">HIPAA Compliant</div></div>
+        <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Treatment Tracking</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CRIS GOLD -->
+  <section class="nv-section nv-section-alt fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-gold">Why CRIS GOLD™ AI</span>
+      <h2 class="nv-h2 nv-h2-dark">🏅 The Most Complete Clinical Assessment Platform Available.</h2>
+      <p class="nv-lead">CRIS GOLD™ isn&#39;t just an HRV tool. It&#39;s a <strong>full clinical intelligence system</strong> that bridges Western autonomic diagnostics with Eastern medicine parameters — delivering AI-generated reports in minutes, not hours.</p>
+      <ul class="nv-checks" style="margin-top:28px;">
+        <li><span class="ck">✅</span> 5-minute assessment — easy to apply, powerful results from session one</li>
+        <li><span class="ck">✅</span> Bridges Western HRV diagnostics with Chinese &amp; Ayurvedic parameters</li>
+        <li><span class="ck">✅</span> AI-generated clinical summaries — ready to share with patients instantly</li>
+        <li><span class="ck">✅</span> Side-by-side date comparison to track treatment progress objectively</li>
+        <li><span class="ck">✅</span> Continuously updated — new modules delivered automatically, free forever</li>
+      </ul>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="#how-it-works" class="btn btn-primary">📊 Explore the Full Platform</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="nv-section fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-teal">How It Works</span>
+      <h2 class="nv-h2 nv-h2-dark">🔬 From Patient to Report in 5 Minutes.</h2>
+      <p class="nv-lead">No complex setup. No lengthy training. Just objective, actionable clinical data — ready in minutes from your first session.</p>
+      <div class="nv-feat-grid">
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-teal2">🔌</div>
+          <h3>1. Connect Sensor</h3>
+          <p>Attach the ear clip or finger pulse sensor. Bluetooth connects automatically. ECG capture begins within seconds — no calibration needed.</p>
+        </div>
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-blue2">📡</div>
+          <h3>2. Capture Reading</h3>
+          <p>CRIS GOLD™ records the HRV signal and runs real-time spectral analysis across all frequency bands simultaneously — 3 minutes of signal capture.</p>
+        </div>
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-gold2">🤖</div>
+          <h3>3. AI Analysis</h3>
+          <p>Western HRV parameters plus Eastern medicine pulse equivalents are processed simultaneously by our AI engine — Chinese, Ayurvedic, and autonomic parameters in one pass.</p>
+        </div>
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-green2">📋</div>
+          <h3>4. Generate Report</h3>
+          <p>Complete clinical report with visual charts, embedded patient education, and AI-written clinical notes — ready to share or print in under 30 seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLINICAL INTEGRATION -->
+  <section class="nv-section nv-section-dark fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-gold">Two Systems. One Report.</span>
+      <h2 class="nv-h2 nv-h2-light">💓 Western Science Meets Eastern Wisdom — In Every Assessment.</h2>
+      <p class="nv-lead nv-lead-light">CRIS GOLD™ uniquely bridges the objectivity of Western diagnostics with the holistic depth of Eastern medicine — the most complete clinical picture available to any practitioner.</p>
+      <div class="nv-flow">
+        <div class="nv-flow-step"><div class="step-icon">🫧</div><div class="step-label">Connect</div><div class="step-name">ECG Sensor</div></div>
+        <div class="nv-flow-arrow">→</div>
+        <div class="nv-flow-step"><div class="step-icon">📊</div><div class="step-label">Analyze</div><div class="step-name">HRV + Eastern</div></div>
+        <div class="nv-flow-arrow">→</div>
+        <div class="nv-flow-step"><div class="step-icon">🤖</div><div class="step-label">Generate</div><div class="step-name">AI Report</div></div>
+        <div class="nv-flow-arrow">→</div>
+        <div class="nv-flow-step"><div class="step-icon">📈</div><div class="step-label">Track</div><div class="step-name">Progress Over Time</div></div>
+      </div>
+      <div class="nv-feat-grid">
+        <div class="nv-feat-card-dark">
+          <div class="nv-feat-icon fi-blue2">📡</div>
+          <h3>Western HRV Parameters</h3>
+          <p>LF/HF Ratio, SDNN, RMSSD, Autonomic Balance, Stress Index, Vagal Tone — all validated frequency-domain metrics from decades of peer-reviewed research.</p>
+        </div>
+        <div class="nv-feat-card-dark">
+          <div class="nv-feat-icon fi-gold2">☯️</div>
+          <h3>Eastern Medicine Parameters</h3>
+          <p>Meridian Analysis, Qi Balance, Five Elements, Ayurvedic Doshas, Organ Vitality — like an electronic pulse analysis, instantly accessible to every clinician.</p>
+        </div>
+        <div class="nv-feat-card-dark">
+          <div class="nv-feat-icon fi-teal2">🤖</div>
+          <h3>AI Clinical Intelligence</h3>
+          <p>AI-generated clinical summaries bridge both systems into one coherent patient narrative — ready to share, print, or integrate into your existing workflow.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="index.html" class="btn-gold-main">📈 See the Complete CRIS GOLD™ Platform</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXCLUSIVE ACCESS -->
+  <section class="nv-section nv-section-alt fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-blue">What&#39;s Included</span>
+      <h2 class="nv-h2 nv-h2-dark">🔓 Everything You Need from Day One.</h2>
+      <p class="nv-lead">Your CRIS GOLD™ purchase includes everything — hardware, software, training, and lifetime updates. No hidden costs, no subscription required.</p>
+      <ul class="nv-member-list">
+        <li><span class="mi">🔌</span><span class="mt"><strong>CRIS GOLD™ Hardware Device:</strong> HeartQuest Professional sensor — ear clip and finger pulse options. Bluetooth connected. Compact and portable.</span></li>
+        <li><span class="mi">💻</span><span class="mt"><strong>Full Software License:</strong> All analysis modules, questionnaires, comparison tools, and AI-generated clinical summaries included.</span></li>
+        <li><span class="mi">🎓</span><span class="mt"><strong>Complete Educational Video Library:</strong> Step-by-step setup, clinical application training, and ongoing content by Dr. Kessler and Dr. Karimov.</span></li>
+        <li><span class="mi">📞</span><span class="mt"><strong>Personal Onboarding &amp; Support:</strong> Dedicated onboarding appointment plus ongoing technical support from our clinical team.</span></li>
+        <li><span class="mi">🔄</span><span class="mt"><strong>Lifetime Software Updates:</strong> Every new feature, module, and parameter delivered automatically — immune screen, CDR tracking, and more.</span></li>
+      </ul>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="#pricing" class="btn btn-primary">🔑 Get Everything — Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="nv-section fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-gold">Pricing &amp; Options</span>
+      <h2 class="nv-h2 nv-h2-dark">💰 Simple Pricing. Total Confidence.</h2>
+      <p class="nv-lead">Everything you need in one complete system. International orders welcome. We ship worldwide.</p>
+      <div class="nv-pricing-grid">
+        <div class="nv-price-card standard">
+          <div class="nv-price-qty">Standard</div>
+          <div class="nv-price-amount">$3,975</div>
+          <div class="nv-price-per">Complete CRIS GOLD™ System</div>
+          <div class="nv-price-bonus">✅ Hardware + Software + Training</div>
+          <div style="margin-top:24px;"><a href="purchase.html" class="btn btn-outline" style="width:100%;justify-content:center;">Order Now</a></div>
+        </div>
+        <div class="nv-price-card featured">
+          <div class="nv-featured-badge">Most Popular</div>
+          <div class="nv-price-qty">Full Bundle</div>
+          <div class="nv-price-amount">$3,975</div>
+          <div class="nv-price-per">+ Add-On Devices Available</div>
+          <div class="nv-price-bonus">✅ Lifetime updates included free</div>
+          <div style="margin-top:24px;"><a href="purchase.html" class="btn-gold-main" style="width:100%;justify-content:center;display:flex;">Order Bundle</a></div>
+        </div>
+        <div class="nv-price-card match">
+          <div class="nv-price-qty">International</div>
+          <div class="nv-price-amount">Contact Us</div>
+          <div class="nv-price-per">We ship worldwide</div>
+          <div class="nv-price-bonus">✅ Dedicated international support</div>
+          <div style="margin-top:24px;"><a href="support.html" class="btn btn-outline" style="width:100%;justify-content:center;">Get Quote</a></div>
+        </div>
+      </div>
+      <p class="nv-price-small">+ tax (within AZ) &amp; shipping. International orders: please contact us directly. All purchases include lifetime software updates and personal onboarding.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px;">
+        <a href="purchase.html" class="btn-gold-main btn-pulse" style="font-size:16px;padding:16px 36px;">🛒 Purchase CRIS GOLD™ Now</a>
+        <a href="support.html" class="btn btn-outline">💬 Ask a Question</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="nv-section nv-section-alt fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-teal">Why CRIS GOLD™</span>
+      <h2 class="nv-h2 nv-h2-dark">CRIS GOLD™ vs. Standard HRV Tools</h2>
+      <div class="nv-compare-wrap">
+        <table class="nv-compare">
+          <thead><tr><th style="width:35%">Feature / Capability</th><th class="th-hqp" style="width:32.5%">🏆 CRIS GOLD™ AI</th><th class="th-other" style="width:32.5%">Standard HRV Tools</th></tr></thead>
+          <tbody>
+            <tr><td>Western HRV Analysis</td><td class="td-hqp"><span class="check-yes">✅</span> Full spectrum</td><td class="td-other">Basic only</td></tr>
+            <tr><td>Eastern Medicine Parameters</td><td class="td-hqp"><span class="check-yes">✅</span> Chinese &amp; Ayurvedic</td><td class="td-other"><span class="check-no">❌</span> Not available</td></tr>
+            <tr><td>AI-Generated Clinical Reports</td><td class="td-hqp"><span class="check-yes">✅</span> Full narrative summaries</td><td class="td-other"><span class="check-no">❌</span> Raw data only</td></tr>
+            <tr><td>Side-by-Side Date Comparison</td><td class="td-hqp"><span class="check-yes">✅</span> Any parameters, any dates</td><td class="td-other">Limited</td></tr>
+            <tr><td>Built-in Patient Education</td><td class="td-hqp"><span class="check-yes">✅</span> Embedded in every screen</td><td class="td-other"><span class="check-no">❌</span> Not included</td></tr>
+            <tr><td>Lifetime Software Updates</td><td class="td-hqp"><span class="check-yes">✅</span> Free forever</td><td class="td-other">Subscription required</td></tr>
+            <tr><td>Personal Onboarding</td><td class="td-hqp"><span class="check-yes">✅</span> Included</td><td class="td-other"><span class="check-no">❌</span> Not included</td></tr>
+            <tr><td>Assessment Time</td><td class="td-hqp"><span class="check-yes">✅</span> 5 minutes</td><td class="td-other">10–30 minutes</td></tr>
+            <tr><td>Integration with Add-On Devices</td><td class="td-hqp"><span class="check-yes">✅</span> BrainGauge, RJL, neuroVIZR</td><td class="td-other"><span class="check-no">❌</span> Standalone only</td></tr>
+            <tr><td>HIPAA Compliant</td><td class="td-hqp"><span class="check-yes">✅</span> Full compliance</td><td class="td-other">Varies</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="nv-section fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-gold">Practitioner Testimonials</span>
+      <h2 class="nv-h2 nv-h2-dark">💬 What Practitioners Are Saying</h2>
+      <div class="nv-testimonials-grid">
+        <div class="nv-testimonial">
+          <blockquote>“CRIS GOLD™ has transformed how I assess and explain patient health. The AI reports save hours per week and my patients finally understand their results.”</blockquote>
+          <cite>Dr. M. Kessler <span>DC, ND — Clinical Director</span></cite>
+        </div>
+        <div class="nv-testimonial">
+          <blockquote>“The Eastern medicine parameters are a game-changer. I&#39;ve been practicing acupuncture for 20 years and this is the first tool that bridges both worlds objectively.”</blockquote>
+          <cite>Dr. S. Andrews <span>LAc, DAOM — Functional Medicine</span></cite>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="about.html" class="btn btn-primary">⭐ Join the HRVHQ Practitioner Network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="nv-final-cta fade-in">
+    <div class="nv-final-cta-inner">
+      <h2>🚀 Ready to Elevate Your Clinical Practice?</h2>
+      <p>Join health professionals in 40+ countries using CRIS GOLD™ for faster, more comprehensive, and more profitable patient assessments.</p>
+      <div class="nv-cta-row">
+        <a href="purchase.html" class="btn-gold-main btn-pulse" style="font-size:17px;padding:18px 38px;">🛒 Purchase CRIS GOLD™ — $3,975</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="nv-disclaimer">
+    <p><strong>Disclaimer:</strong> CRIS GOLD™ is a clinical assessment and reporting tool designed for use by licensed health professionals. It is not intended for diagnosis or treatment of any medical condition independent of clinical judgment.</p>
+  </div>
+
+  <div id="main-footer"></div>
+  <script src="components.js"></script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubimed REBA Testing &#x2014; Psychosomatic Energy Medicine | HRVHQ</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .rb-hero { background: linear-gradient(135deg, #0c0a00 0%, #1c0f00 40%, #100a20 100%); padding: 100px 40px 80px; position: relative; overflow: hidden; text-align: center; }
+    .rb-hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(180,83,9,0.2) 0%, transparent 65%), radial-gradient(ellipse 55% 40% at 80% 80%, rgba(124,58,237,0.18) 0%, transparent 60%); pointer-events: none; }
+    .rb-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+    .rb-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(180,83,9,0.15); border: 1px solid rgba(180,83,9,0.4); border-radius: 100px; padding: 6px 18px; margin-bottom: 28px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #fbbf24; }
+    .rb-hero h1 { font-family: var(--serif); font-size: clamp(34px,5.5vw,62px); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 22px; }
+    .rb-hero h1 span { color: #fbbf24; }
+    .rb-hero-sub { font-size: clamp(16px,2vw,19px); color: rgba(255,255,255,0.68); line-height: 1.75; max-width: 700px; margin: 0 auto 38px; }
+    .rb-hero-sub strong { color: #fff; }
+    .rb-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn-amber { background: linear-gradient(135deg,#b45309,#92400e); color: #fff; border-radius: 10px; padding: 15px 30px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 6px 24px rgba(180,83,9,0.45); transition: all .2s; border: none; cursor: pointer; }
+    .btn-amber:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(180,83,9,0.6); }
+    .btn-purple { background: linear-gradient(135deg,#7c3aed,#5b21b6); color: #fff; border-radius: 10px; padding: 15px 30px; font-weight: 700; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 6px 24px rgba(124,58,237,0.45); transition: all .2s; border: none; cursor: pointer; }
+    .btn-purple:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(124,58,237,0.55); }
+    .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.3); border-radius: 10px; padding: 15px 30px; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-flex; align-items: center; gap: 9px; transition: all .2s; }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+    .btn-pulse-amber { animation: pulse-amber 2.4s ease-in-out infinite; }
+    @keyframes pulse-amber { 0%,100%{box-shadow:0 6px 24px rgba(180,83,9,0.45);} 50%{box-shadow:0 6px 40px rgba(180,83,9,0.75),0 0 0 8px rgba(180,83,9,0.12);} }
+    .rb-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.35); border-radius: 100px; padding: 8px 22px; font-size: 13px; font-weight: 600; color: #c4b5fd; }
+    .rb-section { padding: 88px 40px; }
+    .rb-section-alt { background: var(--bg3); }
+    .rb-section-dark { background: #0c0a14; }
+    .rb-inner { max-width: 1100px; margin: 0 auto; }
+    .rb-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; display: block; }
+    .rb-label-amber { color: #fbbf24; } .rb-label-purple { color: #a78bfa; } .rb-label-teal { color: var(--teal); } .rb-label-gold { color: var(--gold); }
+    .rb-h2 { font-family: var(--serif); font-size: clamp(26px,3.5vw,40px); font-weight: 700; line-height: 1.2; margin-bottom: 18px; }
+    .rb-h2-dark { color: var(--navy); } .rb-h2-light { color: #fff; }
+    .rb-lead { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 680px; }
+    .rb-lead-light { color: rgba(255,255,255,0.62); }
+    .rb-checks { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 28px 0; }
+    .rb-checks li { display: flex; align-items: flex-start; gap: 12px; font-size: 15.5px; color: var(--text); line-height: 1.55; }
+    .rb-checks li .ck { color: #10b981; font-weight: 700; font-size: 17px; flex-shrink: 0; }
+    .rb-feat-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); gap: 24px; margin-top: 48px; }
+    .rb-feat-card { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; transition: border-color .25s,transform .25s,box-shadow .25s; }
+    .rb-feat-card:hover { border-color: #b45309; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(180,83,9,0.1); }
+    .rb-feat-card-dark { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 28px 24px; transition: border-color .25s; }
+    .rb-feat-card-dark:hover { border-color: rgba(180,83,9,0.45); }
+    .rb-feat-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+    .fi-amber { background: rgba(180,83,9,0.12); } .fi-purple { background: rgba(124,58,237,0.12); } .fi-teal2 { background: rgba(14,138,122,0.12); } .fi-gold2 { background: rgba(212,160,23,0.12); }
+    .rb-feat-card h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .rb-feat-card-dark h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .rb-feat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+    .rb-feat-card-dark p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+    .rb-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    @media(max-width:820px){.rb-two-col{grid-template-columns:1fr;gap:40px;}}
+    .rb-orb-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; margin-top: 40px; }
+    @media(max-width:640px){.rb-orb-grid{grid-template-columns:1fr;}}
+    .rb-orb { border-radius: 20px; padding: 28px 22px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .orb-vital { background: radial-gradient(circle at 30% 30%, rgba(180,83,9,0.22), rgba(180,83,9,0.04)); border: 1.5px solid rgba(180,83,9,0.4); }
+    .orb-emotional { background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.22), rgba(124,58,237,0.04)); border: 1.5px solid rgba(124,58,237,0.4); }
+    .orb-mental { background: radial-gradient(circle at 30% 30%, rgba(14,138,122,0.22), rgba(14,138,122,0.04)); border: 1.5px solid rgba(14,138,122,0.4); }
+    .orb-causal { background: radial-gradient(circle at 30% 30%, rgba(212,160,23,0.22), rgba(212,160,23,0.04)); border: 1.5px solid rgba(212,160,23,0.4); }
+    @keyframes orb-pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.03);} }
+    .rb-orb { animation: orb-pulse 4s ease-in-out infinite; }
+    .orb-emotional { animation-delay: 1s; } .orb-mental { animation-delay: 2s; } .orb-causal { animation-delay: 3s; }
+    .rb-orb-num { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; }
+    .orb-vital .rb-orb-num { background: rgba(180,83,9,0.2); color: #fbbf24; }
+    .orb-emotional .rb-orb-num { background: rgba(124,58,237,0.2); color: #c4b5fd; }
+    .orb-mental .rb-orb-num { background: rgba(14,138,122,0.2); color: #5eead4; }
+    .orb-causal .rb-orb-num { background: rgba(212,160,23,0.2); color: #fde68a; }
+    .rb-orb h4 { font-family: var(--serif); font-size: 16px; font-weight: 700; color: #fff; margin: 0; }
+    .rb-orb p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; margin: 0; }
+    .rb-flow { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; margin-top: 48px; }
+    .rb-flow-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 20px 18px; text-align: center; min-width: 130px; max-width: 150px; }
+    .rb-flow-step .fs-icon { font-size: 26px; margin-bottom: 8px; }
+    .rb-flow-step h4 { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .rb-flow-step p { font-size: 11.5px; color: rgba(255,255,255,0.5); line-height: 1.5; margin: 0; }
+    .rb-flow-arrow { font-size: 22px; color: rgba(180,83,9,0.7); padding: 0 8px; flex-shrink: 0; }
+    @media(max-width:700px){.rb-flow{flex-direction:column;} .rb-flow-arrow{transform:rotate(90deg);}}
+    .rb-stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-top: 48px; text-align: center; }
+    @media(max-width:640px){.rb-stat-row{grid-template-columns:1fr;gap:20px;}}
+    .rb-stat { padding: 28px 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
+    .rb-stat-num { font-family: var(--serif); font-size: 42px; font-weight: 800; color: #fbbf24; line-height: 1; margin-bottom: 8px; }
+    .rb-stat-label { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .rb-pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+    @media(max-width:900px){.rb-pricing-grid{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto;}}
+    .rb-price-card { background: var(--white); border: 1.5px solid var(--border); border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 0; transition: transform .25s,box-shadow .25s; }
+    .rb-price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+    .rb-price-card.featured { border-color: #b45309; box-shadow: 0 8px 40px rgba(180,83,9,0.18); }
+    .rb-price-card.bundle { border-color: #7c3aed; box-shadow: 0 8px 40px rgba(124,58,237,0.15); }
+    .rb-price-badge { display: inline-block; background: linear-gradient(135deg,#b45309,#92400e); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; }
+    .rb-price-badge-purple { background: linear-gradient(135deg,#7c3aed,#5b21b6); }
+    .rb-price-card h3 { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .rb-price-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; line-height: 1.5; }
+    .rb-price-amount { font-family: var(--serif); font-size: 52px; font-weight: 800; color: var(--navy); line-height: 1; margin-bottom: 4px; }
+    .rb-price-amount sup { font-size: 24px; vertical-align: top; margin-top: 10px; }
+    .rb-price-per { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+    .rb-price-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 24px; }
+    .rb-price-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
+    .rb-price-list li { font-size: 13.5px; color: var(--text); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .rb-price-list li .ck { color: #10b981; font-weight: 700; flex-shrink: 0; }
+    .rb-compare-wrap { overflow-x: auto; margin-top: 48px; }
+    .rb-compare { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+    .rb-compare th, .rb-compare td { padding: 14px 18px; text-align: center; font-size: 14px; border-bottom: 1px solid var(--border); }
+    .rb-compare th:first-child, .rb-compare td:first-child { text-align: left; font-weight: 600; }
+    .rb-compare thead tr th { background: var(--bg3); color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .rb-compare th.th-hqp { background: linear-gradient(135deg,#b45309,#92400e); color: #fff; }
+    .rb-compare tbody tr:last-child td { border-bottom: none; }
+    .rb-compare tbody tr:hover td { background: rgba(180,83,9,0.03); }
+    .check-y { color: #10b981; font-weight: 700; font-size: 16px; }
+    .check-n { color: #9ca3af; }
+    .rb-testi-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 24px; margin-top: 48px; }
+    .rb-testi { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 28px; }
+    .rb-testi-quote { font-size: 15px; color: var(--text); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
+    .rb-testi-author { display: flex; align-items: center; gap: 12px; }
+    .rb-testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg,#b45309,#7c3aed); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; color: #fff; flex-shrink: 0; }
+    .rb-testi-name { font-weight: 700; font-size: 14px; color: var(--navy); }
+    .rb-testi-role { font-size: 12px; color: var(--muted); }
+    .rb-stars { color: #fbbf24; font-size: 14px; margin-bottom: 14px; }
+    .rb-final-cta { background: linear-gradient(135deg,#0c0a00 0%,#1c0f00 50%,#100a20 100%); padding: 100px 40px; text-align: center; position: relative; overflow: hidden; }
+    .rb-final-cta::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 50%, rgba(180,83,9,0.15) 0%, transparent 65%); pointer-events: none; }
+    .rb-final-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    .rb-final-cta h2 { font-family: var(--serif); font-size: clamp(28px,4vw,48px); font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .rb-final-cta h2 span { color: #fbbf24; }
+    .rb-final-cta p { font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 36px; }
+    .rb-guarantee { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 100px; padding: 10px 24px; font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 24px; }
+    .rb-disclaimer { padding: 36px 40px; background: var(--bg3); }
+    .rb-disclaimer p { font-size: 11.5px; color: var(--muted); line-height: 1.7; max-width: 900px; margin: 0 auto; text-align: center; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+    @media(max-width:600px){ .rb-section{padding:60px 20px;} .rb-hero{padding:80px 20px 60px;} }
+  </style>
+</head>
+<body>
+
+<div id="main-nav"></div>
+
+<!-- SECTION 1: HERO -->
+<section class="rb-hero">
+  <div class="rb-hero-inner">
+    <div class="rb-eyebrow fade-in">
+      <span>&#9670;</span> Psychosomatic Energy Medicine
+    </div>
+    <h1 class="fade-in">
+      Discover the <span>Root Cause</span><br>Behind Every Symptom
+    </h1>
+    <p class="rb-hero-sub fade-in">
+      <strong>Rubimed REBA Testing</strong> decodes your body&#8217;s four energy fields&#8202;&#8212;&#8202;Vital, Emotional, Mental, and Causal&#8202;&#8212;&#8202;revealing the psychosomatic blockages conventional labs never detect.
+    </p>
+    <div class="rb-cta-row fade-in">
+      <a href="booking.html" class="btn-amber btn-pulse-amber">&#10003; Book Your REBA Assessment</a>
+      <a href="#how-it-works" class="btn-outline-white">How It Works &#8595;</a>
+    </div>
+    <div class="rb-badge fade-in">
+      &#9670; Swiss-Developed &bull; Used in 40+ Countries &bull; 30+ Years Clinical Research
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: WHY RUBIMED -->
+<section class="rb-section rb-section-alt">
+  <div class="rb-inner">
+    <div class="rb-two-col">
+      <div class="fade-in">
+        <span class="rb-label rb-label-amber">Why Rubimed</span>
+        <h2 class="rb-h2 rb-h2-dark">Your Symptoms Have a Story.<br>REBA Reads It.</h2>
+        <p class="rb-lead">Most assessments measure what&#8217;s broken. Rubimed REBA testing reveals <em>why</em> it broke&#8202;&#8212;&#8202;mapping the energetic and emotional patterns that precede physical illness by months or years.</p>
+        <ul class="rb-checks">
+          <li><span class="ck">&#10003;</span> Identifies unresolved emotional conflicts stored in the body&#8217;s energy field</li>
+          <li><span class="ck">&#10003;</span> Pinpoints which of the four energy levels is most disrupted</li>
+          <li><span class="ck">&#10003;</span> Guides targeted homeopathic remedy selection (Rubimed remedies)</li>
+          <li><span class="ck">&#10003;</span> Tracks energetic progress between visits&#8202;&#8212;&#8202;not just symptom suppression</li>
+          <li><span class="ck">&#10003;</span> Integrates with HRV, functional labs, and lifestyle protocols</li>
+        </ul>
+        <a href="booking.html" class="btn-amber" style="margin-top:8px;">Start Your Assessment</a>
+      </div>
+      <div class="fade-in">
+        <div class="rb-feat-grid" style="grid-template-columns:1fr 1fr;margin-top:0;">
+          <div class="rb-feat-card">
+            <div class="rb-feat-icon fi-amber">&#128200;</div>
+            <h3>Energy Mapping</h3>
+            <p>Quantifies disruption across all four psychosomatic fields simultaneously.</p>
+          </div>
+          <div class="rb-feat-card">
+            <div class="rb-feat-icon fi-purple">&#129504;</div>
+            <h3>Emotional Root Cause</h3>
+            <p>Identifies the specific unresolved conflict pattern driving physical symptoms.</p>
+          </div>
+          <div class="rb-feat-card">
+            <div class="rb-feat-icon fi-teal2">&#127807;</div>
+            <h3>Remedy Precision</h3>
+            <p>Matches Rubimed homeopathic remedies to your exact energetic signature.</p>
+          </div>
+          <div class="rb-feat-card">
+            <div class="rb-feat-icon fi-gold2">&#128203;</div>
+            <h3>Progress Tracking</h3>
+            <p>Serial testing shows energetic shifts before symptoms resolve&#8202;&#8212;&#8202;early feedback on your healing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: HOW IT WORKS (4 Orbs) -->
+<section class="rb-section rb-section-dark" id="how-it-works">
+  <div class="rb-inner">
+    <div class="fade-in" style="max-width:680px;">
+      <span class="rb-label rb-label-purple">The Four Levels of Health</span>
+      <h2 class="rb-h2 rb-h2-light">REBA Measures What<br>Other Tests Miss</h2>
+      <p class="rb-lead rb-lead-light">The Rubimed system recognises that physical illness originates in deeper energetic layers. REBA testing scans all four levels in a single session using bio-energetic resonance.</p>
+    </div>
+    <div class="rb-orb-grid fade-in">
+      <div class="rb-orb orb-vital">
+        <div class="rb-orb-num">1</div>
+        <h4>Vital Level</h4>
+        <p>The body&#8217;s physical life-force energy. Disruptions here manifest as fatigue, immune weakness, hormonal imbalance, and chronic pain. Rubimed&#8217;s Vital series remedies address this layer directly.</p>
+      </div>
+      <div class="rb-orb orb-emotional">
+        <div class="rb-orb-num">2</div>
+        <h4>Emotional Level</h4>
+        <p>Stored emotional conflicts&#8202;&#8212;&#8202;grief, fear, anger, shock&#8202;&#8212;&#8202;that have become encoded in the energy field. This is often the primary driver of chronic and auto-immune conditions.</p>
+      </div>
+      <div class="rb-orb orb-mental">
+        <div class="rb-orb-num">3</div>
+        <h4>Mental Level</h4>
+        <p>Belief systems, thought patterns, and mental stress loops that sustain energetic blockages. Clearing this level accelerates resolution of both emotional and physical symptoms.</p>
+      </div>
+      <div class="rb-orb orb-causal">
+        <div class="rb-orb-num">4</div>
+        <h4>Causal Level</h4>
+        <p>The deepest constitutional layer&#8202;&#8212;&#8202;inherited predispositions and core existential patterns. Addressing the causal level produces the most profound and lasting healing shifts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: CLINICAL INTEGRATION (Flow Diagram) -->
+<section class="rb-section" style="background:#09080f;">
+  <div class="rb-inner fade-in">
+    <span class="rb-label rb-label-teal" style="text-align:center;display:block;">Clinical Integration</span>
+    <h2 class="rb-h2 rb-h2-light" style="text-align:center;">From Assessment to Resolution:<br>The REBA Protocol</h2>
+    <p class="rb-lead rb-lead-light" style="text-align:center;margin:0 auto 0;">Each session follows a structured clinical flow that maps your energetic state, identifies root conflict patterns, and builds a personalised remedy and lifestyle plan.</p>
+    <div class="rb-flow fade-in">
+      <div class="rb-flow-step">
+        <div class="fs-icon">&#128203;</div>
+        <h4>Intake</h4>
+        <p>Health history, symptom timeline &amp; lifestyle review</p>
+      </div>
+      <div class="rb-flow-arrow">&#8594;</div>
+      <div class="rb-flow-step">
+        <div class="fs-icon">&#9889;</div>
+        <h4>REBA Scan</h4>
+        <p>Bio-energetic resonance testing across all four levels</p>
+      </div>
+      <div class="rb-flow-arrow">&#8594;</div>
+      <div class="rb-flow-step">
+        <div class="fs-icon">&#128270;</div>
+        <h4>Pattern ID</h4>
+        <p>Core conflict pattern and energetic blockage identified</p>
+      </div>
+      <div class="rb-flow-arrow">&#8594;</div>
+      <div class="rb-flow-step">
+        <div class="fs-icon">&#127807;</div>
+        <h4>Remedy Match</h4>
+        <p>Rubimed homeopathic remedies selected to your signature</p>
+      </div>
+      <div class="rb-flow-arrow">&#8594;</div>
+      <div class="rb-flow-step">
+        <div class="fs-icon">&#128200;</div>
+        <h4>Review</h4>
+        <p>Follow-up REBA scan tracks energetic resolution</p>
+      </div>
+    </div>
+    <div class="rb-stat-row fade-in">
+      <div class="rb-stat">
+        <div class="rb-stat-num">30+</div>
+        <div class="rb-stat-label">Years of clinical development by Dr. Reimar Banis in Switzerland</div>
+      </div>
+      <div class="rb-stat">
+        <div class="rb-stat-num">40+</div>
+        <div class="rb-stat-label">Countries where Rubimed REBA testing is practiced by trained clinicians</div>
+      </div>
+      <div class="rb-stat">
+        <div class="rb-stat-num">4</div>
+        <div class="rb-stat-label">Energy levels assessed simultaneously in a single non-invasive session</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: EXCLUSIVE ACCESS -->
+<section class="rb-section rb-section-alt">
+  <div class="rb-inner">
+    <div class="rb-two-col">
+      <div class="fade-in">
+        <span class="rb-label rb-label-gold">Exclusive Access</span>
+        <h2 class="rb-h2 rb-h2-dark">Rubimed Testing + HRV Intelligence&#8202;&#8212;&#8202;Nowhere Else Combined</h2>
+        <p class="rb-lead">We are one of the few practices globally that integrates Rubimed REBA psychosomatic testing with advanced HRV biometrics, functional lab analysis, and personalised nutrition coaching into a single coherent programme.</p>
+        <ul class="rb-checks" style="margin-top:20px;">
+          <li><span class="ck">&#10003;</span> Certified Rubimed practitioner with advanced training in psychosomatic energy medicine</li>
+          <li><span class="ck">&#10003;</span> HRV-guided nervous system assessment alongside REBA energetic testing</li>
+          <li><span class="ck">&#10003;</span> Full Rubimed remedy range available and dispensed in-clinic</li>
+          <li><span class="ck">&#10003;</span> Secure telehealth follow-up available for international clients</li>
+          <li><span class="ck">&#10003;</span> Integrated written report delivered within 48 hours of each session</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <div class="rb-feat-grid" style="grid-template-columns:1fr;margin-top:0;gap:16px;">
+          <div class="rb-feat-card">
+            <div class="rb-feat-icon fi-amber">&#127941;</div>
+            <h3>Certified Practitioner</h3>
+            <p>Trained directly in Rubimed methodology through the official Swiss certification programme.</p>
+          </div>
+          <div class="rb-feat-card">
+            <div class="rb-feat-icon fi-purple">&#128279;</div>
+            <h3>Integrated Protocols</h3>
+            <p>REBA findings feed directly into your HRV, nutrition, and functional medicine plans&#8202;&#8212;&#8202;no siloed results.</p>
+          </div>
+          <div class="rb-feat-card">
+            <div class="rb-feat-icon fi-teal2">&#127760;</div>
+            <h3>Global Telehealth</h3>
+            <p>In-person or remote sessions available. REBA kit can be posted for guided home testing where clinically appropriate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: PRICING -->
+<section class="rb-section">
+  <div class="rb-inner">
+    <div class="fade-in" style="text-align:center;max-width:640px;margin:0 auto 0;">
+      <span class="rb-label rb-label-amber" style="display:block;text-align:center;">Transparent Pricing</span>
+      <h2 class="rb-h2 rb-h2-dark">Choose Your<br>REBA Programme</h2>
+      <p class="rb-lead" style="margin:0 auto;">All sessions include a written report, remedy recommendations, and a 15-minute follow-up call. No hidden costs.</p>
+    </div>
+    <div class="rb-pricing-grid fade-in">
+      <!-- Standard -->
+      <div class="rb-price-card standard">
+        <div class="rb-price-badge" style="background:rgba(180,83,9,0.12);color:#b45309;border:1px solid rgba(180,83,9,0.3);">Single Session</div>
+        <h3>REBA Assessment</h3>
+        <p class="rb-price-sub">One complete four-level energetic assessment with remedy matching and report.</p>
+        <div class="rb-price-amount"><sup>$</sup>295</div>
+        <p class="rb-price-per">per session &bull; 60 min</p>
+        <hr class="rb-price-divider">
+        <ul class="rb-price-list">
+          <li><span class="ck">&#10003;</span> Full REBA scan across all 4 levels</li>
+          <li><span class="ck">&#10003;</span> Psychosomatic conflict pattern report</li>
+          <li><span class="ck">&#10003;</span> Rubimed remedy prescription</li>
+          <li><span class="ck">&#10003;</span> 15-min follow-up call</li>
+          <li><span class="ck">&#10003;</span> Telehealth or in-person</li>
+        </ul>
+        <a href="booking.html" class="btn-amber" style="text-align:center;justify-content:center;">Book Session</a>
+      </div>
+      <!-- Featured -->
+      <div class="rb-price-card featured">
+        <div class="rb-price-badge">Most Popular</div>
+        <h3>REBA + HRV Bundle</h3>
+        <p class="rb-price-sub">Rubimed REBA testing combined with our advanced HRV nervous system assessment.</p>
+        <div class="rb-price-amount"><sup>$</sup>495</div>
+        <p class="rb-price-per">per session &bull; 90 min</p>
+        <hr class="rb-price-divider">
+        <ul class="rb-price-list">
+          <li><span class="ck">&#10003;</span> Full REBA 4-level scan</li>
+          <li><span class="ck">&#10003;</span> 20-minute HRV biometric assessment</li>
+          <li><span class="ck">&#10003;</span> Integrated psychosomatic + ANS report</li>
+          <li><span class="ck">&#10003;</span> Rubimed remedy prescription</li>
+          <li><span class="ck">&#10003;</span> Personalised lifestyle protocol</li>
+          <li><span class="ck">&#10003;</span> 30-min debrief consultation</li>
+        </ul>
+        <a href="booking.html" class="btn-amber btn-pulse-amber" style="text-align:center;justify-content:center;">Book Bundle</a>
+      </div>
+      <!-- Bundle -->
+      <div class="rb-price-card bundle">
+        <div class="rb-price-badge rb-price-badge-purple">Best Value</div>
+        <h3>Healing Programme</h3>
+        <p class="rb-price-sub">Three REBA sessions over 12 weeks tracking your energetic resolution journey.</p>
+        <div class="rb-price-amount"><sup>$</sup>849</div>
+        <p class="rb-price-per">3 sessions &bull; save 6</p>
+        <hr class="rb-price-divider">
+        <ul class="rb-price-list">
+          <li><span class="ck">&#10003;</span> 3 x REBA + HRV sessions</li>
+          <li><span class="ck">&#10003;</span> Serial energetic progress tracking</li>
+          <li><span class="ck">&#10003;</span> Full remedy programme across 12 weeks</li>
+          <li><span class="ck">&#10003;</span> Functional lab panel included</li>
+          <li><span class="ck">&#10003;</span> Priority booking &amp; direct practitioner access</li>
+          <li><span class="ck">&#10003;</span> Comprehensive final summary report</li>
+        </ul>
+        <a href="booking.html" class="btn-purple" style="text-align:center;justify-content:center;">Start Programme</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="rb-section rb-section-alt">
+  <div class="rb-inner">
+    <div class="fade-in" style="text-align:center;max-width:640px;margin:0 auto 0;">
+      <span class="rb-label rb-label-amber" style="display:block;text-align:center;">How We Compare</span>
+      <h2 class="rb-h2 rb-h2-dark">Rubimed REBA vs.<br>Conventional Approaches</h2>
+    </div>
+    <div class="rb-compare-wrap fade-in">
+      <table class="rb-compare">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="th-hqp">Rubimed REBA<br><small>at HRVHQ</small></th>
+            <th>Standard<br>Blood Tests</th>
+            <th>Functional<br>Medicine</th>
+            <th>Conventional<br>Therapy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Detects energetic root cause</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-n">&#8212;</span></td></tr>
+          <tr><td>Emotional conflict mapping</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-n">&#8212;</span></td><td>Partial</td></tr>
+          <tr><td>Non-invasive (no blood draw)</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-y">&#10003;</span></td></tr>
+          <tr><td>Personalised remedy selection</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td>Partial</td><td><span class="check-n">&#8212;</span></td></tr>
+          <tr><td>Tracks energetic progress</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-n">&#8212;</span></td></tr>
+          <tr><td>Integrates with HRV &amp; labs</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td>Partial</td><td><span class="check-n">&#8212;</span></td></tr>
+          <tr><td>Same-session results</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-n">&#8212;</span></td><td><span class="check-y">&#10003;</span></td></tr>
+          <tr><td>Telehealth available</td><td><span class="check-y">&#10003;</span></td><td><span class="check-n">&#8212;</span></td><td>Partial</td><td>Partial</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: TESTIMONIALS -->
+<section class="rb-section">
+  <div class="rb-inner">
+    <div class="fade-in" style="text-align:center;max-width:600px;margin:0 auto 0;">
+      <span class="rb-label rb-label-purple" style="display:block;text-align:center;">Client Experiences</span>
+      <h2 class="rb-h2 rb-h2-dark">What Our Clients Say</h2>
+    </div>
+    <div class="rb-testi-grid fade-in">
+      <div class="rb-testi">
+        <div class="rb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rb-testi-quote">&#8220;I had chronic fatigue for six years. Every blood test came back normal. My first REBA session identified a grief conflict from a loss twelve years ago that I had never fully processed. Within eight weeks on the Rubimed remedies, my energy was genuinely returning.&#8221;</p>
+        <div class="rb-testi-author">
+          <div class="rb-testi-avatar">SM</div>
+          <div>
+            <div class="rb-testi-name">Sarah M.</div>
+            <div class="rb-testi-role">Chronic Fatigue Programme, Melbourne</div>
+          </div>
+        </div>
+      </div>
+      <div class="rb-testi">
+        <div class="rb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rb-testi-quote">&#8220;As a GP, I was sceptical. But I kept seeing patients with complex chronic conditions improve after REBA testing and Rubimed remedies when nothing else had worked. I trained in the method and now use it in my own practice. The energetic mapping is genuinely clinical.&#8221;</p>
+        <div class="rb-testi-author">
+          <div class="rb-testi-avatar">DR</div>
+          <div>
+            <div class="rb-testi-name">Dr. R. Hartmann</div>
+            <div class="rb-testi-role">General Practitioner, Sydney</div>
+          </div>
+        </div>
+      </div>
+      <div class="rb-testi">
+        <div class="rb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rb-testi-quote">&#8220;The combination of HRV testing and REBA in one session was eye-opening. Seeing my nervous system dysregulation and the emotional energy patterns that were driving it&#8202;&#8212;&#8202;and then having a clear remedy and lifestyle plan&#8202;&#8212;&#8202;gave me genuine hope for the first time in years.&#8221;</p>
+        <div class="rb-testi-author">
+          <div class="rb-testi-avatar">JL</div>
+          <div>
+            <div class="rb-testi-name">James L.</div>
+            <div class="rb-testi-role">REBA + HRV Bundle, Brisbane</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: FINAL CTA -->
+<section class="rb-final-cta">
+  <div class="rb-final-inner">
+    <div class="fade-in">
+      <span class="rb-label rb-label-amber" style="display:block;text-align:center;margin-bottom:18px;">Take the First Step</span>
+      <h2>Your Body Has Been<br>Trying to Tell You <span>Something</span></h2>
+      <p>Book your Rubimed REBA assessment today and discover the energetic root cause behind your symptoms&#8202;&#8212;&#8202;not just what is wrong, but <em>why</em> and <em>how</em> to resolve it at the deepest level.</p>
+      <div class="rb-cta-row">
+        <a href="booking.html" class="btn-amber btn-pulse-amber">&#10003; Book Your REBA Assessment</a>
+        <a href="contact.html" class="btn-outline-white">Ask a Question</a>
+      </div>
+      <div class="rb-guarantee">
+        &#128737; Satisfaction guaranteed &bull; Written report included &bull; Telehealth available
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="rb-disclaimer">
+  <p><strong>Disclaimer:</strong> Rubimed REBA testing is a bio-energetic assessment method used within the framework of psychosomatic energy medicine. It is not a substitute for conventional medical diagnosis or treatment. Rubimed remedies are homeopathic preparations and their efficacy is not proven by randomised controlled trials to the standard required for pharmaceutical registration. REBA testing and Rubimed remedies are complementary tools intended to be used alongside, not in place of, conventional medical care. Always consult a qualified healthcare professional regarding any medical condition. Individual results vary. Testimonials reflect individual experiences and do not constitute a guarantee of outcome.</p>
+</div>
+
+<div id="main-footer"></div>
+<script src="components.js"></script>
+<script>
+  (function(){
+    var els = document.querySelectorAll('.fade-in');
+    if(!els.length) return;
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+    },{threshold:0.12});
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+</body>
+</html>
