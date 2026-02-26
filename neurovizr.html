@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>neuroVIZR — Engage the Mind. Elevate the Practice. | HRVHQ</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    /* ── FUNNEL PAGE STYLES ── */
+
+    /* Hero */
+    .nv-hero {
+      background: linear-gradient(135deg, #060d1a 0%, #0f2744 50%, #0a1e3a 100%);
+      padding: 100px 40px 80px;
+      position: relative; overflow: hidden; text-align: center;
+    }
+    .nv-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(100,60,200,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(26,111,181,0.2) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .nv-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+    .nv-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(130,80,255,0.15); border: 1px solid rgba(130,80,255,0.35);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 28px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #a78bfa;
+    }
+    .nv-hero h1 {
+      font-family: var(--serif); font-size: clamp(34px, 5.5vw, 62px);
+      font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 22px;
+    }
+    .nv-hero h1 span { color: #a78bfa; }
+    .nv-hero-sub {
+      font-size: clamp(16px, 2vw, 19px); color: rgba(255,255,255,0.68);
+      line-height: 1.7; max-width: 680px; margin: 0 auto 38px;
+    }
+    .nv-hero-sub strong { color: #fff; }
+    .nv-cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn-purple {
+      background: linear-gradient(135deg, #7c3aed, #5b21b6);
+      color: #fff; border-radius: 10px; padding: 15px 30px;
+      font-weight: 700; font-size: 15px; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 9px;
+      box-shadow: 0 6px 24px rgba(124,58,237,0.45);
+      transition: all .2s; border: none; cursor: pointer;
+    }
+    .btn-purple:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(124,58,237,0.55); }
+    .btn-outline-white {
+      background: transparent; color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.3); border-radius: 10px;
+      padding: 15px 30px; font-weight: 600; font-size: 15px;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 9px;
+      transition: all .2s;
+    }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
+    .nv-price-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(212,160,23,0.12); border: 1px solid rgba(212,160,23,0.35);
+      border-radius: 100px; padding: 8px 20px;
+      font-size: 13px; font-weight: 600; color: var(--gold);
+    }
+    .nv-hero-overlay {
+      display: inline-block; margin-top: 48px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 14px 28px;
+      font-size: 13px; color: rgba(255,255,255,0.5); letter-spacing: 0.5px;
+      font-style: italic;
+    }
+
+    /* Section base */
+    .nv-section { padding: 88px 40px; }
+    .nv-section-alt { background: var(--bg3); }
+    .nv-section-dark { background: #080e1a; }
+    .nv-inner { max-width: 1100px; margin: 0 auto; }
+    .nv-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 14px; display: block;
+    }
+    .nv-label-purple { color: #a78bfa; }
+    .nv-label-teal   { color: var(--teal); }
+    .nv-label-gold   { color: var(--gold); }
+    .nv-label-blue   { color: var(--blue); }
+    .nv-h2 {
+      font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700; line-height: 1.2; margin-bottom: 18px;
+    }
+    .nv-h2-dark { color: var(--navy); }
+    .nv-h2-light { color: #fff; }
+    .nv-lead { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 660px; }
+    .nv-lead-light { color: rgba(255,255,255,0.62); }
+
+    /* Check list */
+    .nv-checks { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 28px 0; }
+    .nv-checks li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 15px; color: var(--text); line-height: 1.5;
+    }
+    .nv-checks li .ck { color: var(--teal); font-weight: 700; font-size: 17px; flex-shrink: 0; }
+    .nv-checks-light li { color: rgba(255,255,255,0.78); }
+
+    /* Feature grid */
+    .nv-feat-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .nv-feat-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 18px; padding: 28px 24px;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .nv-feat-card:hover { border-color: #7c3aed; transform: translateY(-3px); box-shadow: 0 12px 40px rgba(124,58,237,0.1); }
+    .nv-feat-card-dark {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px; padding: 28px 24px;
+      transition: border-color .25s;
+    }
+    .nv-feat-card-dark:hover { border-color: rgba(124,58,237,0.45); }
+    .nv-feat-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; margin-bottom: 16px;
+    }
+    .fi-purple { background: rgba(124,58,237,0.12); }
+    .fi-teal2  { background: rgba(14,138,122,0.12); }
+    .fi-gold2  { background: rgba(212,160,23,0.12); }
+    .fi-blue2  { background: rgba(26,111,181,0.12); }
+    .nv-feat-card h3, .nv-feat-card-dark h3 {
+      font-family: var(--serif); font-size: 17px; font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .nv-feat-card h3 { color: var(--navy); }
+    .nv-feat-card-dark h3 { color: #fff; }
+    .nv-feat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+    .nv-feat-card-dark p { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+    /* Light pattern visual */
+    .nv-light-viz {
+      display: flex; gap: 32px; justify-content: center; margin: 48px 0;
+      flex-wrap: wrap;
+    }
+    .nv-light-orb {
+      width: 140px; height: 140px; border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 6px; font-size: 12px; font-weight: 600; letter-spacing: 0.5px;
+    }
+    .orb-calm {
+      background: radial-gradient(circle, rgba(14,138,122,0.3), rgba(14,138,122,0.05));
+      border: 2px solid rgba(14,138,122,0.4); color: #3ecf8e;
+      animation: pulse-calm 3s ease-in-out infinite;
+    }
+    .orb-energy {
+      background: radial-gradient(circle, rgba(124,58,237,0.3), rgba(124,58,237,0.05));
+      border: 2px solid rgba(124,58,237,0.4); color: #a78bfa;
+      animation: pulse-energy 2.5s ease-in-out infinite;
+    }
+    .orb-repattern {
+      background: radial-gradient(circle, rgba(212,160,23,0.25), rgba(212,160,23,0.04));
+      border: 2px solid rgba(212,160,23,0.4); color: var(--gold);
+      animation: pulse-calm 3.5s ease-in-out infinite;
+    }
+    .orb-icon { font-size: 30px; }
+    @keyframes pulse-calm {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.06); opacity: 0.85; }
+    }
+    @keyframes pulse-energy {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+      50% { transform: scale(1.08) rotate(3deg); opacity: 0.9; }
+    }
+
+    /* Flow diagram */
+    .nv-flow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0; flex-wrap: wrap; margin: 48px 0;
+    }
+    .nv-flow-step {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 20px 24px; text-align: center;
+      min-width: 160px; flex: 1; max-width: 200px;
+    }
+    .nv-flow-step .step-icon { font-size: 28px; margin-bottom: 8px; }
+    .nv-flow-step .step-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a78bfa; margin-bottom: 4px; }
+    .nv-flow-step .step-name { font-size: 13.5px; font-weight: 600; color: #fff; }
+    .nv-flow-arrow { font-size: 24px; color: rgba(255,255,255,0.3); padding: 0 10px; }
+
+    /* Member access list */
+    .nv-member-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin: 32px 0; }
+    .nv-member-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px; padding: 16px 20px;
+    }
+    .nv-member-list li .mi { font-size: 22px; flex-shrink: 0; }
+    .nv-member-list li .mt { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.75); }
+    .nv-member-list li .mt strong { color: #fff; }
+
+    /* Pricing table */
+    .nv-pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0;
+    }
+    .nv-price-card {
+      border-radius: 20px; padding: 32px 28px; text-align: center;
+      transition: transform .25s;
+    }
+    .nv-price-card:hover { transform: translateY(-4px); }
+    .nv-price-card.featured {
+      background: linear-gradient(135deg, #7c3aed, #5b21b6);
+      box-shadow: 0 16px 48px rgba(124,58,237,0.4);
+      position: relative;
+    }
+    .nv-price-card.standard {
+      background: var(--white); border: 1px solid var(--border);
+    }
+    .nv-price-card.match {
+      background: var(--bg3); border: 1.5px dashed var(--border);
+    }
+    .nv-featured-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--gold); color: #fff; font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; border-radius: 100px;
+      padding: 4px 16px; white-space: nowrap;
+    }
+    .nv-price-qty { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .standard .nv-price-qty { color: var(--muted); }
+    .featured .nv-price-qty { color: rgba(255,255,255,0.7); }
+    .match .nv-price-qty { color: var(--teal); }
+    .nv-price-amount { font-family: var(--serif); font-size: 44px; font-weight: 700; line-height: 1; margin-bottom: 6px; }
+    .standard .nv-price-amount { color: var(--navy); }
+    .featured .nv-price-amount { color: #fff; }
+    .match .nv-price-amount { color: var(--teal); font-size: 30px; }
+    .nv-price-per { font-size: 13px; margin-bottom: 16px; }
+    .standard .nv-price-per { color: var(--muted); }
+    .featured .nv-price-per { color: rgba(255,255,255,0.65); }
+    .match .nv-price-per { color: var(--muted); }
+    .nv-price-bonus {
+      font-size: 13px; font-weight: 600; display: flex; align-items: center;
+      justify-content: center; gap: 6px; margin-top: 12px;
+    }
+    .standard .nv-price-bonus { color: var(--teal); }
+    .featured .nv-price-bonus { color: rgba(255,255,255,0.85); }
+    .match .nv-price-bonus { color: var(--teal); }
+    .nv-price-small {
+      font-size: 12px; color: var(--muted); font-style: italic;
+      text-align: center; max-width: 700px; margin: 0 auto;
+      padding: 16px; background: var(--bg3); border-radius: 10px;
+    }
+
+    /* Comparison table */
+    .nv-compare-wrap { overflow-x: auto; margin: 40px 0; }
+    .nv-compare {
+      width: 100%; border-collapse: collapse;
+      font-size: 14px;
+    }
+    .nv-compare th {
+      padding: 16px 20px; text-align: left; font-size: 12px;
+      font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .nv-compare th:first-child { color: var(--muted); }
+    .nv-compare th.th-hqp {
+      background: linear-gradient(135deg, #7c3aed, #5b21b6);
+      color: #fff; border-radius: 10px 10px 0 0;
+    }
+    .nv-compare th.th-other { color: var(--muted); }
+    .nv-compare td { padding: 13px 20px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .nv-compare td:first-child { color: var(--text); font-weight: 500; }
+    .nv-compare td.td-hqp { background: rgba(124,58,237,0.04); border-left: 1px solid rgba(124,58,237,0.15); border-right: 1px solid rgba(124,58,237,0.15); }
+    .nv-compare td.td-other { color: var(--muted); }
+    .nv-compare tr:last-child td.td-hqp { border-radius: 0 0 10px 10px; border-bottom: 1px solid rgba(124,58,237,0.15); }
+    .check-yes { color: var(--teal); font-weight: 700; }
+    .check-no  { color: var(--red); font-weight: 700; }
+
+    /* Testimonials */
+    .nv-testimonials-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;
+    }
+    .nv-testimonial {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 18px; padding: 28px 24px;
+      position: relative;
+    }
+    .nv-testimonial::before {
+      content: '"'; font-size: 64px; font-family: Georgia, serif;
+      color: rgba(124,58,237,0.15); line-height: 1; position: absolute;
+      top: 12px; left: 20px;
+    }
+    .nv-testimonial blockquote {
+      font-size: 15px; color: var(--text); line-height: 1.7;
+      font-style: italic; margin-bottom: 16px; padding-top: 20px;
+    }
+    .nv-testimonial cite {
+      font-size: 13px; font-weight: 700; color: var(--navy);
+      font-style: normal; display: block;
+    }
+    .nv-testimonial cite span { font-weight: 400; color: var(--muted); }
+
+    /* Final CTA */
+    .nv-final-cta {
+      background: linear-gradient(135deg, #3b0764 0%, #1e1b4b 50%, #0f2744 100%);
+      padding: 100px 40px; text-align: center; position: relative; overflow: hidden;
+    }
+    .nv-final-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(124,58,237,0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .nv-final-cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    .nv-final-cta h2 {
+      font-family: var(--serif); font-size: clamp(28px, 4vw, 46px);
+      color: #fff; font-weight: 700; line-height: 1.2; margin-bottom: 16px;
+    }
+    .nv-final-cta p { font-size: 17px; color: rgba(255,255,255,0.62); line-height: 1.7; margin-bottom: 36px; }
+
+    /* Pulse animation */
+    .btn-pulse {
+      animation: btn-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes btn-pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(124,58,237,0.45); }
+      50% { box-shadow: 0 6px 40px rgba(124,58,237,0.75), 0 0 0 8px rgba(124,58,237,0.12); }
+    }
+
+    /* Disclaimer */
+    .nv-disclaimer {
+      background: #f8f9fb; border-top: 1px solid var(--border);
+      padding: 24px 40px; text-align: center;
+    }
+    .nv-disclaimer p {
+      font-size: 12px; color: var(--muted); max-width: 700px; margin: 0 auto;
+      font-style: italic; line-height: 1.6;
+    }
+
+    /* Why HQP section */
+    .nv-why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 48px; }
+    .nv-why-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 18px; padding: 32px;
+    }
+    .nv-why-box.hqp-box {
+      background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(26,111,181,0.04));
+      border-color: rgba(124,58,237,0.2);
+    }
+    .nv-why-box h3 {
+      font-family: var(--serif); font-size: 18px; font-weight: 700;
+      color: var(--navy); margin-bottom: 16px;
+    }
+    .nv-why-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .nv-why-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--muted); line-height: 1.5;
+    }
+    .nv-why-list li .li-icon { flex-shrink: 0; margin-top: 1px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nv-pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+      .nv-testimonials-grid { grid-template-columns: 1fr; }
+      .nv-why-grid { grid-template-columns: 1fr; }
+      .nv-flow { gap: 8px; }
+      .nv-flow-arrow { display: none; }
+    }
+    @media (max-width: 640px) {
+      .nv-hero { padding: 80px 20px 60px; }
+      .nv-section { padding: 64px 20px; }
+      .nv-final-cta { padding: 72px 20px; }
+      .nv-cta-row { flex-direction: column; align-items: center; }
+      .nv-light-viz { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <!-- ── SECTION 1: HERO ── -->
+  <section class="nv-hero">
+    <div class="nv-hero-inner">
+      <div class="nv-eyebrow">🧠 Clinically-Driven Neuroplasticity Training</div>
+      <h1>Engage the Mind.<br><span>Elevate the Practice.</span></h1>
+      <p class="nv-hero-sub">
+        Harness the power of <strong>light + sound neuro-engagement</strong> to enhance focus, calm
+        the nervous system, and accelerate patient recovery — all in one intuitive, portable device.
+      </p>
+      <div class="nv-cta-row">
+        <a href="#pricing" class="btn-purple btn-pulse">🛒 Order Now — From $475 Each!</a>
+        <a href="#integration" class="btn-outline-white">🎯 See How It Integrates with HeartQuest</a>
+      </div>
+      <div>
+        <span class="nv-price-badge">💰 Price Match Guarantee + Exclusive Member Access Included!</span>
+      </div>
+      <div class="nv-hero-overlay">Practitioner holding neuroVIZR over a relaxed patient.</div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: WHY NEUROVIZR ── -->
+  <section class="nv-section nv-section-alt fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-purple">Why neuroVIZR</span>
+      <h2 class="nv-h2 nv-h2-dark">🧩 The Future of Brain Wellness Is<br>Engagement — Not Entrainment.</h2>
+      <p class="nv-lead">
+        neuroVIZR isn't another relaxation gadget. It's a <strong>neural engagement system</strong> that stimulates the brain to grow, adapt, and reset through dynamic light and sound patterns.
+      </p>
+      <ul class="nv-checks" style="margin-top:28px;">
+        <li><span class="ck">✅</span> Clinically informed by 35+ years of neuroscience</li>
+        <li><span class="ck">✅</span> Increases neuroplasticity, focus, and emotional regulation</li>
+        <li><span class="ck">✅</span> Over 100 guided programs: Sleep &bull; Focus &bull; Stress &bull; Recovery</li>
+        <li><span class="ck">✅</span> Perfect companion to HeartQuest HRV analysis for measurable outcomes</li>
+      </ul>
+
+      <div class="nv-light-viz">
+        <div class="nv-light-orb orb-calm">
+          <div class="orb-icon">↺</div>
+          <div>Counter-Clockwise</div>
+          <div style="font-size:11px;opacity:.7;">Calming</div>
+        </div>
+        <div class="nv-light-orb orb-energy">
+          <div class="orb-icon">↻</div>
+          <div>Clockwise</div>
+          <div style="font-size:11px;opacity:.7;">Energizing</div>
+        </div>
+        <div class="nv-light-orb orb-repattern">
+          <div class="orb-icon">⤡</div>
+          <div>Diagonal</div>
+          <div style="font-size:11px;opacity:.7;">Re-Patterning</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="#pricing" class="btn btn-primary">⚡ Experience a neuroVIZR Session Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: HOW IT WORKS ── -->
+  <section class="nv-section fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-teal">How It Works</span>
+      <h2 class="nv-h2 nv-h2-dark">🔬 Science-Backed. Easy to Use.<br>Loved by Practitioners.</h2>
+      <p class="nv-lead">Each neuroVIZR session delivers structured sensory input that challenges the brain to build new connections.</p>
+
+      <div class="nv-feat-grid">
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-purple">💡</div>
+          <h3>Dynamic Light Patterns</h3>
+          <p>Counter-clockwise light calms the nervous system. Clockwise patterns energize and stimulate. Diagonal motion drives neural re-patterning.</p>
+        </div>
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-teal2">🎵</div>
+          <h3>Multi-Layered Frequencies</h3>
+          <p>Combined audio frequencies work in concert with light to maximize brain response — improving balance, adaptability, and focus.</p>
+        </div>
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-blue2">📱</div>
+          <h3>Intuitive Mobile App</h3>
+          <p>Simple, practitioner-friendly interface. Select programs, customize sessions, and monitor patient progress — all from your phone.</p>
+        </div>
+        <div class="nv-feat-card">
+          <div class="nv-feat-icon fi-gold2">🧬</div>
+          <h3>100+ Guided Programs</h3>
+          <p>Protocols for Sleep, Focus, Stress Recovery, Cognitive Enhancement, and more — each mapped to specific neurological outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: CLINICAL INTEGRATION ── -->
+  <section id="integration" class="nv-section nv-section-dark fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-purple">Clinical Integration</span>
+      <h2 class="nv-h2 nv-h2-light">💓 From Insight to Action —<br>Powered by HRVHQ.</h2>
+      <p class="nv-lead nv-lead-light">HeartQuest identifies imbalance; neuroVIZR helps correct it. Together, they create measurable outcomes your patients can <em>see and feel.</em></p>
+
+      <div class="nv-flow">
+        <div class="nv-flow-step">
+          <div class="step-icon">🫀</div>
+          <div class="step-label">Step 1</div>
+          <div class="step-name">HeartQuest Scan</div>
+        </div>
+        <div class="nv-flow-arrow">→</div>
+        <div class="nv-flow-step">
+          <div class="step-icon">🤖</div>
+          <div class="step-label">Step 2</div>
+          <div class="step-name">AI Plan</div>
+        </div>
+        <div class="nv-flow-arrow">→</div>
+        <div class="nv-flow-step">
+          <div class="step-icon">🧠</div>
+          <div class="step-label">Step 3</div>
+          <div class="step-name">neuroVIZR Protocol</div>
+        </div>
+        <div class="nv-flow-arrow">→</div>
+        <div class="nv-flow-step">
+          <div class="step-icon">📈</div>
+          <div class="step-label">Step 4</div>
+          <div class="step-name">Retest Results</div>
+        </div>
+      </div>
+
+      <div class="nv-feat-grid">
+        <div class="nv-feat-card-dark">
+          <div class="nv-feat-icon fi-purple">🔍</div>
+          <h3>Detect</h3>
+          <p>HRVHQ detects stress, vagus nerve tone, and brainwave imbalance with precision clinical scanning.</p>
+        </div>
+        <div class="nv-feat-card-dark">
+          <div class="nv-feat-icon fi-teal2">🔄</div>
+          <h3>Retrain</h3>
+          <p>neuroVIZR retrains neural pathways for stability and recovery using targeted light + sound protocols.</p>
+        </div>
+        <div class="nv-feat-card-dark">
+          <div class="nv-feat-icon fi-gold2">✅</div>
+          <h3>Prove Progress</h3>
+          <p>Retest with HeartQuest to demonstrate measurable improvement patients can see in their own data.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a href="index.html" class="btn-purple">📈 See the Complete HRVHQ System</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: EXCLUSIVE MEMBER ACCESS ── -->
+  <section class="nv-section nv-section-alt fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-blue">Exclusive Access</span>
+      <h2 class="nv-h2 nv-h2-dark">🔓 Only Available When You Buy Through HRVHQ.</h2>
+      <p class="nv-lead">Your purchase through HRVHQ includes <strong>complimentary access</strong> to our private Member Portal — a resource you won't find anywhere else.</p>
+
+      <ul class="nv-member-list">
+        <li>
+          <span class="mi">🎥</span>
+          <span class="mt"><strong>Video Training Library:</strong> setup, patient use, and advanced protocols — everything you need from day one.</span>
+        </li>
+        <li>
+          <span class="mi">📊</span>
+          <span class="mt"><strong>Integration Guides:</strong> pair neuroVIZR data with HeartQuest reports for a complete clinical picture.</span>
+        </li>
+        <li>
+          <span class="mi">🧠</span>
+          <span class="mt"><strong>Brainwave Mapping Tools:</strong> enhance session results with HQP Quadrant-aligned protocols.</span>
+        </li>
+        <li>
+          <span class="mi">🤝</span>
+          <span class="mt"><strong>Private Practitioner Community:</strong> live Q&amp;As, ongoing education, and peer support.</span>
+        </li>
+        <li>
+          <span class="mi">🔁</span>
+          <span class="mt"><strong>New Programs Added Monthly:</strong> your library grows continuously — no extra cost, ever.</span>
+        </li>
+      </ul>
+
+      <div style="text-align:center;margin-top:40px;">
+        <a href="#pricing" class="btn btn-primary">🔑 Join Free with Your neuroVIZR Purchase</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 6: PRICING ── -->
+  <section id="pricing" class="nv-section fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-gold">Pricing &amp; Guarantee</span>
+      <h2 class="nv-h2 nv-h2-dark">💰 Simple Pricing. Total Confidence.</h2>
+      <p class="nv-lead">We'll match any advertised price — guaranteed. And when you purchase through HRVHQ, you unlock <strong>exclusive tools, support, and updates</strong> not available anywhere else.</p>
+
+      <div class="nv-pricing-grid">
+        <div class="nv-price-card standard">
+          <div class="nv-price-qty">1 Device</div>
+          <div class="nv-price-amount">$599</div>
+          <div class="nv-price-per">per device</div>
+          <div class="nv-price-bonus">✅ Includes full member access</div>
+          <div style="margin-top:24px;">
+            <a href="#order" class="btn btn-outline" style="width:100%;justify-content:center;">Order Now</a>
+          </div>
+        </div>
+        <div class="nv-price-card featured">
+          <div class="nv-featured-badge">Best Value</div>
+          <div class="nv-price-qty">3+ Devices</div>
+          <div class="nv-price-amount">$475</div>
+          <div class="nv-price-per">each — save over $370 total</div>
+          <div class="nv-price-bonus">✅ Full member access per practitioner</div>
+          <div style="margin-top:24px;">
+            <a href="#order" class="btn-purple" style="width:100%;justify-content:center;display:flex;">Order Bulk</a>
+          </div>
+        </div>
+        <div class="nv-price-card match">
+          <div class="nv-price-qty">Found Lower?</div>
+          <div class="nv-price-amount">We'll Match It</div>
+          <div class="nv-price-per">price match guarantee</div>
+          <div class="nv-price-bonus">✅ Still includes HRVHQ membership</div>
+          <div style="margin-top:24px;">
+            <a href="#order" class="btn btn-outline" style="width:100%;justify-content:center;">Request Match</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="nv-price-small">
+        Price Match Guarantee applies to any publicly advertised neuroVIZR offer from authorized distributors.
+        Member access remains exclusive to HRVHQ purchasers.
+      </p>
+
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px;" id="order">
+        <a href="purchase.html" class="btn-purple btn-pulse">🛒 Order neuroVIZR Now</a>
+        <a href="support.html" class="btn btn-outline">💬 Request Bulk Pricing Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY HEARTQUEST GLOBAL ── -->
+  <section class="nv-section nv-section-alt fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-purple">The HeartQuest Difference</span>
+      <h2 class="nv-h2 nv-h2-dark">Why Many Practitioners Choose to Purchase<br>NeuroVIZR Through HeartQuest Global</h2>
+      <p class="nv-lead">We have worked closely with NeuroVIZR to ensure the Experience Pack integrates seamlessly with HeartQuest Professional (HQP) and CRIS GOLD™ clinical workflows.</p>
+
+      <div class="nv-why-grid">
+        <div class="nv-why-box hqp-box">
+          <h3>🏆 When You Purchase Through HeartQuest Global</h3>
+          <ul class="nv-why-list">
+            <li><span class="li-icon">✅</span> Lifetime access to the NeuroVIZR Core Library (600+ sessions)</li>
+            <li><span class="li-icon">✅</span> 100+ Light &amp; Sound entrainment programs included</li>
+            <li><span class="li-icon">✅</span> No required monthly subscription for core access</li>
+            <li><span class="li-icon">✅</span> Pre-mapped NeuroVIZR programs aligned with HQP Quadrants</li>
+            <li><span class="li-icon">✅</span> Brain Gym progression integrated into the CRIS GOLD™ workflow</li>
+            <li><span class="li-icon">✅</span> Clinical implementation guidance and onboarding</li>
+            <li><span class="li-icon">✅</span> Ongoing protocol refinement as CRIS GOLD evolves</li>
+            <li><span class="li-icon">✅</span> Direct support from our clinical integration team</li>
+            <li><span class="li-icon">✅</span> <strong>We will match or beat any publicly advertised NeuroVIZR price</strong></li>
+          </ul>
+        </div>
+        <div class="nv-why-box">
+          <h3>📦 If Purchasing Directly from NeuroVIZR / Other Resellers</h3>
+          <ul class="nv-why-list">
+            <li><span class="li-icon" style="color:var(--muted)">—</span> Subscription-based access model for core library</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> Access varies by subscription tier</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> Monthly subscription required for ongoing access</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> HQP Quadrant Mapping — not included</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> CRIS GOLD™ Clinical Routing — not included</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> Brain Gym pathway — self-directed</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> Clinical Implementation Training — not included</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> Standard retail pricing, no match guarantee</li>
+            <li><span class="li-icon" style="color:var(--muted)">—</span> Standalone access model</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="background:rgba(124,58,237,0.06);border:1px solid rgba(124,58,237,0.2);border-radius:14px;padding:28px 32px;margin-top:32px;">
+        <p style="font-size:15px;color:var(--navy);line-height:1.7;margin:0;">
+          Both purchase pathways provide access to NeuroVIZR technology. However, purchasing through HeartQuest Global ensures your device is integrated into a measurable, structured clinical system — <strong>with no additional subscription layer and no increase in cost.</strong> Our goal is simple: you should never pay more to receive more support.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPARISON TABLE ── -->
+  <section class="nv-section fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-teal">Side-by-Side Comparison</span>
+      <h2 class="nv-h2 nv-h2-dark">NeuroVIZR Purchase Options Compared</h2>
+
+      <div class="nv-compare-wrap">
+        <table class="nv-compare">
+          <thead>
+            <tr>
+              <th style="width:35%">Feature / Benefit</th>
+              <th class="th-hqp" style="width:32.5%">🏆 Through HeartQuest Global</th>
+              <th class="th-other" style="width:32.5%">Other Resellers / Direct</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lifetime Access to Core Library (600+ sessions)</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Included</td>
+              <td class="td-other">Subscription-based access model</td>
+            </tr>
+            <tr>
+              <td>100+ Light &amp; Sound Entrainment Sessions</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Included</td>
+              <td class="td-other">Access varies by subscription tier</td>
+            </tr>
+            <tr>
+              <td>Monthly Subscription Required</td>
+              <td class="td-hqp"><span class="check-no">❌</span> Not required for core library</td>
+              <td class="td-other"><span class="check-yes">✅</span> Required for ongoing access</td>
+            </tr>
+            <tr>
+              <td>HQP Quadrant Mapping Integration</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Included</td>
+              <td class="td-other">Not included</td>
+            </tr>
+            <tr>
+              <td>CRIS GOLD™ Clinical Routing Integration</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Included</td>
+              <td class="td-other">Not included</td>
+            </tr>
+            <tr>
+              <td>Brain Gym Completion Pathway Integration</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Structured &amp; guided</td>
+              <td class="td-other">Self-directed</td>
+            </tr>
+            <tr>
+              <td>Clinical Implementation Training</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Included</td>
+              <td class="td-other">Not included</td>
+            </tr>
+            <tr>
+              <td>Ongoing Protocol Updates</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Included</td>
+              <td class="td-other">Not included</td>
+            </tr>
+            <tr>
+              <td>Price Assurance</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> We match or beat any advertised price</td>
+              <td class="td-other">Standard retail pricing</td>
+            </tr>
+            <tr>
+              <td>Designed for Clinical Ecosystem Use</td>
+              <td class="td-hqp"><span class="check-yes">✅</span> Fully integrated</td>
+              <td class="td-other">Standalone access model</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 7: TESTIMONIALS ── -->
+  <section class="nv-section nv-section-alt fade-in">
+    <div class="nv-inner">
+      <span class="nv-label nv-label-purple">Practitioner Testimonials</span>
+      <h2 class="nv-h2 nv-h2-dark">💬 What Practitioners Are Saying</h2>
+
+      <div class="nv-testimonials-grid">
+        <div class="nv-testimonial">
+          <blockquote>"The neuroVIZR + HeartQuest combination is a game-changer — patients sleep better, recover faster, and love their sessions."</blockquote>
+          <cite>Dr. M. Kessler <span>DC, ND</span></cite>
+        </div>
+        <div class="nv-testimonial">
+          <blockquote>"I bought three units for my staff. Each can run sessions independently — and we saw ROI in under 30 days."</blockquote>
+          <cite>Dr. S. Andrews <span>Functional Medicine</span></cite>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px;">
+        <a href="about.html" class="btn btn-primary">⭐ Join the HRVHQ Practitioner Network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 8: FINAL CTA ── -->
+  <section class="nv-final-cta fade-in">
+    <div class="nv-final-cta-inner">
+      <h2>🚀 Ready to Engage the Brain and<br>Elevate Your Practice?</h2>
+      <p>Order your neuroVIZR today — enjoy exclusive HRVHQ access, price-match protection, and the world's most advanced neural engagement technology.</p>
+      <div class="nv-cta-row">
+        <a href="purchase.html" class="btn-purple btn-pulse" style="font-size:17px;padding:18px 38px;">🛒 Order Now from $475</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DISCLAIMER ── -->
+  <div class="nv-disclaimer">
+    <p><strong>Disclaimer:</strong> neuroVIZR is a wellness device designed for educational and relaxation purposes. It is not intended for diagnosis or treatment of any medical condition.</p>
+  </div>
+
+  <div id="main-footer"></div>
+  <script src="components.js"></script>
+</body>
+</html>
