@@ -1,5 +1,5 @@
 // MedAnalytica — Shared Components
-const LOGO_SVG = `<img src="hqp-logo-new.png" alt="HQP Global Logo" class="logo-svg" style="height:90px;width:auto;object-fit:contain;">`;
+const LOGO_SVG = `<img src="HQP-LOGO-Updated.png" alt="HQP Global Logo" class="logo-svg" style="height:90px;width:auto;object-fit:contain;">`;
 
 const NAV_HTML = `
 <nav>
