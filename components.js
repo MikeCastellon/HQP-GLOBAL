@@ -7,6 +7,7 @@ const NAV_HTML = `
     ${LOGO_SVG}
   </a>
   <ul class="nav-links">
+    <li><a href="hqp.html">HQP</a></li>
     <li><a href="hqp-cris-gold.html">CRIS GOLD™ AI</a></li>
     <li><a href="neurovizr.html">neuroVIZR</a></li>
     <li><a href="braingauge-funnel.html">BrainGauge™</a></li>
@@ -31,6 +32,7 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-col-head">Platform</div>
         <ul class="footer-links">
+          <li><a href="hqp.html">HeartQuest Professional</a></li>
           <li><a href="hqp-cris-gold.html">CRIS GOLD™ AI</a></li>
           <li><a href="neurovizr.html">neuroVIZR</a></li>
           <li><a href="braingauge-funnel.html">BrainGauge™</a></li>
