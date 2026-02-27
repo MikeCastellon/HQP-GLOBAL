@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "HQP-GLOBAL",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "3000"],
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "netlify", "dev", "--port", "3000"],
       "port": 3000
     }
   ]
