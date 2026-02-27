@@ -46,8 +46,8 @@ export default async (req) => {
           ...(tier === "bulk" ? { adjustable_quantity: { enabled: true, minimum: 3 } } : {}),
         },
       ],
-      success_url: `${origin}/neurovizr.html?checkout=success`,
-      cancel_url: `${origin}/neurovizr.html?checkout=cancelled`,
+      success_url: `${origin}/thank-you-neurovizr.html`,
+      cancel_url: `${origin}/neurovizr.html#pricing`,
       shipping_address_collection: {
         allowed_countries: [
           "US", "CA", "GB", "AU", "DE", "FR", "NL", "BE", "AT", "CH",
