@@ -86,7 +86,7 @@
         <strong>HQP</strong> is the clinical-grade ECG sensor that powers CRIS GOLD™ AI — capturing 5-minute HRV readings with ear clip or finger pulse sensors, Bluetooth connected, compact enough for any practice or home visit.
       </p>
       <div class="nv-cta-row">
-        <a href="purchase.html" class="btn-gold-main btn-pulse">🛒 Purchase HQP — $3,975</a>
+        <button onclick="hqpCheckout()" class="btn-gold-main btn-pulse">🛒 Purchase HQP — $3,975</button>
         <a href="hqp-cris-gold.html" class="btn-outline-white">🤖 See CRIS GOLD™ AI Software</a>
       </div>
       <div>
@@ -207,7 +207,7 @@
       <h2>🚀 Ready to Start Assessing Patients?</h2>
       <p>The HeartQuest Professional ships worldwide. Every purchase includes the CRIS GOLD™ AI software license, personal onboarding, and lifetime updates — no hidden costs.</p>
       <div class="nv-cta-row">
-        <a href="purchase.html" class="btn-gold-main btn-pulse" style="font-size:17px;padding:18px 38px;">🛒 Purchase HQP — $3,975</a>
+        <button onclick="hqpCheckout()" class="btn-gold-main btn-pulse" style="font-size:17px;padding:18px 38px;">🛒 Purchase HQP — $3,975</button>
         <a href="support.html" class="btn-outline-white">💬 Ask a Question</a>
       </div>
     </div>
@@ -219,5 +219,32 @@
 
   <div id="main-footer"></div>
   <script src="components.js"></script>
+  <script>
+    async function hqpCheckout() {
+      const btn = event.currentTarget;
+      const orig = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '⏳ Redirecting to Checkout…';
+      try {
+        const res = await fetch('/api/checkout-hqp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({}),
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert(data.error || 'Something went wrong. Please try again.');
+          btn.disabled = false;
+          btn.innerHTML = orig;
+        }
+      } catch (e) {
+        alert('Network error. Please try again.');
+        btn.disabled = false;
+        btn.innerHTML = orig;
+      }
+    }
+  </script>
 </body>
 </html>

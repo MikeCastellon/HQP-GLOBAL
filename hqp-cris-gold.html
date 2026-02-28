@@ -278,7 +278,7 @@
           <div class="nv-price-amount">$3,975</div>
           <div class="nv-price-per">Complete CRIS GOLD™ System</div>
           <div class="nv-price-bonus">✅ Hardware + Software + Training</div>
-          <div style="margin-top:24px;"><a href="purchase.html" class="btn btn-outline" style="width:100%;justify-content:center;">Order Now</a></div>
+          <div style="margin-top:24px;"><button onclick="hqpCheckout()" class="btn btn-outline" style="width:100%;justify-content:center;">Order Now</button></div>
         </div>
         <div class="nv-price-card featured">
           <div class="nv-featured-badge">Most Popular</div>
@@ -286,7 +286,7 @@
           <div class="nv-price-amount">$3,975</div>
           <div class="nv-price-per">+ Add-On Devices Available</div>
           <div class="nv-price-bonus">✅ Lifetime updates included free</div>
-          <div style="margin-top:24px;"><a href="purchase.html" class="btn-gold-main" style="width:100%;justify-content:center;display:flex;">Order Bundle</a></div>
+          <div style="margin-top:24px;"><button onclick="hqpCheckout()" class="btn-gold-main" style="width:100%;justify-content:center;display:flex;">Order Bundle</button></div>
         </div>
         <div class="nv-price-card match">
           <div class="nv-price-qty">International</div>
@@ -298,7 +298,7 @@
       </div>
       <p class="nv-price-small">+ tax (within AZ) &amp; shipping. International orders: please contact us directly. All purchases include lifetime software updates and personal onboarding.</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px;">
-        <a href="purchase.html" class="btn-gold-main btn-pulse" style="font-size:16px;padding:16px 36px;">🛒 Purchase CRIS GOLD™ Now</a>
+        <button onclick="hqpCheckout()" class="btn-gold-main btn-pulse" style="font-size:16px;padding:16px 36px;">🛒 Purchase CRIS GOLD™ Now</button>
         <a href="support.html" class="btn btn-outline">💬 Ask a Question</a>
       </div>
     </div>
@@ -356,7 +356,7 @@
       <h2>🚀 Ready to Elevate Your Clinical Practice?</h2>
       <p>Join health professionals in 40+ countries using CRIS GOLD™ for faster, more comprehensive, and more profitable patient assessments.</p>
       <div class="nv-cta-row">
-        <a href="purchase.html" class="btn-gold-main btn-pulse" style="font-size:17px;padding:18px 38px;">🛒 Purchase CRIS GOLD™ — $3,975</a>
+        <button onclick="hqpCheckout()" class="btn-gold-main btn-pulse" style="font-size:17px;padding:18px 38px;">🛒 Purchase CRIS GOLD™ — $3,975</button>
       </div>
     </div>
   </section>
@@ -367,5 +367,32 @@
 
   <div id="main-footer"></div>
   <script src="components.js"></script>
+  <script>
+    async function hqpCheckout() {
+      const btn = event.currentTarget;
+      const orig = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = '⏳ Redirecting to Checkout…';
+      try {
+        const res = await fetch('/api/checkout-hqp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({}),
+        });
+        const data = await res.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert(data.error || 'Something went wrong. Please try again.');
+          btn.disabled = false;
+          btn.innerHTML = orig;
+        }
+      } catch (e) {
+        alert('Network error. Please try again.');
+        btn.disabled = false;
+        btn.innerHTML = orig;
+      }
+    }
+  </script>
 </body>
 </html>
